@@ -3,20 +3,23 @@ import { FiCreditCard } from 'react-icons/fi';
 import { BsShield, BsCurrencyDollar } from 'react-icons/bs';
 import { MdOutlineCancel } from 'react-icons/md';
 
-const UserProfile = ({ setUserProfile }) => {
-  return (
-    <div className='nav-item absolute top-16 right-10 bg-white p-8 rounded-lg w-96'>
-      <div className='flex justify-between items-center'>
-        <p className='font-semibold text-lg'>User Profile</p>
+import Button from './Button';
+import { userProfileData } from '../data/dummy';
 
-        <div>
-          <button
-            className='text-2xl text-gray-500 rounded-md'
-            onClick={() => setUserProfile(false)}
-          >
-            <MdOutlineCancel />
-          </button>
-        </div>
+const UserProfile = ({ setUserProfile, userProfile, currentColor }) => {
+  return (
+    <div className='nav-item absolute top-16 right-1 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96'>
+      <div className='flex justify-between items-center'>
+        <p className='font-semibold text-lg dark:text-gray-200'>User Profile</p>
+        <Button
+          state={userProfile}
+          setState={setUserProfile}
+          icon={<MdOutlineCancel />}
+          color={'rgb(153, 171, 180)'}
+          bgHoverColor={'light-gray'}
+          size={'2xl'}
+          borderRadius={'full'}
+        />
       </div>
       <div className='flex gap-5 items-center mt-6 border-color border-b-1 pb-6'>
         <img
@@ -25,45 +28,46 @@ const UserProfile = ({ setUserProfile }) => {
           alt=''
         />
         <div>
-          <p className='font-semibold text-xl'>Julia Roberts</p>
-          <p className='text-gray-500 text-sm'>Administrator</p>
-          <p className='text-gray-500 text-sm font-semibold'>info@shop.com</p>
+          <p className='font-semibold text-xl dark:text-gray-200'>
+            Julia Roberts
+          </p>
+          <p className='text-gray-500 text-sm dark:text-gray-400'>
+            Administrator
+          </p>
+          <p className='text-gray-500 text-sm font-semibold dark:text-gray-400'>
+            info@shop.com
+          </p>
         </div>
       </div>
       <div>
-        <div className='flex gap-5 border-b-1 border-color p-4 hover:bg-light-gray cursor-pointer'>
-          <button className=' text-light-blue bg-icon-light-blue text-xl rounded-lg p-3 hover:bg-light-gray'>
-            <BsCurrencyDollar />
-          </button>
+        {userProfileData.map((item) => (
+          <div className='flex gap-5 border-b-1 border-color p-4 hover:bg-light-gray cursor-pointer  dark:hover:bg-[#42464D]'>
+            <button
+              style={{ color: item.iconColor, backgroundColor: item.iconBg }}
+              className=' text-xl rounded-lg p-3 hover:bg-light-gray'
+            >
+              {item.icon}
+            </button>
 
-          <div>
-            <p className='font-semibold '>My Profile</p>
-            <p className='text-gray-500 text-sm'>Account Settings</p>
+            <div>
+              <p className='font-semibold dark:text-gray-200 '>{item.title}</p>
+              <p className='text-gray-500 text-sm dark:text-gray-400'>
+                {item.desc}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className='flex gap-5 border-b-1 border-color p-4 hover:bg-light-gray cursor-pointer'>
-          <button className=' text-icon-light-green bg-icon-light-green text-xl rounded-lg p-3 hover:bg-light-gray'>
-            <BsShield />
-          </button>
-          <div>
-            <p className='font-semibold '>My Inbox</p>
-            <p className='text-gray-500 text-sm'>Messages & Emails</p>
-          </div>
-        </div>
-        <div className='flex gap-5 border-b-1 border-color p-4 hover:bg-light-gray cursor-pointer'>
-          <button className=' text-icon-light-red bg-icon-light-orange text-xl rounded-lg p-3 hover:bg-light-gray'>
-            <FiCreditCard />
-          </button>
-          <div>
-            <p className='font-semibold '>My Tasks</p>
-            <p className='text-gray-500 text-sm'>To-do and Daily Tasks</p>
-          </div>
-        </div>
+        ))}
       </div>
       <div>
-        <button className='bg-light-blue p-2 pl-3 pr-3 text-white rounded-md mt-4 w-full'>
-          Logout
-        </button>
+        <Button
+          state={userProfile}
+          setState={setUserProfile}
+          color={'white'}
+          bgColor={currentColor}
+          text={'Logout'}
+          borderRadius={'md'}
+          width={'full'}
+        />
       </div>
     </div>
   );

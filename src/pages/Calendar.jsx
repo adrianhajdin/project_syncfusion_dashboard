@@ -15,9 +15,8 @@ import {
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 import PropertyPane from '../components/PropertyPane';
 import { scheduleData } from '../data/dummy';
-/**
- * Schedule Default sample
- */
+import Header from '../components/Header';
+
 const Scheduler = () => {
   const [scheduleObj, setScheduleObj] = useState();
   const change = (args) => {
@@ -28,12 +27,11 @@ const Scheduler = () => {
     args.navigation.enable = true;
   };
   console.log(scheduleObj);
+
   return (
-    <div className='schedule-control-section m-4 md:m-10 mt-20 md:mt-40'>
-      <div className='mt-10 mb-10'>
-        <p className='text-lg text-gray-500'>App</p>
-        <p className='text-3xl font-bold'>Calendar</p>
-      </div>
+    <div className='min-h-590 m-4 md:m-10 mt-20 md:mt-24'>
+      <Header category={'App'} title={'Calendar'} />
+
       <div className='col-lg-9 control-section'>
         <div className='control-wrapper'>
           <ScheduleComponent

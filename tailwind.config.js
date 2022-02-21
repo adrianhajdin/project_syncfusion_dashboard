@@ -1,5 +1,6 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'class',
   theme: {
     fontFamily: {
       display: ['Open Sans', 'sans-serif'],
@@ -8,6 +9,8 @@ module.exports = {
     extend: {
       backgroundColor: {
         'main-bg': '#FAFBFB',
+        'main-dark-bg': '#20232A',
+        'secondary-dark-bg': '#33373E',
         'light-blue': '#03C9D7',
         'light-gray': '#F7F7F7',
         'light-red': '#FB9678',
@@ -17,6 +20,16 @@ module.exports = {
         'icon-light-green': 'rgb(235, 250, 242)',
         'icon-green': '#00C292',
         orange: 'rgb(254, 201, 15)',
+        'half-transparent': 'rgba(0, 0, 0, 0.5)',
+        'blue-theme': '#1A97F5',
+        'green-theme': '#03C9D7',
+        'purple-theme': '#7352FF',
+        'red-theme': '#FF5C8E',
+        'indigo-theme': '#1E4DB7',
+        'orange-theme': '#FB9678',
+      },
+      minHeight: {
+        590: '590px',
       },
       colors: {
         'light-blue': '#03C9D7',
@@ -30,6 +43,9 @@ module.exports = {
       borderColor: {
         color: 'rgba(0, 0, 0, 0.1)',
       },
+      duration: {
+        3000: '3000',
+      },
       width: {
         400: '400px',
         760: '760px',
@@ -41,6 +57,10 @@ module.exports = {
       },
       height: {
         80: '80px',
+      },
+      backgroundImage: {
+        'hero-pattern':
+          "url('https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/welcome-bg-2x-svg.25338f53.svg')",
       },
     },
   },

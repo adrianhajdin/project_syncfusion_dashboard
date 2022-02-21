@@ -11,10 +11,13 @@ import {
   DataLabel,
 } from '@syncfusion/ej2-react-charts';
 import { barChartData } from '../../data/dummy';
+import Header from '../../components/Header';
 
 const Bar = () => {
   return (
-    <div className='md:m-10 m-4 md:mt-40 mt-20'>
+    <div className='md:m-10 m-4 md:mt-24 mt-20 min-h-590'>
+      <Header category={'Chart'} title={'Bar'} />
+
       <div className=' w-full'>
         <ChartComponent
           id='charts'

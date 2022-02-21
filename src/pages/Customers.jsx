@@ -12,6 +12,7 @@ import {
   Filter,
 } from '@syncfusion/ej2-react-grids';
 import { customersData } from '../data/dummy';
+import Header from '../components/Header';
 
 const Customers = () => {
   let selectionsettings = { persistSelection: true };
@@ -33,9 +34,21 @@ const Customers = () => {
       </div>
     );
   };
-
+  const gridStatus = (props) => {
+    return (
+      <div className='flex gap-2 justify-center items-center text-gray-700 capitalize'>
+        <p
+          style={{ background: props.StatusBg }}
+          className='rounded-full h-3 w-3'
+        ></p>
+        <p>{props.Status}</p>
+      </div>
+    );
+  };
   return (
-    <div className='control-pane md:m-10 m-4'>
+    <div className='mt-10 md:mt-24 min-h-590 m-4'>
+      <Header category={'Page'} title={'Customers'} />
+
       <div className='control-section'>
         <GridComponent
           dataSource={customersData}
@@ -50,8 +63,8 @@ const Customers = () => {
             <ColumnDirective type='checkbox' width='50'></ColumnDirective>
 
             <ColumnDirective
-              headerText='Customer'
-              width='180'
+              headerText='Name'
+              width='150'
               template={gridTemplate}
               textAlign='Center'
             />
@@ -60,6 +73,7 @@ const Customers = () => {
               field='ProjectName'
               headerText='Project Name'
               width='150'
+              textAlign='Center'
             ></ColumnDirective>
 
             <ColumnDirective
@@ -67,21 +81,28 @@ const Customers = () => {
               headerText='Status'
               width='130'
               format='yMd'
-              textAlign='Right'
+              textAlign='Center'
+              template={gridStatus}
             />
             <ColumnDirective
               field='Weeks'
               headerText='Weeks'
               width='100'
               format='C2'
-              textAlign='Right'
+              textAlign='Center'
             />
             <ColumnDirective
               field='Budget'
               headerText='Budget'
               width='100'
               format='yMd'
-              textAlign='Right'
+              textAlign='Center'
+            ></ColumnDirective>
+            <ColumnDirective
+              field='Location'
+              headerText='Location'
+              width='150'
+              textAlign='Center'
             ></ColumnDirective>
           </ColumnsDirective>
           <Inject services={[Page, Selection, Toolbar, Edit, Sort, Filter]} />

@@ -5,6 +5,7 @@ import {
   ColumnDirective,
 } from '@syncfusion/ej2-react-grids';
 import { employeesData } from '../data/dummy';
+import Header from '../components/Header';
 
 const Employees = () => {
   const gridTemplate = () => {
@@ -19,9 +20,11 @@ const Employees = () => {
     );
   };
   return (
-    <div className='m-4 md:m-10 mt-20 md:mt-40'>
+    <div className='m-4 md:m-10 mt-20 md:mt-24 min-h-590'>
+      <Header category={'Page'} title={'Employees'} />
+
       <div>
-        <GridComponent dataSource={employeesData} width='auto' height='700'>
+        <GridComponent dataSource={employeesData} width='auto'>
           <ColumnsDirective>
             <ColumnDirective
               headerText='Employee Image'

@@ -8,9 +8,9 @@ import {
   AccumulationDataLabel,
   Inject,
 } from '@syncfusion/ej2-react-charts';
-import { doughnutChartData } from '../data/dummy';
+import { doughnutChartData } from '../../data/dummy';
 
-const Pie = () => {
+const Doughnut = () => {
   return (
     <div className='control-pane bg-transparent'>
       <div className='control-section w-40 bg-transparent'>
@@ -56,4 +56,4 @@ const Pie = () => {
     </div>
   );
 };
-export default Pie;
+export default Doughnut;

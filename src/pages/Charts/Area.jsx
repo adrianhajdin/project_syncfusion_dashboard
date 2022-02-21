@@ -9,10 +9,12 @@ import {
   Legend,
 } from '@syncfusion/ej2-react-charts';
 import { areaChartData } from '../../data/dummy';
+import Header from '../../components/Header';
 
 const Area = () => {
   return (
-    <div className='md:m-10 m-4 md:mt-40 mt-20'>
+    <div className='md:m-10 m-4 md:mt-24 mt-20 min-h-590'>
+      <Header category={'Chart'} title={'Area'} />
       <div className='w-full'>
         <ChartComponent
           id='charts'

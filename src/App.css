@@ -1,7 +1,6 @@
 @import url('https://cdn.syncfusion.com/ej2/material.css');
 
-.sidebar,
-.navbar {
+.sidebar {
   box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
 }
 .nav-item,
@@ -10,7 +9,7 @@
   z-index: 10000;
 }
 
-.e-grid .e-gridheader tr:first-child th {
+/* .e-grid .e-gridheader tr:first-child th {
   background-color: #03c9d7;
   color: white;
 }
@@ -24,20 +23,21 @@
 .e-checkbox-wrapper .e-frame.e-check,
 .e-css.e-checkbox-wrapper .e-frame.e-check {
   background: #03c9d7;
-}
+} */
 
 ::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: #fff;
+  width: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d4f5f5;
+  background-color: rgb(216, 216, 216);
+  border-radius: 40px;
 }
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
 /* color-picker style  */
 
-/* Common sample level styles */
 #inline-control {
   width: 100%;
   text-align: center;

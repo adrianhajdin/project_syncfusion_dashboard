@@ -8,14 +8,13 @@ import {
   RichTextEditorComponent,
   Toolbar,
 } from '@syncfusion/ej2-react-richtexteditor';
+import Header from '../components/Header';
 
 const Editor = () => {
   return (
-    <div className='m-4 md:m-10 mt-20 md:mt-40 h-screen'>
-      <div className='mt-10 mb-10'>
-        <p className='text-lg text-gray-500'>App</p>
-        <p className='text-3xl font-bold'>Editor</p>
-      </div>
+    <div className='m-4 md:m-10 mt-20 md:mt-24 min-h-590'>
+      <Header category={'App'} title={'Editor'} />
+
       <div>
         <div>
           <RichTextEditorComponent>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ColorPickerComponent } from '@syncfusion/ej2-react-inputs';
+import Header from '../components/Header';
 const ColorPicker = () => {
   const change = (args) => {
     document.getElementById('preview').style.backgroundColor =
@@ -7,11 +8,8 @@ const ColorPicker = () => {
   };
 
   return (
-    <div className='m-4 md:m-10 mt-20 md:mt-40 h-screen'>
-      <div className='mt-10 mb-10'>
-        <p className='text-lg text-gray-500'>App</p>
-        <p className='text-3xl font-bold'>Color Picker</p>
-      </div>
+    <div className='m-4 md:m-10 mt-20 md:mt-24 min-h-590'>
+      <Header category={'App'} title={'Color Picker'} />
       <div className='inline control-section'>
         <div id='inline-control'>
           <div className='row'>
@@ -21,8 +19,11 @@ const ColorPicker = () => {
             id='inline-content'
             className='flex justify-center items-center gap-20 flex-wrap'
           >
-            <div className='col-xs-12 col-sm-12 col-lg-6 col-md-6'>
-              <h4>Inline Palette</h4>
+            <div>
+              <p className='text-2xl font-semibold dark:text-gray-200 mt-2 mb-4'>
+                Inline Pallete
+              </p>
+
               <ColorPickerComponent
                 id='inline-palette'
                 mode='Palette'
@@ -32,8 +33,11 @@ const ColorPicker = () => {
                 change={change}
               ></ColorPickerComponent>
             </div>
-            <div className='col-xs-12 col-sm-12 col-lg-6 col-md-6'>
-              <h4>Inline Picker</h4>
+            <div>
+              <p className='text-2xl font-semibold dark:text-gray-200 mt-2 mb-4'>
+                Inline Picker
+              </p>
+
               <ColorPickerComponent
                 id='inline-picker'
                 mode='Picker'

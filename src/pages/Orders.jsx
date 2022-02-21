@@ -14,22 +14,36 @@ import {
   Inject,
 } from '@syncfusion/ej2-react-grids';
 import { ordersData, contextMenuItems } from '../data/dummy';
+import Header from '../components/Header';
 
 const Orders = () => {
   let editing = { allowDeleting: true, allowEditing: true };
-  const gridTemplate = () => {
+  const gridTemplate = (props) => {
     return (
       <div className='image'>
         <img
-          className='rounded-full h-20 w-30'
-          src='https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s2.3260a3b5.jpg'
-          alt='employee'
+          className='rounded-xl h-20 md:ml-3'
+          src={props.ProductImage}
+          alt='order-item'
         />
       </div>
     );
   };
+
+  const gridStatus = (props) => {
+    return (
+      <button
+        style={{ background: props.StatusBg }}
+        className='text-white py-1 px-2 capitalize rounded-2xl text-md'
+      >
+        {props.Status}
+      </button>
+    );
+  };
   return (
-    <div className='m-4 md:m-10 mt-12 md:mt-40'>
+    <div className='m-4 md:m-10 mt-24 min-h-590'>
+      <Header category={'Page'} title={'Orders'} />
+
       <div className=' m-5 mt-10'>
         <GridComponent
           id='gridcomp'
@@ -43,48 +57,55 @@ const Orders = () => {
         >
           <ColumnsDirective>
             <ColumnDirective
-              headerText='Employee Image'
+              headerText='Image'
               template={gridTemplate}
               textAlign='Center'
-            />
-            <ColumnDirective
-              field='OrderID'
-              headerText='Order ID'
               width='120'
-              textAlign='Right'
-              isPrimaryKey={true}
-            ></ColumnDirective>
-            <ColumnDirective
-              field='CustomerName'
-              headerText='Customer Name'
-            ></ColumnDirective>
-            <ColumnDirective
-              field='TotalAmount'
-              headerText='Total Amount'
-              format='C2'
-              textAlign='Right'
-              editType='numericedit'
             />
-            <ColumnDirective
-              field='Invoice'
-              headerText='Invoice'
-              width='200'
-            ></ColumnDirective>
+
             <ColumnDirective
               field='OrderItems'
               headerText='Item'
               width='150'
               editType='dropdownedit'
+              textAlign='Center'
             ></ColumnDirective>
             <ColumnDirective
-              field='BillingCycle'
-              headerText='Billing Cycle'
+              field='CustomerName'
+              headerText='Customer Name'
               width='150'
+              textAlign='Center'
             ></ColumnDirective>
+
+            <ColumnDirective
+              field='TotalAmount'
+              headerText='Total Amount'
+              format='C2'
+              textAlign='Center'
+              editType='numericedit'
+              width='150'
+            />
+
+            <ColumnDirective
+              field='Status'
+              template={gridStatus}
+              headerText='Status'
+              width='120'
+              textAlign='Center'
+            ></ColumnDirective>
+            <ColumnDirective
+              field='OrderID'
+              headerText='Order ID'
+              width='120'
+              textAlign='Center'
+              isPrimaryKey={true}
+            ></ColumnDirective>
+
             <ColumnDirective
               field='Location'
               headerText='Location'
               width='150'
+              textAlign='Center'
             ></ColumnDirective>
           </ColumnsDirective>
           <Inject
