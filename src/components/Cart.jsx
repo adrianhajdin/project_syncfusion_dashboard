@@ -34,15 +34,9 @@ const Cart = ({ setCart, cart, currentColor }) => {
                   <div className='flex gap-4 mt-2 items-center'>
                     <p className='font-semibold text-lg'>{item.price}</p>
                     <div className='flex border-1 border-r-0 border-color rounded'>
-                      <p className='p-2 border-r-1 dark:border-gray-600 border-color text-red-600 '>
-                        -
-                      </p>
-                      <p className='p-2 border-r-1 border-color dark:border-gray-600 text-green-600'>
-                        0
-                      </p>
-                      <p className='p-2 border-r-1 border-color dark:border-gray-600 text-green-600'>
-                        +
-                      </p>
+                      <p className='p-2 border-r-1 dark:border-gray-600 border-color text-red-600 '>-</p>
+                      <p className='p-2 border-r-1 border-color dark:border-gray-600 text-green-600'>0</p>
+                      <p className='p-2 border-r-1 border-color dark:border-gray-600 text-green-600'>+</p>
                     </div>
                   </div>
                 </div>

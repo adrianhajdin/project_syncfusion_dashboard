@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  ChartComponent,
-  SeriesCollectionDirective,
-  SeriesDirective,
-  Inject,
-  Legend,
-  Category,
-  StackingColumnSeries,
-  Tooltip,
-} from '@syncfusion/ej2-react-charts';
+import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Legend, Category, StackingColumnSeries, Tooltip } from '@syncfusion/ej2-react-charts';
 
 import { stackedChartData } from '../../data/dummy';
 
@@ -52,14 +43,14 @@ const Stacked = ({ currentMode }) => {
           name='Budget'
           type='StackingColumn'
           style={{ background: 'blue' }}
-        ></SeriesDirective>
+        />
         <SeriesDirective
           dataSource={stackedChartData[1]}
           xName='x'
           yName='y'
           name='Expense'
           type='StackingColumn'
-        ></SeriesDirective>
+        />
       </SeriesCollectionDirective>
     </ChartComponent>
   );

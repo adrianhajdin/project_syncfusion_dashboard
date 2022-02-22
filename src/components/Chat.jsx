@@ -41,15 +41,9 @@ const Chat = ({ setChat, chat, currentColor }) => {
             </div>
 
             <div>
-              <p className='font-semibold dark:text-gray-200 '>
-                {chat.message}
-              </p>
-              <p className='text-gray-500 dark:text-gray-400 text-sm'>
-                {chat.desc}
-              </p>
-              <p className='text-gray-500 dark:text-gray-400 text-xs'>
-                {chat.time}
-              </p>
+              <p className='font-semibold dark:text-gray-200 '>{chat.message}</p>
+              <p className='text-gray-500 dark:text-gray-400 text-sm'>{chat.desc}</p>
+              <p className='text-gray-500 dark:text-gray-400 text-xs'>{chat.time}</p>
             </div>
           </div>
         ))}

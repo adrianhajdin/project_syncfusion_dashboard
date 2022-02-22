@@ -1,17 +1,5 @@
 import React, { useState } from 'react';
-import {
-  ScheduleComponent,
-  ViewsDirective,
-  ViewDirective,
-  Day,
-  Week,
-  WorkWeek,
-  Month,
-  Agenda,
-  Inject,
-  Resize,
-  DragAndDrop,
-} from '@syncfusion/ej2-react-schedule';
+import { ScheduleComponent, ViewsDirective, ViewDirective, Day, Week, WorkWeek, Month, Agenda, Inject, Resize, DragAndDrop } from '@syncfusion/ej2-react-schedule';
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 
 import PropertyPane from '../components/PropertyPane';
@@ -20,10 +8,12 @@ import Header from '../components/Header';
 
 const Scheduler = () => {
   const [scheduleObj, setScheduleObj] = useState();
+
   const change = (args) => {
     scheduleObj.selectedDate = args.value;
     scheduleObj.dataBind();
   };
+
   const onDragStart = (args) => {
     args.navigation.enable = true;
   };
@@ -49,17 +39,7 @@ const Scheduler = () => {
               <ViewDirective option='Month' />
               <ViewDirective option='Agenda' />
             </ViewsDirective>
-            <Inject
-              services={[
-                Day,
-                Week,
-                WorkWeek,
-                Month,
-                Agenda,
-                Resize,
-                DragAndDrop,
-              ]}
-            />
+            <Inject services={[ Day, Week, WorkWeek, Month, Agenda, Resize, DragAndDrop ]} />
           </ScheduleComponent>
         </div>
       </div>
@@ -81,7 +61,7 @@ const Scheduler = () => {
                       placeholder='Current Date'
                       floatLabelType='Always'
                       change={change}
-                    ></DatePickerComponent>
+                    />
                   </div>
                 </td>
               </tr>
@@ -92,4 +72,5 @@ const Scheduler = () => {
     </div>
   );
 };
+
 export default Scheduler;
