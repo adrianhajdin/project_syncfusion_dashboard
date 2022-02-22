@@ -8,6 +8,7 @@ import {
   RichTextEditorComponent,
   Toolbar,
 } from '@syncfusion/ej2-react-richtexteditor';
+
 import Header from '../components/Header';
 
 const Editor = () => {

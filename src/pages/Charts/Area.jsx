@@ -8,6 +8,7 @@ import {
   SplineAreaSeries,
   Legend,
 } from '@syncfusion/ej2-react-charts';
+
 import { areaChartData } from '../../data/dummy';
 import Header from '../../components/Header';
 

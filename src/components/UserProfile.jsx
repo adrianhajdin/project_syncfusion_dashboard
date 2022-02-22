@@ -1,6 +1,4 @@
 import React from 'react';
-import { FiCreditCard } from 'react-icons/fi';
-import { BsShield, BsCurrencyDollar } from 'react-icons/bs';
 import { MdOutlineCancel } from 'react-icons/md';
 
 import Button from './Button';

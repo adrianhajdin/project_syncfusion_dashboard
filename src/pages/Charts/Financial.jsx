@@ -11,6 +11,7 @@ import {
   Logarithmic,
   Crosshair,
 } from '@syncfusion/ej2-react-charts';
+
 import { financialChartData } from '../../data/dummy';
 import Header from '../../components/Header';
 

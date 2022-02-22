@@ -9,22 +9,6 @@
   z-index: 10000;
 }
 
-/* .e-grid .e-gridheader tr:first-child th {
-  background-color: #03c9d7;
-  color: white;
-}
-.e-pager .e-currentitem,
-.e-pager .e-currentitem:hover {
-  background-color: #03c9d7;
-}
-.e-schedule .e-vertical-view .e-day-wrapper .e-appointment {
-  background: #03c9d7;
-}
-.e-checkbox-wrapper .e-frame.e-check,
-.e-css.e-checkbox-wrapper .e-frame.e-check {
-  background: #03c9d7;
-} */
-
 ::-webkit-scrollbar {
   width: 6px;
 }

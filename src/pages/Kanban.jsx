@@ -4,6 +4,7 @@ import {
   ColumnsDirective,
   ColumnDirective,
 } from '@syncfusion/ej2-react-kanban';
+
 import { kanbanData } from '../data/dummy';
 import Header from '../components/Header';
 

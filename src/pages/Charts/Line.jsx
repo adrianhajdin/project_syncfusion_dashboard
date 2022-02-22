@@ -9,6 +9,7 @@ import {
   Legend,
   Tooltip,
 } from '@syncfusion/ej2-react-charts';
+
 import { lineChartData } from '../../data/dummy';
 import Header from '../../components/Header';
 

@@ -11,6 +11,7 @@ import {
   Sort,
   Filter,
 } from '@syncfusion/ej2-react-grids';
+
 import { customersData } from '../data/dummy';
 import Header from '../components/Header';
 

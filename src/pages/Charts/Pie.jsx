@@ -9,6 +9,7 @@ import {
   Inject,
   AccumulationTooltip,
 } from '@syncfusion/ej2-react-charts';
+
 import { pieChartData } from '../../data/dummy';
 import Header from '../../components/Header';
 

@@ -38,7 +38,6 @@ const Navbar = ({ activeMenu, setActiveMenu, currentColor }) => {
       setActiveMenu(true);
     }
   }, [screenSize]);
-  console.log(currentColor);
   return (
     <div className='flex justify-between p-2 md:ml-6 md:mr-6 relative'>
       <div className='flex'>

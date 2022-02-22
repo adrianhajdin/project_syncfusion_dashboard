@@ -9,10 +9,10 @@ import {
   StackingColumnSeries,
   Tooltip,
 } from '@syncfusion/ej2-react-charts';
+
 import { stackedChartData } from '../../data/dummy';
 
 const Stacked = ({ currentMode }) => {
-  console.log(currentMode);
   return (
     <ChartComponent
       id='charts'

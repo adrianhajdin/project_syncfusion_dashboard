@@ -4,6 +4,7 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
 import Orders from './pages/Orders';
@@ -11,8 +12,6 @@ import Scheduler from './pages/Calendar';
 import Employees from './pages/Employees';
 import Customers from './pages/Customers';
 import Kanban from './pages/Kanban';
-
-import './App.css';
 import Line from './pages/Charts/Line';
 import Area from './pages/Charts/Area';
 import Bar from './pages/Charts/Bar';
@@ -23,15 +22,15 @@ import Editor from './pages/Editor';
 import ColorPicker from './pages/ColorPicker';
 import Button from './components/Button';
 import ThemeSettings from './components/ThemeSettings';
-import Footer from './components/Footer';
 import Pyramid from './pages/Charts/Pyramid';
+import './App.css';
 
 const App = () => {
   const [activeMenu, setActiveMenu] = useState(true);
   const [themeSettings, setThemeSettings] = useState(false);
   const [currentColor, setCurrentColor] = useState('#7352FF');
   const [currentMode, setCurrentMode] = useState('Light');
-  console.log(currentMode);
+
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
     const currentThemeMode = localStorage.getItem('themeMode');
