@@ -24,6 +24,7 @@ import ColorPicker from './pages/ColorPicker';
 import Button from './components/Button';
 import ThemeSettings from './components/ThemeSettings';
 import Footer from './components/Footer';
+import Pyramid from './pages/Charts/Pyramid';
 
 const App = () => {
   const [activeMenu, setActiveMenu] = useState(true);
@@ -71,8 +72,8 @@ const App = () => {
           <div
             className={
               activeMenu
-                ? 'dark:bg-main-dark-bg  bg-main-bg md:ml-72 w-full  '
-                : 'bg-main-bg dark:bg-main-dark-bg  w-full flex-2 '
+                ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  '
+                : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
             }
           >
             <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full '>
@@ -97,12 +98,22 @@ const App = () => {
               <Routes>
                 <Route
                   path='/'
-                  element={<Home currentColor={currentColor} />}
+                  element={
+                    <Home
+                      currentColor={currentColor}
+                      currentMode={currentMode}
+                    />
+                  }
                 />
 
                 <Route
                   path='/ecommerce'
-                  element={<Home currentColor={currentColor} />}
+                  element={
+                    <Home
+                      currentColor={currentColor}
+                      currentMode={currentMode}
+                    />
+                  }
                 />
                 <Route path='/orders' element={<Orders />} />
                 <Route path='/calendar' element={<Scheduler />} />
@@ -119,6 +130,7 @@ const App = () => {
                 <Route path='/pie' element={<Pie />} />
                 <Route path='/financial' element={<Financial />} />
                 <Route path='/color-mapping' element={<ColorMapping />} />
+                <Route path='/pyramid' element={<Pyramid />} />
               </Routes>
             </div>
             <Footer />

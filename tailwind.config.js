@@ -7,6 +7,9 @@ module.exports = {
       body: ['Open Sans', 'sans-serif'],
     },
     extend: {
+      fontSize: {
+        14: '14px',
+      },
       backgroundColor: {
         'main-bg': '#FAFBFB',
         'main-dark-bg': '#20232A',
@@ -28,9 +31,7 @@ module.exports = {
         'indigo-theme': '#1E4DB7',
         'orange-theme': '#FB9678',
       },
-      minHeight: {
-        590: '590px',
-      },
+
       colors: {
         'light-blue': '#03C9D7',
         'icon-light-orange': 'rgb(254, 201, 15)',
@@ -57,6 +58,9 @@ module.exports = {
       },
       height: {
         80: '80px',
+      },
+      minHeight: {
+        590: '590px',
       },
       backgroundImage: {
         'hero-pattern':

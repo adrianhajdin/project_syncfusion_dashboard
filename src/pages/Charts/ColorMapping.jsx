@@ -16,7 +16,7 @@ import Header from '../../components/Header';
 
 const ColorMapping = () => {
   return (
-    <div className='md:m-10 m-4 md:mt-24 mt-20 min-h-590'>
+    <div className='m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl'>
       <Header category={'Chart'} title={'Color-Mapping'} />
       <div className='w-full'>
         <ChartComponent

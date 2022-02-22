@@ -8,7 +8,7 @@ const ColorPicker = () => {
   };
 
   return (
-    <div className='m-4 md:m-10 mt-20 md:mt-24 min-h-590'>
+    <div className='m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl'>
       <Header category={'App'} title={'Color Picker'} />
       <div className='inline control-section'>
         <div id='inline-control'>

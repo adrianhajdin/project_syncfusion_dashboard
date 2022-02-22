@@ -28,11 +28,18 @@ const Chat = ({ setChat, chat, currentColor }) => {
       <div className='mt-5 '>
         {chatData?.map((chat) => (
           <div className='flex items-center gap-5 border-b-1 border-color p-3 leading-8 cursor-pointer'>
-            <img
-              className='rounded-full h-10 w-10'
-              src={chat.image}
-              alt={chat.message}
-            />
+            <div className='relative'>
+              <img
+                className='rounded-full h-10 w-10'
+                src={chat.image}
+                alt={chat.message}
+              />
+              <span
+                style={{ background: chat.dotColor }}
+                className='absolute inline-flex rounded-full h-2 w-2 right-0 -top-1'
+              ></span>
+            </div>
+
             <div>
               <p className='font-semibold dark:text-gray-200 '>
                 {chat.message}

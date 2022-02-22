@@ -29,7 +29,7 @@ const Scheduler = () => {
   console.log(scheduleObj);
 
   return (
-    <div className='min-h-590 m-4 md:m-10 mt-20 md:mt-24'>
+    <div className='m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl'>
       <Header category={'App'} title={'Calendar'} />
 
       <div className='col-lg-9 control-section'>
@@ -40,6 +40,7 @@ const Scheduler = () => {
             selectedDate={new Date(2021, 0, 10)}
             eventSettings={{ dataSource: scheduleData }}
             dragStart={onDragStart}
+            background={'red'}
           >
             <ViewsDirective>
               <ViewDirective option='Day' />
@@ -68,7 +69,7 @@ const Scheduler = () => {
             id='property'
             title='Properties'
             className='property-panel-table'
-            style={{ width: '100%' }}
+            style={{ width: '100%', backgroud: 'blue' }}
           >
             <tbody>
               <tr style={{ height: '50px' }}>

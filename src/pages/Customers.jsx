@@ -46,7 +46,7 @@ const Customers = () => {
     );
   };
   return (
-    <div className='mt-10 md:mt-24 min-h-590 m-4'>
+    <div className='m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl'>
       <Header category={'Page'} title={'Customers'} />
 
       <div className='control-section'>
@@ -58,6 +58,7 @@ const Customers = () => {
           selectionSettings={selectionsettings}
           toolbar={toolbarOptions}
           editSettings={editing}
+          allowSorting={true}
         >
           <ColumnsDirective>
             <ColumnDirective type='checkbox' width='50'></ColumnDirective>
@@ -103,6 +104,13 @@ const Customers = () => {
               headerText='Location'
               width='150'
               textAlign='Center'
+            ></ColumnDirective>
+            <ColumnDirective
+              field='CustomerID'
+              headerText='Customer ID'
+              width='120'
+              textAlign='Center'
+              isPrimaryKey={true}
             ></ColumnDirective>
           </ColumnsDirective>
           <Inject services={[Page, Selection, Toolbar, Edit, Sort, Filter]} />

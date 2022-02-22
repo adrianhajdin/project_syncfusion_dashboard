@@ -11,7 +11,8 @@ import {
 } from '@syncfusion/ej2-react-charts';
 import { stackedChartData } from '../../data/dummy';
 
-const Stacked = () => {
+const Stacked = ({ currentMode }) => {
+  console.log(currentMode);
   return (
     <ChartComponent
       id='charts'
@@ -36,10 +37,11 @@ const Stacked = () => {
         minorTickLines: { width: 0 },
         labelFormat: '{value}',
       }}
-      width={'400px'}
+      width={'320px'}
       height={'70%'}
       chartArea={{ border: { width: 0 } }}
       tooltip={{ enable: true }}
+      background={currentMode === 'Dark' ? '#33373E' : '#fff'}
     >
       <Inject services={[StackingColumnSeries, Category, Legend, Tooltip]} />
       <SeriesCollectionDirective>

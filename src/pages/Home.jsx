@@ -13,19 +13,9 @@ import {
   recentTransactions,
   weeklyStats,
 } from '../data/dummy';
+import Button from '../components/Button';
 
-const Button = ({ text, bgColor }) => {
-  return (
-    <button
-      style={{ backgroundColor: bgColor }}
-      className=' p-2 pl-3 pr-3 text-white rounded-md mt-5 hover:drop-shadow-xl'
-    >
-      {text}
-    </button>
-  );
-};
-
-const Home = ({ currentColor }) => {
+const Home = ({ currentColor, currentMode }) => {
   return (
     <div className='mt-24'>
       <div className='flex flex-wrap lg:flex-nowrap justify-center '>
@@ -42,11 +32,18 @@ const Home = ({ currentColor }) => {
               <BsCurrencyDollar />
             </button>
           </div>
-          <Button text={'Download'} bgColor={currentColor} />
+          <div className='mt-3'>
+            <Button
+              color={'white'}
+              bgColor={currentColor}
+              text={'Download'}
+              borderRadius={'md'}
+            />
+          </div>
         </div>
-        <div className='flex m-3 flex-wrap justify-center gap-1 '>
+        <div className='flex m-3 flex-wrap justify-center gap-1 items-center'>
           {earningData.map((item) => (
-            <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg w-56 p-4 pt-9  rounded-2xl '>
+            <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl '>
               <button
                 style={{ color: item.iconColor, backgroundColor: item.iconBg }}
                 className='text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl'
@@ -66,7 +63,7 @@ const Home = ({ currentColor }) => {
       </div>
 
       <div className='flex gap-10 flex-wrap justify-center'>
-        <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl w-780 '>
+        <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  '>
           <div className='flex justify-between'>
             <p className='font-semibold text-xl'>Products Performance</p>
             <div className='flex items-center gap-4'>
@@ -101,17 +98,22 @@ const Home = ({ currentColor }) => {
                 <p className='text-gray-500 mt-1'>Expense</p>
               </div>
               <div className='mt-10'>
-                <Button text={'Download Report'} bgColor={currentColor} />
+                <Button
+                  color={'white'}
+                  bgColor={currentColor}
+                  text={'Download Report'}
+                  borderRadius={'md'}
+                />
               </div>
             </div>
-            <distinctStringValues>
-              <Stacked />
-            </distinctStringValues>
+            <div>
+              <Stacked currentMode={currentMode} />
+            </div>
           </div>
         </div>
         <div>
           <div
-            className=' rounded-2xl w-400 p-8 m-3'
+            className=' rounded-2xl md:w-400 p-8 m-3'
             style={{ backgroundColor: currentColor }}
           >
             <div className='flex justify-between items-center '>
@@ -124,14 +126,14 @@ const Home = ({ currentColor }) => {
             <p className='text-gray-200'>Monthly revenue</p>
           </div>
 
-          <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl w-400 p-8 m-3 flex justify-center items-center'>
+          <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center'>
             <div>
               <p className='text-2xl font-semibold '>43,246</p>
               <p className='text-gray-400'>Yearly sales</p>
             </div>
 
             <div>
-              <Doughnut />
+              <Doughnut currentMode={currentMode} />
             </div>
           </div>
         </div>
@@ -140,7 +142,7 @@ const Home = ({ currentColor }) => {
       <div className='flex gap-10 m-4 flex-wrap justify-center'>
         <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl'>
           <p className='text-xl font-semibold'>Recent Transactions</p>
-          <div className='mt-10 w-400'>
+          <div className='mt-10 w-72 md:w-400'>
             {recentTransactions.map((item) => (
               <div className='flex justify-between mt-4'>
                 <div className='flex gap-4'>
@@ -163,37 +165,54 @@ const Home = ({ currentColor }) => {
             ))}
           </div>
           <div className='flex justify-between items-center mt-5 border-t-1 border-color'>
-            <Button text={'Add'} bgColor={currentColor} />
+            <div className='mt-3'>
+              <Button
+                color={'white'}
+                bgColor={currentColor}
+                text={'Add'}
+                borderRadius={'md'}
+              />
+            </div>
 
             <p className='text-gray-400 text-sm'>36 Recent Transactions</p>
           </div>
         </div>
-        <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-760'>
+        <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl md:w-760 overflow-auto'>
           <p className='text-xl font-semibold mb-10'>Products Performance</p>
-          {productsPerformance.map((item) => (
-            <div className='flex justify-between gap-10 mt-4 border-b-1 border-color pb-4'>
-              <div className='flex gap-4 items-center'>
-                <img className='rounded-lg w-20 h-18' src={item.image} alt='' />
-                <div>
-                  <p className='text-md font-semibold'>{item.title}</p>
-                  <p className='text-sm text-gray-400'>{item.desc}</p>
+          <div className='w-760 md:w-full overflow-auto'>
+            {productsPerformance.map((item) => (
+              <div className='flex justify-between gap-10 mt-4 border-b-1 border-color pb-4'>
+                <div className='flex gap-4 items-center'>
+                  <img
+                    className='rounded-lg w-20 h-18'
+                    src={item.image}
+                    alt=''
+                  />
+                  <div>
+                    <p className='text-md font-semibold'>{item.title}</p>
+                    <p className='text-sm text-gray-400'>{item.desc}</p>
+                  </div>
+                </div>
+                <div className='flex items-center gap-6'>
+                  <div>
+                    <p className='text-md font-semibold'>{item.rating}</p>
+                    <p className='text-sm text-gray-400'>
+                      {item.itemSold} sold
+                    </p>
+                  </div>
+                  <div>
+                    <p className='text-sm text-gray-400'>Earnings</p>
+                    <p className='text-md font-semibold'>
+                      {item.earningAmount}
+                    </p>
+                  </div>
+                  <button className='text-xl text-gray-400'>
+                    <AiOutlineDelete />
+                  </button>
                 </div>
               </div>
-              <div className='flex items-center gap-6'>
-                <div>
-                  <p className='text-md font-semibold'>{item.rating}</p>
-                  <p className='text-sm text-gray-400'>{item.itemSold} sold</p>
-                </div>
-                <div>
-                  <p className='text-sm text-gray-400'>Earnings</p>
-                  <p className='text-md font-semibold'>{item.earningAmount}</p>
-                </div>
-                <button className='text-xl text-gray-400'>
-                  <AiOutlineDelete />
-                </button>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
@@ -267,7 +286,14 @@ const Home = ({ currentColor }) => {
             </div>
           </div>
           <div className='flex justify-between items-center mt-5 border-t-1 border-color'>
-            <Button text={'Add'} bgColor={currentColor} />
+            <div className='mt-3'>
+              <Button
+                color={'white'}
+                bgColor={currentColor}
+                text={'Add'}
+                borderRadius={'md'}
+              />
+            </div>
 
             <p className='text-gray-400 text-sm'>36 Recent Transactions</p>
           </div>
@@ -292,7 +318,14 @@ const Home = ({ currentColor }) => {
                 This will be the small description for the news you have shown
                 here. There could be some great info.
               </p>
-              <Button text={'Read More'} bgColor={currentColor} />
+              <div className='mt-3'>
+                <Button
+                  color={'white'}
+                  bgColor={currentColor}
+                  text={'Read More'}
+                  borderRadius={'md'}
+                />
+              </div>
             </div>
           </div>
         </div>

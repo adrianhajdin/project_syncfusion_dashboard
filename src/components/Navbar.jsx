@@ -158,12 +158,12 @@ const Navbar = ({ activeMenu, setActiveMenu, currentColor }) => {
               alt=''
             />
             <p>
-              <span className='text-gray-400 text-lg'>Hi,</span>{' '}
-              <span className='text-gray-400 font-bold ml-1 text-lg'>
+              <span className='text-gray-400 text-14'>Hi,</span>{' '}
+              <span className='text-gray-400 font-bold ml-1 text-14'>
                 Julia
               </span>
             </p>
-            <MdKeyboardArrowDown className='text-gray-400 text-lg' />
+            <MdKeyboardArrowDown className='text-gray-400 text-14' />
           </div>
         </TooltipComponent>
         {search && <Searchbar setSearch={setSearch} search={search} />}

@@ -12,7 +12,7 @@ import Header from '../components/Header';
 
 const Editor = () => {
   return (
-    <div className='m-4 md:m-10 mt-20 md:mt-24 min-h-590'>
+    <div className='m-4 md:m-10 mt-24 p-10 min-h-590 bg-white rounded-3xl'>
       <Header category={'App'} title={'Editor'} />
 
       <div>
