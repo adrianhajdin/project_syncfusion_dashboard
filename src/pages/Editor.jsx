@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  HtmlEditor,
-  Image,
-  Inject,
-  Link,
-  QuickToolbar,
-  RichTextEditorComponent,
-  Toolbar,
-} from '@syncfusion/ej2-react-richtexteditor';
+import { HtmlEditor, Image, Inject, Link, QuickToolbar, RichTextEditorComponent, Toolbar } from '@syncfusion/ej2-react-richtexteditor';
 
 import Header from '../components/Header';
 
@@ -33,9 +25,7 @@ const Editor = () => {
               officiis ex ut. Soluta, repellat atque? Minus dolor natus odit
               eaque deserunt laborum nisi alias, sapiente aliquid, totam ipsum?
             </p>
-            <Inject
-              services={[HtmlEditor, Toolbar, Image, Link, QuickToolbar]}
-            />
+            <Inject services={[HtmlEditor, Toolbar, Image, Link, QuickToolbar]} />
           </RichTextEditorComponent>
         </div>
       </div>

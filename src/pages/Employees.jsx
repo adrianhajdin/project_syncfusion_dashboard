@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  GridComponent,
-  ColumnsDirective,
-  ColumnDirective,
-} from '@syncfusion/ej2-react-grids';
+import { GridComponent, ColumnsDirective, ColumnDirective } from '@syncfusion/ej2-react-grids';
 import { GrLocation } from 'react-icons/gr';
 
 import { employeesData } from '../data/dummy';
@@ -36,6 +32,7 @@ const Employees = () => {
 
   let editing = { allowDeleting: true, allowEditing: true };
 
+  // TODO: Refactor
   return (
     <div className='m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl'>
       <Header category={'Page'} title={'Employees'} />

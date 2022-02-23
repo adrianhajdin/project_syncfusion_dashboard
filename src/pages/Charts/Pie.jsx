@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  AccumulationChartComponent,
-  AccumulationSeriesCollectionDirective,
-  AccumulationSeriesDirective,
-  AccumulationLegend,
-  PieSeries,
-  AccumulationDataLabel,
-  Inject,
-  AccumulationTooltip,
-} from '@syncfusion/ej2-react-charts';
+import { AccumulationChartComponent, AccumulationSeriesCollectionDirective, AccumulationSeriesDirective, AccumulationLegend, PieSeries, AccumulationDataLabel, Inject, AccumulationTooltip } from '@syncfusion/ej2-react-charts';
 
 import { pieChartData } from '../../data/dummy';
 import Header from '../../components/Header';
@@ -21,10 +12,7 @@ const Pie = () => {
         <AccumulationChartComponent
           id='pie-chart'
           title='Project Cost Breakdown'
-          legendSettings={{
-            visible: true,
-            position: 'Top',
-          }}
+          legendSettings={{ visible: true, position: 'Top', }}
           enableSmartLabels={true}
           tooltip={{ enable: true }}
         >

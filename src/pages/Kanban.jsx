@@ -8,8 +8,9 @@ import {
 import { kanbanData } from '../data/dummy';
 import Header from '../components/Header';
 
-const Kanban = () => {
-  return (
+// TODO: Refactor
+// TODO: Indentation to the left
+const Kanban = () => (
     <div className='m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl'>
       <Header category={'App'} title={'Kanban'} />
       <div>
@@ -47,6 +48,6 @@ const Kanban = () => {
         </div>
       </div>
     </div>
-  );
-};
+);
+
 export default Kanban;

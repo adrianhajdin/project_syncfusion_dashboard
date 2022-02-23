@@ -6,17 +6,11 @@ import { IoIosMore } from 'react-icons/io';
 
 import Stacked from './Charts/Stacked';
 import Doughnut from './Charts/Doughnut';
-import {
-  earningData,
-  medicalproBranding,
-  productsPerformance,
-  recentTransactions,
-  weeklyStats,
-} from '../data/dummy';
+import { earningData, medicalproBranding, productsPerformance, recentTransactions, weeklyStats } from '../data/dummy';
 import Button from '../components/Button';
 
-const Home = ({ currentColor, currentMode }) => {
-  return (
+// TODO: Indentation to the left
+const Home = ({ currentColor, currentMode }) => (
     <div className='mt-24'>
       <div className='flex flex-wrap lg:flex-nowrap justify-center '>
         <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center'>
@@ -332,6 +326,5 @@ const Home = ({ currentColor, currentMode }) => {
       </div>
     </div>
   );
-};
 
 export default Home;
