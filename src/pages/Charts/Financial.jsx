@@ -31,6 +31,7 @@ const Financial = () => {
         <ChartComponent
           id='charts'
           style={{ textAlign: 'center' }}
+          background='blue'
           primaryXAxis={{
             valueType: 'DateTime',
             minimum: new Date('2016, 12, 31'),

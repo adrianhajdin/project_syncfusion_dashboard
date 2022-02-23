@@ -20,7 +20,7 @@ const Line = () => {
       <div className='w-full'>
         <ChartComponent
           id='charts'
-          style={{ textAlign: 'center' }}
+          style={{ textAlign: 'center', color: 'white' }}
           primaryXAxis={{
             valueType: 'DateTime',
             labelFormat: 'y',
