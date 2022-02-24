@@ -1,83 +1,51 @@
 import React from 'react';
-import {
-  ChartComponent,
-  SeriesCollectionDirective,
-  SeriesDirective,
-  Inject,
-  HiloSeries,
-  Tooltip,
-  DateTime,
-  Zoom,
-  Logarithmic,
-  Crosshair,
-} from '@syncfusion/ej2-react-charts';
+import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, HiloSeries, Tooltip, DateTime, Zoom, Logarithmic, Crosshair } from '@syncfusion/ej2-react-charts';
 
-import { financialChartData } from '../../data/dummy';
-import Header from '../../components/Header';
+import { financialChartData, FinancialPrimaryXAxis, FinancialPrimaryYAxis } from '../../data/dummy';
+import { useStateContext } from '../../contexts/ContextProvider';
+import ChartsHeader from '../../components/ChartsHeader';
 
-let date1 = new Date('2017, 1, 1');
-let returnValue = financialChartData.filter(filterValue);
+const date1 = new Date('2017, 1, 1');
+
 function filterValue(value) {
   if (value.x >= date1) {
-    // eslint-disable-next-line no-sequences
     return value.x, value.high, value.low;
   }
 }
-const Financial = () => {
-  return (
-    <div className='m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl'>
-      <Header category={'Chart'} title={'Financial'} />
-      <div className='w-full'>
-        <ChartComponent
-          id='charts'
-          style={{ textAlign: 'center' }}
-          background='blue'
-          primaryXAxis={{
-            valueType: 'DateTime',
-            minimum: new Date('2016, 12, 31'),
-            maximum: new Date('2017, 9, 30'),
-            crosshairTooltip: { enable: true },
-            majorGridLines: { width: 0 },
-          }}
-          primaryYAxis={{
-            title: 'Price',
-            minimum: 100,
-            maximum: 180,
-            interval: 20,
+const returnValue = financialChartData.filter(filterValue);
 
-            lineStyle: { width: 0 },
-            majorTickLines: { width: 0 },
-          }}
-          legendSettings={{ visible: false }}
+const Financial = () => {
+  const { currentMode } = useStateContext();
+
+  return (
+    <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+      <ChartsHeader category="Financial" title="AAPLE Historical" />
+      <div className="w-full">
+        <ChartComponent
+          id="charts"
+          primaryXAxis={FinancialPrimaryXAxis}
+          primaryYAxis={FinancialPrimaryYAxis}
           chartArea={{ border: { width: 0 } }}
           tooltip={{ enable: true, shared: true }}
           crosshair={{ enable: true, lineType: 'Vertical', line: { width: 0 } }}
-          title='AAPL Historical'
+          background={currentMode === 'Dark' ? '#33373E' : '#fff'}
         >
-          <Inject
-            services={[
-              HiloSeries,
-              Tooltip,
-              DateTime,
-              Logarithmic,
-              Crosshair,
-              Zoom,
-            ]}
-          />
+          <Inject services={[HiloSeries, Tooltip, DateTime, Logarithmic, Crosshair, Zoom]} />
           <SeriesCollectionDirective>
             <SeriesDirective
               dataSource={returnValue}
-              xName='x'
-              yName='low'
-              name='Apple Inc'
-              type='Hilo'
-              low='low'
-              high='high'
-            ></SeriesDirective>
+              xName="x"
+              yName="low"
+              name="Apple Inc"
+              type="Hilo"
+              low="low"
+              high="high"
+            />
           </SeriesCollectionDirective>
         </ChartComponent>
       </div>
     </div>
   );
 };
+
 export default Financial;

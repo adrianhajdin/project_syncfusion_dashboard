@@ -22,64 +22,18 @@
 
 /* color-picker style  */
 
-#inline-control {
-  width: 100%;
-  text-align: center;
-}
-#inline-control .col-xs-12 {
-  margin: 10px 0;
-}
-#inline-control h4 {
-  margin-bottom: 20px;
-}
-
-.e-bigger #inline-control h4 {
-  font-size: 20px;
-}
-#inline-control.e-mobile-control h4 {
-  margin-bottom: 15px;
-}
-
-/* Preview area styles */
-#inline-control #preview {
+ #preview {
   background: transparent
     url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen.png')
     no-repeat;
   display: inline-block;
   height: 80px;
   margin: 10px 0;
-  width: 300px;
-  background-color: #008000;
-}
-#inline-control.e-mobile-control #preview {
-  background: transparent
-    url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen_mobile.png')
-    no-repeat;
-  background-color: #008000;
-  height: 35px;
-  width: 300px;
-}
-.highcontrast #inline-control #preview {
-  background: transparent
-    url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen_highcontrast.png')
-    no-repeat;
-  background-color: #008000;
-  border-radius: 20px;
-}
-.highcontrast #inline-control.e-mobile-control #preview {
-  background: transparent
-    url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen_mobile_highcontrast.png')
-    no-repeat;
+  min-width: 300px;
+  max-width: 600px;
   background-color: #008000;
 }
 
-/* Common sample level styles for mobile */
-#inline-control.e-mobile-control #inline-content {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-}
-#inline-control.e-mobile-control #inline-content .col-xs-12 {
-  flex: 0 0 auto;
-  margin-top: 5px;
+.e-input-group:not(.e-float-icon-left), .e-input-group.e-success:not(.e-float-icon-left), .e-input-group.e-warning:not(.e-float-icon-left), .e-input-group.e-error:not(.e-float-icon-left), .e-input-group.e-control-wrapper:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left){
+  border: none;
 }

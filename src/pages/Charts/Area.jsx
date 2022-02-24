@@ -1,72 +1,29 @@
 import React from 'react';
-import {
-  ChartComponent,
-  SeriesCollectionDirective,
-  SeriesDirective,
-  Inject,
-  DateTime,
-  SplineAreaSeries,
-  Legend,
-} from '@syncfusion/ej2-react-charts';
+import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, DateTime, SplineAreaSeries, Legend } from '@syncfusion/ej2-react-charts';
 
-import { areaChartData } from '../../data/dummy';
-import Header from '../../components/Header';
+import ChartsHeader from '../../components/ChartsHeader';
+import { areaCustomSeries, areaPrimaryXAxis, areaPrimaryYAxis } from '../../data/dummy';
+import { useStateContext } from '../../contexts/ContextProvider';
 
 const Area = () => {
+  const { currentMode } = useStateContext();
+
   return (
-    <div className='m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl'>
-      <Header category={'Chart'} title={'Area'} />
-      <div className='w-full'>
+    <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+      <ChartsHeader category="Area" title="Inflation Rate in percentage" />
+      <div className="w-full">
         <ChartComponent
-          id='charts'
-          style={{ textAlign: 'center' }}
-          primaryXAxis={{
-            valueType: 'DateTime',
-            labelFormat: 'y',
-            majorGridLines: { width: 0 },
-            intervalType: 'Years',
-            edgeLabelPlacement: 'Shift',
-          }}
-          primaryYAxis={{
-            labelFormat: '{value}%',
-            lineStyle: { width: 0 },
-            maximum: 4,
-            interval: 1,
-            majorTickLines: { width: 0 },
-            minorTickLines: { width: 0 },
-          }}
+          id="charts"
+          primaryXAxis={areaPrimaryXAxis}
+          primaryYAxis={areaPrimaryYAxis}
           chartArea={{ border: { width: 0 } }}
-          title='Inflation Rate in Percentage'
+          background={currentMode === 'Dark' ? '#33373E' : '#fff'}
+          legendSettings={{ background: 'white' }}
         >
           <Inject services={[SplineAreaSeries, DateTime, Legend]} />
           <SeriesCollectionDirective>
-            <SeriesDirective
-              dataSource={areaChartData[0]}
-              xName='x'
-              yName='y'
-              name='US'
-              opacity={0.5}
-              type='SplineArea'
-              width={2}
-            ></SeriesDirective>
-            <SeriesDirective
-              dataSource={areaChartData[1]}
-              xName='x'
-              yName='y'
-              name='France'
-              opacity={0.5}
-              type='SplineArea'
-              width={2}
-            ></SeriesDirective>
-            <SeriesDirective
-              dataSource={areaChartData[2]}
-              xName='x'
-              yName='y'
-              name='Germany'
-              opacity={0.5}
-              type='SplineArea'
-              width={2}
-            ></SeriesDirective>
+            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+            {areaCustomSeries.map((item) => <SeriesDirective {...item} />)}
           </SeriesCollectionDirective>
         </ChartComponent>
       </div>

@@ -1,87 +1,48 @@
 import React from 'react';
-import {
-  ChartComponent,
-  SeriesCollectionDirective,
-  SeriesDirective,
-  Inject,
-  ColumnSeries,
-  Category,
-  Tooltip,
-  Legend,
-  RangeColorSettingsDirective,
-  RangeColorSettingDirective,
-} from '@syncfusion/ej2-react-charts';
+import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, ColumnSeries, Category, Tooltip, Legend, RangeColorSettingsDirective, RangeColorSettingDirective } from '@syncfusion/ej2-react-charts';
 
-import { colorMappingData } from '../../data/dummy';
-import Header from '../../components/Header';
+import { colorMappingData, ColorMappingPrimaryXAxis, ColorMappingPrimaryYAxis, rangeColorMapping } from '../../data/dummy';
+import ChartsHeader from '../../components/ChartsHeader';
+import { useStateContext } from '../../contexts/ContextProvider';
 
 const ColorMapping = () => {
+  const { currentMode } = useStateContext();
+
   return (
-    <div className='m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl'>
-      <Header category={'Chart'} title={'Color-Mapping'} />
-      <div className='w-full'>
+    <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+      <ChartsHeader category="Color Mappping" title="USA CLIMATE - WEATHER BY MONTH" />
+      <div className="w-full">
         <ChartComponent
-          id='charts'
-          style={{ textAlign: 'center' }}
-          primaryXAxis={{
-            valueType: 'Category',
-            majorGridLines: { width: 0 },
-            title: 'Months',
-          }}
-          primaryYAxis={{
-            lineStyle: { width: 0 },
-            majorTickLines: { width: 0 },
-            minorTickLines: { width: 0 },
-            labelFormat: '{value}°C',
-            title: 'Temperature',
-          }}
-          title='USA CLIMATE - WEATHER BY MONTH'
+          id="charts"
+          primaryXAxis={ColorMappingPrimaryXAxis}
+          primaryYAxis={ColorMappingPrimaryYAxis}
           chartArea={{ border: { width: 0 } }}
-          legendSettings={{
-            mode: 'Range',
-          }}
-          tooltip={{
-            enable: true,
-          }}
+          legendSettings={{ mode: 'Range', background: 'white' }}
+          tooltip={{ enable: true }}
+          background={currentMode === 'Dark' ? '#33373E' : '#fff'}
         >
           <Inject services={[ColumnSeries, Tooltip, Category, Legend]} />
           <SeriesCollectionDirective>
             <SeriesDirective
               dataSource={colorMappingData[0]}
-              name='USA'
-              xName='x'
-              yName='y'
-              type='Column'
-              animation={{ enable: false }}
+              name="USA"
+              xName="x"
+              yName="y"
+              type="Column"
               cornerRadius={{
                 topLeft: 10,
                 topRight: 10,
               }}
-            ></SeriesDirective>
+            />
           </SeriesCollectionDirective>
           <RangeColorSettingsDirective>
-            <RangeColorSettingDirective
-              label='1°C to 10°C'
-              start={1}
-              end={10}
-              colors={colorMappingData[1]}
-            ></RangeColorSettingDirective>
-            <RangeColorSettingDirective
-              label='11°C to 20°C'
-              start={11}
-              end={20}
-              colors={colorMappingData[2]}
-            ></RangeColorSettingDirective>
-            <RangeColorSettingDirective
-              label='21°C to 30°C'
-              start={21}
-              end={30}
-              colors={colorMappingData[3]}
-            ></RangeColorSettingDirective>
+            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+            {rangeColorMapping.map((item) => <RangeColorSettingDirective {...item} />)}
           </RangeColorSettingsDirective>
         </ChartComponent>
       </div>
     </div>
   );
 };
+
 export default ColorMapping;

@@ -2,19 +2,21 @@ import React from 'react';
 import { AccumulationChartComponent, AccumulationSeriesCollectionDirective, AccumulationSeriesDirective, AccumulationLegend, PieSeries, AccumulationDataLabel, Inject, AccumulationTooltip } from '@syncfusion/ej2-react-charts';
 
 import { pieChartData } from '../../data/dummy';
-import Header from '../../components/Header';
+import { useStateContext } from '../../contexts/ContextProvider';
+import ChartsHeader from '../../components/ChartsHeader';
 
 const Pie = () => {
+  const { currentMode } = useStateContext();
+
   return (
-    <div className='m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl'>
-      <Header category={'Chart'} title={'Pie'} />
-      <div className='w-full'>
+    <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+      <ChartsHeader category="Pie" title="Project Cost Breakdown" />
+      <div className="w-full">
         <AccumulationChartComponent
-          id='pie-chart'
-          title='Project Cost Breakdown'
-          legendSettings={{ visible: true, position: 'Top', }}
-          enableSmartLabels={true}
+          id="pie-chart"
+          legendSettings={{ visible: true, position: 'Top', background: 'white' }}
           tooltip={{ enable: true }}
+          background={currentMode === 'Dark' ? '#33373E' : '#fff'}
         >
           <Inject
             services={[
@@ -26,16 +28,16 @@ const Pie = () => {
           />
           <AccumulationSeriesCollectionDirective>
             <AccumulationSeriesDirective
-              name='Cost'
+              name="Cost"
               dataSource={pieChartData}
-              xName='x'
-              yName='y'
-              innerRadius='40%'
+              xName="x"
+              yName="y"
+              innerRadius="40%"
               startAngle={0}
               endAngle={360}
-              radius='70%'
-              explode={true}
-              explodeOffset='10%'
+              radius="70%"
+              explode
+              explodeOffset="10%"
               explodeIndex={3}
               dataLabel={{
                 visible: true,
@@ -46,11 +48,12 @@ const Pie = () => {
                   color: '#ffffff',
                 },
               }}
-            ></AccumulationSeriesDirective>
+            />
           </AccumulationSeriesCollectionDirective>
         </AccumulationChartComponent>
       </div>
     </div>
   );
 };
+
 export default Pie;

@@ -1,89 +1,30 @@
 import React from 'react';
-import {
-  ChartComponent,
-  SeriesCollectionDirective,
-  SeriesDirective,
-  Inject,
-  Legend,
-  Category,
-  Tooltip,
-  ColumnSeries,
-  DataLabel,
-} from '@syncfusion/ej2-react-charts';
+import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Legend, Category, Tooltip, ColumnSeries, DataLabel } from '@syncfusion/ej2-react-charts';
 
-import { barChartData } from '../../data/dummy';
-import Header from '../../components/Header';
+import { barCustomSeries, barPrimaryXAxis, barPrimaryYAxis } from '../../data/dummy';
+import ChartsHeader from '../../components/ChartsHeader';
+import { useStateContext } from '../../contexts/ContextProvider';
 
 const Bar = () => {
-  return (
-    <div className='m-4 md:m-10 mt-24 p-10 bg-white rounded-3xl'>
-      <Header category={'Chart'} title={'Bar'} />
+  const { currentMode } = useStateContext();
 
-      <div className=' w-full'>
+  return (
+    <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+      <ChartsHeader category="Bar" title="Olympic Medal Counts - RIO" />
+      <div className=" w-full">
         <ChartComponent
-          id='charts'
-          style={{ textAlign: 'center' }}
-          primaryXAxis={{
-            valueType: 'Category',
-            interval: 1,
-            majorGridLines: { width: 0 },
-          }}
-          primaryYAxis={{
-            majorGridLines: { width: 0 },
-            majorTickLines: { width: 0 },
-            lineStyle: { width: 0 },
-            labelStyle: { color: 'transparent' },
-          }}
+          id="charts"
+          primaryXAxis={barPrimaryXAxis}
+          primaryYAxis={barPrimaryYAxis}
           chartArea={{ border: { width: 0 } }}
           tooltip={{ enable: true }}
-          title='Olympic Medal Counts - RIO'
+          background={currentMode === 'Dark' ? '#33373E' : '#fff'}
+          legendSettings={{ background: 'white' }}
         >
-          <Inject
-            services={[ColumnSeries, Legend, Tooltip, Category, DataLabel]}
-          />
+          <Inject services={[ColumnSeries, Legend, Tooltip, Category, DataLabel]} />
           <SeriesCollectionDirective>
-            <SeriesDirective
-              dataSource={barChartData[0]}
-              xName='x'
-              yName='y'
-              name='Gold'
-              type='Column'
-              marker={{
-                dataLabel: {
-                  visible: true,
-                  position: 'Top',
-                  font: { fontWeight: '600', color: '#ffffff' },
-                },
-              }}
-            ></SeriesDirective>
-            <SeriesDirective
-              dataSource={barChartData[1]}
-              xName='x'
-              yName='y'
-              name='Silver'
-              type='Column'
-              marker={{
-                dataLabel: {
-                  visible: true,
-                  position: 'Top',
-                  font: { fontWeight: '600', color: '#ffffff' },
-                },
-              }}
-            ></SeriesDirective>
-            <SeriesDirective
-              dataSource={barChartData[2]}
-              xName='x'
-              yName='y'
-              name='Bronze'
-              type='Column'
-              marker={{
-                dataLabel: {
-                  visible: true,
-                  position: 'Top',
-                  font: { fontWeight: '600', color: '#ffffff' },
-                },
-              }}
-            ></SeriesDirective>
+            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+            {barCustomSeries.map((item) => <SeriesDirective {...item} />)}
           </SeriesCollectionDirective>
         </ChartComponent>
       </div>
