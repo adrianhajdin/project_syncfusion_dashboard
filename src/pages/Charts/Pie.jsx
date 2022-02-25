@@ -18,14 +18,7 @@ const Pie = () => {
           tooltip={{ enable: true }}
           background={currentMode === 'Dark' ? '#33373E' : '#fff'}
         >
-          <Inject
-            services={[
-              AccumulationLegend,
-              PieSeries,
-              AccumulationTooltip,
-              AccumulationDataLabel,
-            ]}
-          />
+          <Inject services={[AccumulationLegend, PieSeries, AccumulationTooltip, AccumulationDataLabel]} />
           <AccumulationSeriesCollectionDirective>
             <AccumulationSeriesDirective
               name="Cost"

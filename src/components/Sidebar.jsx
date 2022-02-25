@@ -13,7 +13,7 @@ const Sidebar = () => {
   const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
 
   return (
-    <div className="ml-3 h-screen overflow-hidden hover:overflow-auto sm:mt-0 mt-10">
+    <div className="ml-3 h-screen overflow-hidden hover:overflow-auto sm:mt-0 mt-10 pb-10">
       {activeMenu && (
         <>
           <Link to="/" className="items-center gap-3 ml-3 mt-4 hidden sm:flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
@@ -23,14 +23,14 @@ const Sidebar = () => {
           </Link>
           <div className="mt-10 ">
             {links.map((item) => (
-              <div>
+              <div key={item.title}>
                 <p className="text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase">
                   {item.title}
                 </p>
                 {item.links.map((link) => (
                   <NavLink
                     to={`/${link.name}`}
-                    key={link}
+                    key={link.name}
                     style={({ isActive }) => ({
                       backgroundColor: isActive ? currentColor : '',
                     })}

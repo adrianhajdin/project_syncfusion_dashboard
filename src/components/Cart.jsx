@@ -6,7 +6,7 @@ import { useStateContext } from '../contexts/ContextProvider';
 import { cartData } from '../data/dummy';
 import Button from './Button';
 
-const Cart = ({ setCart, cart }) => {
+const Cart = () => {
   const { currentColor } = useStateContext();
 
   return (
@@ -15,8 +15,6 @@ const Cart = ({ setCart, cart }) => {
         <div className="flex justify-between items-center">
           <p className="font-semibold text-lg">Shopping Cart</p>
           <Button
-            state={cart}
-            setState={setCart}
             icon={<MdOutlineCancel />}
             color="rgb(153, 171, 180)"
             bgHoverColor="light-gray"
@@ -59,8 +57,6 @@ const Cart = ({ setCart, cart }) => {
         </div>
         <div className="mt-5">
           <Button
-            state={cart}
-            setState={setCart}
             color="white"
             bgColor={currentColor}
             text="Place Order"

@@ -37,7 +37,7 @@ const ColorMapping = () => {
           </SeriesCollectionDirective>
           <RangeColorSettingsDirective>
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-            {rangeColorMapping.map((item) => <RangeColorSettingDirective {...item} />)}
+            {rangeColorMapping.map((item, index) => <RangeColorSettingDirective key={index} {...item} />)}
           </RangeColorSettingsDirective>
         </ChartComponent>
       </div>

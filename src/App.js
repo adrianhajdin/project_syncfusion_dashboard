@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import { Navbar, Footer, Sidebar, Button, ThemeSettings } from './components';
+import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 import { Ecommerce, Orders, Calendar, Employees, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
 import './App.css';
 
@@ -15,7 +15,7 @@ const App = () => {
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
     const currentThemeMode = localStorage.getItem('themeMode');
-    if (setCurrentColor && setCurrentMode) {
+    if (currentThemeColor && currentThemeMode) {
       setCurrentColor(currentThemeColor);
       setCurrentMode(currentThemeMode);
     }
@@ -30,15 +30,15 @@ const App = () => {
               content="Settings"
               position="Top"
             >
-              <Button
-                setState={setThemeSettings}
-                state={themeSettings}
-                icon={<FiSettings />}
-                bgColor={currentColor}
-                color="white"
-                size="3xl"
-                borderRadius="50%"
-              />
+              <button
+                type="button"
+                onClick={() => setThemeSettings(true)}
+                style={{ background: currentColor, borderRadius: '50%' }}
+                className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
+              >
+                <FiSettings />
+              </button>
+
             </TooltipComponent>
           </div>
           {activeMenu ? (

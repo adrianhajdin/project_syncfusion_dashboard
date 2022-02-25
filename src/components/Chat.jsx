@@ -3,10 +3,13 @@ import { MdOutlineCancel } from 'react-icons/md';
 
 import Button from './Button';
 import { chatData } from '../data/dummy';
+import { useStateContext } from '../contexts/ContextProvider';
 
-const Chat = ({ setChat, chat, currentColor }) => (
-  <div className="bg-transparent w-full h-screen fixed top-0 right-0 nav-item">
-    <div className="absolute right-5 md:right-52 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
+const Chat = () => {
+  const { currentColor } = useStateContext();
+
+  return (
+    <div className="nav-item absolute right-5 md:right-52 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
       <div className="flex justify-between items-center">
         <div className="flex gap-3">
           <p className="font-semibold text-lg dark:text-gray-200">Messages</p>
@@ -16,8 +19,6 @@ const Chat = ({ setChat, chat, currentColor }) => (
         </div>
 
         <Button
-          state={chat}
-          setState={setChat}
           icon={<MdOutlineCancel />}
           color="rgb(153, 171, 180)"
           bgHoverColor="light-gray"
@@ -50,8 +51,6 @@ const Chat = ({ setChat, chat, currentColor }) => (
 
         <div className="mt-5">
           <Button
-            state={chat}
-            setState={setChat}
             color="white"
             bgColor={currentColor}
             text="See all messages"
@@ -61,8 +60,7 @@ const Chat = ({ setChat, chat, currentColor }) => (
         </div>
       </div>
     </div>
-  </div>
-
-);
+  );
+};
 
 export default Chat;

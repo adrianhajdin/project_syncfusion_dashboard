@@ -18,7 +18,7 @@ const DropDown = ({ currentMode }) => (
   </div>
 );
 
-const Home = () => {
+const Ecommerce = () => {
   const { currentColor, currentMode } = useStateContext();
 
   return (
@@ -38,7 +38,7 @@ const Home = () => {
               <BsCurrencyDollar />
             </button>
           </div>
-          <div className="mt-3">
+          <div className="mt-6">
             <Button
               color="white"
               bgColor={currentColor}
@@ -49,7 +49,7 @@ const Home = () => {
         </div>
         <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
           {earningData.map((item) => (
-            <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl ">
+            <div key={item.title} className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl ">
               <button
                 type="button"
                 style={{ color: item.iconColor, backgroundColor: item.iconBg }}
@@ -106,8 +106,7 @@ const Home = () => {
               </div>
 
               <div className="mt-5">
-                <SparkLine id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={currentColor} />
-
+                <SparkLine currentColor={currentColor} id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={currentColor} />
               </div>
               <div className="mt-10">
                 <Button
@@ -125,7 +124,7 @@ const Home = () => {
         </div>
         <div>
           <div
-            className=" rounded-2xl md:w-400 p-8 m-3"
+            className=" rounded-2xl md:w-400 p-4 m-3"
             style={{ backgroundColor: currentColor }}
           >
             <div className="flex justify-between items-center ">
@@ -138,7 +137,7 @@ const Home = () => {
             </div>
 
             <div className="mt-4">
-              <SparkLine id="column-sparkLine" height="100px" type="Column" data={SparklineAreaData} width="350" color="rgb(242, 252, 253)" />
+              <SparkLine currentColor={currentColor} id="column-sparkLine" height="100px" type="Column" data={SparklineAreaData} width="320" color="rgb(242, 252, 253)" />
             </div>
           </div>
 
@@ -157,13 +156,13 @@ const Home = () => {
 
       <div className="flex gap-10 m-4 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center gap-2">
             <p className="text-xl font-semibold">Recent Transactions</p>
             <DropDown currentMode={currentMode} />
           </div>
           <div className="mt-10 w-72 md:w-400">
             {recentTransactions.map((item) => (
-              <div className="flex justify-between mt-4">
+              <div key={item.title} className="flex justify-between mt-4">
                 <div className="flex gap-4">
                   <button
                     type="button"
@@ -198,7 +197,7 @@ const Home = () => {
           </div>
         </div>
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-96 md:w-760">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center gap-2">
             <p className="text-xl font-semibold mb-10">Sales Overview</p>
             <DropDown currentMode={currentMode} />
           </div>
@@ -209,7 +208,7 @@ const Home = () => {
       </div>
 
       <div className="flex flex-wrap justify-center">
-        <div className="w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
+        <div className="md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
           <div className="flex justify-between">
             <p className="text-xl font-semibold">Weekly Stats</p>
             <button type="button" className="text-xl font-semibold text-gray-500">
@@ -219,7 +218,7 @@ const Home = () => {
 
           <div className="mt-10 ">
             {weeklyStats.map((item) => (
-              <div className="flex justify-between mt-4 w-full">
+              <div key={item.title} className="flex justify-between mt-4 w-full">
                 <div className="flex gap-4">
                   <button
                     type="button"
@@ -237,7 +236,7 @@ const Home = () => {
               </div>
             ))}
             <div className="mt-4">
-              <SparkLine id="area-sparkLine" height="160px" type="Area" data={SparklineAreaData} width="350" color="rgb(242, 252, 253)" />
+              <SparkLine currentColor={currentColor} id="area-sparkLine" height="160px" type="Area" data={SparklineAreaData} width="320" color="rgb(242, 252, 253)" />
             </div>
           </div>
 
@@ -255,7 +254,7 @@ const Home = () => {
 
           <div className="flex gap-4 border-b-1 border-color mt-6">
             {medicalproBranding.data.map((item) => (
-              <div className="border-r-1 border-color pr-4 pb-2">
+              <div key={item.title} className="border-r-1 border-color pr-4 pb-2">
                 <p className="text-xs text-gray-400">{item.title}</p>
                 <p className="text-sm">{item.desc}</p>
               </div>
@@ -267,6 +266,7 @@ const Home = () => {
             <div className="flex gap-4">
               {medicalproBranding.teams.map((item) => (
                 <p
+                  key={item.name}
                   className={`bg-${item.color} cursor-pointer hover:drop-shadow-xl text-white py-0.5 px-3 rounded-lg text-xs`}
                 >
                   {item.name}
@@ -277,8 +277,8 @@ const Home = () => {
           <div className="mt-2">
             <p className="text-md font-semibold mb-2">Leaders</p>
             <div className="flex gap-4">
-              {medicalproBranding.leaders.map((item) => (
-                <img className="rounded-full w-8 h-8" src={item.image} alt="" />
+              {medicalproBranding.leaders.map((item, index) => (
+                <img key={index} className="rounded-full w-8 h-8" src={item.image} alt="" />
               ))}
             </div>
           </div>
@@ -304,7 +304,7 @@ const Home = () => {
           </div>
           <div className="mt-10">
             <img
-              className="w-96 h-50 "
+              className="md:w-96 h-50 "
               src="https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/blog-bg-2x.f6e9447d.jpg"
               alt=""
             />
@@ -331,4 +331,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Ecommerce;

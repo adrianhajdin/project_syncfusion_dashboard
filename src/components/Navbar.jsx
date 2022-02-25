@@ -16,12 +16,7 @@ import { useStateContext } from '../contexts/ContextProvider';
 
 const Navbar = () => {
   const [screenSize, setScreenSize] = useState(undefined);
-  const [chat, setChat] = useState(false);
-  const [notification, setNotification] = useState(false);
-  const [userProfile, setUserProfile] = useState(false);
-  const [cart, setCart] = useState(false);
-  const [search, setSearch] = useState(false);
-  const { currentColor, activeMenu, setActiveMenu } = useStateContext();
+  const { currentColor, activeMenu, setActiveMenu, handleClick, isClicked } = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -71,57 +66,63 @@ const Navbar = () => {
           </button>
         </TooltipComponent>
         <TooltipComponent content="Search" position="BottomCenter">
-          <Button
-            state={search}
-            setState={setSearch}
-            icon={<FiSearch />}
-            color={currentColor}
-            bgHoverColor="light-gray"
-            size="xl"
-            borderRadius="50%"
-          />
+          <button
+            type="button"
+            onClick={() => handleClick('search')}
+            style={{ color: currentColor, borderRadius: '50%' }}
+            className="text-xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
+          >
+            <FiSearch />
+          </button>
+
         </TooltipComponent>
       </div>
       <div className="flex">
         <TooltipComponent content="Cart" position="BottomCenter">
-          <Button
-            state={cart}
-            setState={setCart}
-            color={currentColor}
-            icon={<FiShoppingCart />}
-            bgHoverColor="light-gray"
-            size="xl"
-            borderRadius="50%"
-          />
+          <button
+            type="button"
+            onClick={() => handleClick('cart')}
+            style={{ color: currentColor, borderRadius: '50%' }}
+            className="text-xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
+          >
+            <FiShoppingCart />
+          </button>
+
         </TooltipComponent>
         <TooltipComponent content="Chat" position="BottomCenter">
-          <Button
-            state={chat}
-            setState={setChat}
-            icon={<BsChatLeft />}
-            dotColor="#03C9D7"
-            color={currentColor}
-            bgHoverColor="light-gray"
-            size="lg"
-            borderRadius="50%"
-          />
+          <button
+            type="button"
+            onClick={() => handleClick('chat')}
+            style={{ color: currentColor, borderRadius: '50%' }}
+            className="relative text-lg p-3 hover:drop-shadow-xl hover:bg-light-gray"
+          >
+            <span
+              style={{ background: '#03C9D7' }}
+              className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
+            />
+            <BsChatLeft />
+          </button>
+
         </TooltipComponent>
         <TooltipComponent content="Notification" position="BottomCenter">
-          <Button
-            state={notification}
-            setState={setNotification}
-            icon={<RiNotification3Line />}
-            dotColor="rgb(254, 201, 15)"
-            color={currentColor}
-            bgHoverColor="light-gray"
-            size="xl"
-            borderRadius="50%"
-          />
+          <button
+            type="button"
+            onClick={() => handleClick('notification')}
+            style={{ color: currentColor, borderRadius: '50%' }}
+            className="relative text-xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
+          >
+            <span
+              style={{ background: 'rgb(254, 201, 15)' }}
+              className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
+            />
+            <RiNotification3Line />
+          </button>
+
         </TooltipComponent>
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-            onClick={() => setUserProfile(!userProfile)}
+            onClick={() => handleClick('userProfile')}
           >
             <img
               className="rounded-full w-8 h-8"
@@ -138,11 +139,11 @@ const Navbar = () => {
           </div>
         </TooltipComponent>
 
-        {search && <Searchbar setSearch={setSearch} search={search} />}
-        {cart && (<Cart setCart={setCart} cart={cart} currentColor={currentColor} />)}
-        {chat && (<Chat setChat={setChat} chat={chat} currentColor={currentColor} />)}
-        {notification && (<Notification setNotification={setNotification} notification={notification} currentColor={currentColor} />)}
-        {userProfile && (<UserProfile setUserProfile={setUserProfile} userProfile={userProfile} currentColor={currentColor} />)}
+        {isClicked.search && <Searchbar />}
+        {isClicked.cart && (<Cart currentColor={currentColor} />)}
+        {isClicked.chat && (<Chat currentColor={currentColor} />)}
+        {isClicked.notification && (<Notification currentColor={currentColor} />)}
+        {isClicked.userProfile && (<UserProfile currentColor={currentColor} />)}
       </div>
     </div>
   );
