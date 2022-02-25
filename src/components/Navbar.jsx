@@ -11,7 +11,6 @@ import Chat from './Chat';
 import Notification from './Notification';
 import UserProfile from './UserProfile';
 import Searchbar from './Searchbar';
-import Button from './Button';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Navbar = () => {
