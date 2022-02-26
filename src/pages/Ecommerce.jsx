@@ -74,13 +74,13 @@ const Ecommerce = () => {
           <div className="flex justify-between">
             <p className="font-semibold text-xl">Revenue Updates</p>
             <div className="flex items-center gap-4">
-              <p className="flex items-center gap-2 text-icon-light-red hover:drop-shadow-xl">
+              <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
                 <span>
                   <GoPrimitiveDot />
                 </span>
                 <span>Expense</span>
               </p>
-              <p className="flex items-center gap-2 text-icon-light-orange hover:drop-shadow-xl">
+              <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
                 <span>
                   <GoPrimitiveDot />
                 </span>
@@ -222,7 +222,8 @@ const Ecommerce = () => {
                 <div className="flex gap-4">
                   <button
                     type="button"
-                    className={`text-2xl bg-${item.iconBg} hover:drop-shadow-xl text-white rounded-full p-3`}
+                    style={{ background: item.iconBg }}
+                    className="text-2xl hover:drop-shadow-xl text-white rounded-full p-3"
                   >
                     {item.icon}
                   </button>
@@ -248,7 +249,7 @@ const Ecommerce = () => {
               <IoIosMore />
             </button>
           </div>
-          <p className="text-xs cursor-pointer hover:drop-shadow-xl font-semibold rounded-lg w-24 bg-icon-light-orange py-0.5 px-2 text-icon-light-red mt-10">
+          <p className="text-xs cursor-pointer hover:drop-shadow-xl font-semibold rounded-lg w-24 bg-orange-400 py-0.5 px-2 text-gray-200 mt-10">
             16 APR, 2021
           </p>
 
@@ -267,7 +268,8 @@ const Ecommerce = () => {
               {medicalproBranding.teams.map((item) => (
                 <p
                   key={item.name}
-                  className={`bg-${item.color} cursor-pointer hover:drop-shadow-xl text-white py-0.5 px-3 rounded-lg text-xs`}
+                  style={{ background: item.color }}
+                  className="cursor-pointer hover:drop-shadow-xl text-white py-0.5 px-3 rounded-lg text-xs"
                 >
                   {item.name}
                 </p>

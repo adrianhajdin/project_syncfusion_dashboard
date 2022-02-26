@@ -693,7 +693,7 @@ export const weeklyStats = [
     amount: '-$560',
     title: 'Top Sales',
     desc: 'Johnathan Doe',
-    iconBg: 'light-red',
+    iconBg: '#FB9678',
     pcColor: 'red-600',
   },
   {
@@ -701,7 +701,7 @@ export const weeklyStats = [
     amount: '-$560',
     title: 'Best Seller',
     desc: 'MaterialPro Admin',
-    iconBg: 'orange',
+    iconBg: 'rgb(254, 201, 15)',
     pcColor: 'red-600',
   },
   {
@@ -709,7 +709,7 @@ export const weeklyStats = [
     amount: '+$560',
     title: 'Most Commented',
     desc: 'Ample Admin',
-    iconBg: 'icon-green',
+    iconBg: '#00C292',
     pcColor: 'green-600',
   },
 ];
@@ -775,7 +775,7 @@ export const medicalproBranding = {
     },
     {
       name: 'Angular',
-      color: 'light-red',
+      color: '#FB9678',
     },
   ],
   leaders: [
