@@ -33,8 +33,8 @@ const UserProfile = () => {
         </div>
       </div>
       <div>
-        {userProfileData.map((item) => (
-          <div className="flex gap-5 border-b-1 border-color p-4 hover:bg-light-gray cursor-pointer  dark:hover:bg-[#42464D]">
+        {userProfileData.map((item, index) => (
+          <div key={index} className="flex gap-5 border-b-1 border-color p-4 hover:bg-light-gray cursor-pointer  dark:hover:bg-[#42464D]">
             <button
               type="button"
               style={{ color: item.iconColor, backgroundColor: item.iconBg }}
