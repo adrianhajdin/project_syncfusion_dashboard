@@ -93,7 +93,7 @@ const Ecommerce = () => {
               <div>
                 <p>
                   <span className="text-3xl font-semibold">$93,438</span>
-                  <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-icon-green ml-3 text-xs">
+                  <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">
                     23%
                   </span>
                 </p>
@@ -197,8 +197,8 @@ const Ecommerce = () => {
           </div>
         </div>
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-96 md:w-760">
-          <div className="flex justify-between items-center gap-2">
-            <p className="text-xl font-semibold mb-10">Sales Overview</p>
+          <div className="flex justify-between items-center gap-2 mb-10">
+            <p className="text-xl font-semibold">Sales Overview</p>
             <DropDown currentMode={currentMode} />
           </div>
           <div className="md:w-full overflow-auto">

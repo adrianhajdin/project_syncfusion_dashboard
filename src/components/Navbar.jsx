@@ -14,8 +14,7 @@ import Searchbar from './Searchbar';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Navbar = () => {
-  const [screenSize, setScreenSize] = useState(undefined);
-  const { currentColor, activeMenu, setActiveMenu, handleClick, isClicked } = useStateContext();
+  const { currentColor, activeMenu, setActiveMenu, handleClick, isClicked, setScreenSize, screenSize } = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -28,7 +27,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (screenSize <= 800) {
+    if (screenSize <= 900) {
       setActiveMenu(false);
     } else {
       setActiveMenu(true);
