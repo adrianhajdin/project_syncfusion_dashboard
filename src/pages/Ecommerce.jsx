@@ -4,8 +4,8 @@ import { GoPrimitiveDot } from 'react-icons/go';
 import { IoIosMore } from 'react-icons/io';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
-import { Stacked, Doughnut, Button, LineChart, SparkLine } from '../components';
-import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData } from '../data/dummy';
+import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
+import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const DropDown = ({ currentMode }) => (
@@ -143,8 +143,8 @@ const Ecommerce = () => {
               <p className="text-gray-400">Yearly sales</p>
             </div>
 
-            <div>
-              <Doughnut currentMode={currentMode} />
+            <div className="w-40">
+              <Pie id="pie-chart" data={ecomPieChartData} legendVisiblity={false} height="160px" />
             </div>
           </div>
         </div>
