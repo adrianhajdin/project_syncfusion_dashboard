@@ -3,7 +3,7 @@ import { AccumulationChartComponent, AccumulationSeriesCollectionDirective, Accu
 
 import { pieChartData } from '../../data/dummy';
 import { useStateContext } from '../../contexts/ContextProvider';
-import ChartsHeader from '../../components/ChartsHeader';
+import { ChartsHeader } from '../../components';
 
 const Pie = () => {
   const { currentMode } = useStateContext();

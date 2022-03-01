@@ -6,12 +6,25 @@ import { RiNotification3Line } from 'react-icons/ri';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import Cart from './Cart';
-import Chat from './Chat';
-import Notification from './Notification';
-import UserProfile from './UserProfile';
-import Searchbar from './Searchbar';
+import { Cart, Chat, Notification, Searchbar, UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
+
+const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
+  <TooltipComponent content={title} position="BottomCenter">
+    <button
+      type="button"
+      onClick={() => customFunc()}
+      style={{ color }}
+      className="relative text-xl rounded-full p-3 hover:bg-light-gray"
+    >
+      <span
+        style={{ background: dotColor }}
+        className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
+      />
+      {icon}
+    </button>
+  </TooltipComponent>
+);
 
 const Navbar = () => {
   const { currentColor, activeMenu, setActiveMenu, handleClick, isClicked, setScreenSize, screenSize } = useStateContext();
@@ -34,74 +47,21 @@ const Navbar = () => {
     }
   }, [screenSize]);
 
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
+
   return (
     <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
       <div className="flex">
 
-        <TooltipComponent content="Menu" position="BottomCenter">
-          <button
-            type="button"
-            onClick={() => setActiveMenu(!activeMenu)}
-            style={{ color: currentColor }}
-            className="text-xl rounded-full p-3 hover:bg-light-gray"
-          >
-            <AiOutlineMenu />
-          </button>
-        </TooltipComponent>
-        <TooltipComponent content="Search" position="BottomCenter">
-          <button
-            type="button"
-            onClick={() => handleClick('search')}
-            style={{ color: currentColor, borderRadius: '50%' }}
-            className="text-xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
-          >
-            <FiSearch />
-          </button>
+        <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
+        <NavButton title="Search" customFunc={() => handleClick('search')} color={currentColor} icon={<FiSearch />} />
 
-        </TooltipComponent>
       </div>
       <div className="flex">
-        <TooltipComponent content="Cart" position="BottomCenter">
-          <button
-            type="button"
-            onClick={() => handleClick('cart')}
-            style={{ color: currentColor, borderRadius: '50%' }}
-            className="text-xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
-          >
-            <FiShoppingCart />
-          </button>
+        <NavButton title="Cart" customFunc={() => handleClick('cart')} color={currentColor} icon={<FiShoppingCart />} />
+        <NavButton title="Chat" dotColor="#03C9D7" customFunc={() => handleClick('chat')} color={currentColor} icon={<BsChatLeft />} />
+        <NavButton title="Notification" dotColor="rgb(254, 201, 15)" customFunc={() => handleClick('notification')} color={currentColor} icon={<RiNotification3Line />} />
 
-        </TooltipComponent>
-        <TooltipComponent content="Chat" position="BottomCenter">
-          <button
-            type="button"
-            onClick={() => handleClick('chat')}
-            style={{ color: currentColor, borderRadius: '50%' }}
-            className="relative text-lg p-3 hover:drop-shadow-xl hover:bg-light-gray"
-          >
-            <span
-              style={{ background: '#03C9D7' }}
-              className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
-            />
-            <BsChatLeft />
-          </button>
-
-        </TooltipComponent>
-        <TooltipComponent content="Notification" position="BottomCenter">
-          <button
-            type="button"
-            onClick={() => handleClick('notification')}
-            style={{ color: currentColor, borderRadius: '50%' }}
-            className="relative text-xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
-          >
-            <span
-              style={{ background: 'rgb(254, 201, 15)' }}
-              className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
-            />
-            <RiNotification3Line />
-          </button>
-
-        </TooltipComponent>
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
@@ -123,10 +83,10 @@ const Navbar = () => {
         </TooltipComponent>
 
         {isClicked.search && <Searchbar />}
-        {isClicked.cart && (<Cart currentColor={currentColor} />)}
-        {isClicked.chat && (<Chat currentColor={currentColor} />)}
-        {isClicked.notification && (<Notification currentColor={currentColor} />)}
-        {isClicked.userProfile && (<UserProfile currentColor={currentColor} />)}
+        {isClicked.cart && (<Cart />)}
+        {isClicked.chat && (<Chat />)}
+        {isClicked.notification && (<Notification />)}
+        {isClicked.userProfile && (<UserProfile />)}
       </div>
     </div>
   );

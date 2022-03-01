@@ -3,7 +3,7 @@ import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Hil
 
 import { financialChartData, FinancialPrimaryXAxis, FinancialPrimaryYAxis } from '../../data/dummy';
 import { useStateContext } from '../../contexts/ContextProvider';
-import ChartsHeader from '../../components/ChartsHeader';
+import { ChartsHeader } from '../../components';
 
 const date1 = new Date('2017, 1, 1');
 

@@ -4,13 +4,9 @@ import { GoPrimitiveDot } from 'react-icons/go';
 import { IoIosMore } from 'react-icons/io';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
-import Stacked from './Charts/Stacked';
-import Doughnut from './Charts/Doughnut';
+import { Stacked, Doughnut, Button, LineChart, SparkLine } from '../components';
 import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData } from '../data/dummy';
-import Button from '../components/Button';
 import { useStateContext } from '../contexts/ContextProvider';
-import LineChart from '../components/LineChart';
-import SparkLine from '../components/SparkLine';
 
 const DropDown = ({ currentMode }) => (
   <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
