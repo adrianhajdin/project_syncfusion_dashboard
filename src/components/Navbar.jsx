@@ -3,7 +3,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { FiSearch, FiShoppingCart } from 'react-icons/fi';
 import { BsChatLeft } from 'react-icons/bs';
 import { RiNotification3Line } from 'react-icons/ri';
-import { MdKeyboardArrowDown, MdOutlineCancel } from 'react-icons/md';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import Cart from './Cart';
@@ -37,28 +37,13 @@ const Navbar = () => {
   return (
     <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
       <div className="flex">
-        <button
-          type="button"
-          onClick={() => setActiveMenu(!activeMenu)}
-          style={{ color: currentColor }}
-          className="text-xl rounded-full p-3 hover:bg-light-gray sm:hidden"
-        >
-          {activeMenu ? (
-            <TooltipComponent content="Close" position="BottomCenter">
-              <MdOutlineCancel className="text-lg" />
-            </TooltipComponent>
-          ) : (
-            <TooltipComponent content="Menu" position="BottomCenter">
-              <AiOutlineMenu className="text-lg" />
-            </TooltipComponent>
-          )}
-        </button>
+
         <TooltipComponent content="Menu" position="BottomCenter">
           <button
             type="button"
             onClick={() => setActiveMenu(!activeMenu)}
             style={{ color: currentColor }}
-            className="text-xl rounded-full p-3 hover:bg-light-gray hidden sm:block "
+            className="text-xl rounded-full p-3 hover:bg-light-gray"
           >
             <AiOutlineMenu />
           </button>

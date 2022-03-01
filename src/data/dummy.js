@@ -416,6 +416,7 @@ export const customersGrid = [
     headerText: 'Customer ID',
     width: '120',
     textAlign: 'Center',
+    isPrimaryKey: true,
   },
 
 ];
@@ -1044,7 +1045,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1001,
+    CustomerID: 1011,
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
@@ -1057,7 +1058,7 @@ export const customersData = [
     Location: 'India',
   },
   {
-    CustomerID: 1002,
+    CustomerID: 1012,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
@@ -1072,7 +1073,7 @@ export const customersData = [
     Location: 'India',
   },
   {
-    CustomerID: 1003,
+    CustomerID: 1013,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
@@ -1086,7 +1087,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1004,
+    CustomerID: 1014,
 
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
@@ -1100,7 +1101,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1005,
+    CustomerID: 1015,
 
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
@@ -1114,7 +1115,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1006,
+    CustomerID: 1016,
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
@@ -1127,7 +1128,7 @@ export const customersData = [
     Location: 'India',
   },
   {
-    CustomerID: 1007,
+    CustomerID: 1017,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
@@ -1142,7 +1143,7 @@ export const customersData = [
     Location: 'India',
   },
   {
-    CustomerID: 1008,
+    CustomerID: 1018,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
@@ -1156,7 +1157,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1009,
+    CustomerID: 1019,
 
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
@@ -1170,7 +1171,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1010,
+    CustomerID: 1020,
 
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
@@ -1184,7 +1185,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1001,
+    CustomerID: 1021,
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
@@ -1197,7 +1198,7 @@ export const customersData = [
     Location: 'India',
   },
   {
-    CustomerID: 1002,
+    CustomerID: 1022,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
@@ -1212,7 +1213,7 @@ export const customersData = [
     Location: 'India',
   },
   {
-    CustomerID: 1003,
+    CustomerID: 1023,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
@@ -1226,7 +1227,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1004,
+    CustomerID: 1024,
 
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
@@ -1240,7 +1241,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1005,
+    CustomerID: 1025,
 
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
@@ -1254,7 +1255,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1006,
+    CustomerID: 1026,
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
@@ -1267,7 +1268,7 @@ export const customersData = [
     Location: 'India',
   },
   {
-    CustomerID: 1007,
+    CustomerID: 1027,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
@@ -1282,7 +1283,7 @@ export const customersData = [
     Location: 'India',
   },
   {
-    CustomerID: 1008,
+    CustomerID: 1028,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
@@ -1296,7 +1297,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1009,
+    CustomerID: 1029,
 
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
@@ -1310,7 +1311,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1010,
+    CustomerID: 1030,
 
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
@@ -1324,7 +1325,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1001,
+    CustomerID: 1031,
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
@@ -1337,7 +1338,7 @@ export const customersData = [
     Location: 'India',
   },
   {
-    CustomerID: 1002,
+    CustomerID: 1032,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
@@ -1352,7 +1353,7 @@ export const customersData = [
     Location: 'India',
   },
   {
-    CustomerID: 1003,
+    CustomerID: 1033,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
@@ -1366,7 +1367,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1004,
+    CustomerID: 1034,
 
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
@@ -1380,7 +1381,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1005,
+    CustomerID: 1035,
 
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
@@ -1394,7 +1395,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1006,
+    CustomerID: 1036,
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
@@ -1407,7 +1408,7 @@ export const customersData = [
     Location: 'India',
   },
   {
-    CustomerID: 1007,
+    CustomerID: 1037,
 
     CustomerName: 'Sunil Joshi',
     CustomerEmail: 'sunil@gmail.com',
@@ -1422,7 +1423,7 @@ export const customersData = [
     Location: 'India',
   },
   {
-    CustomerID: 1008,
+    CustomerID: 1038,
 
     CustomerName: 'Andrew McDownland',
     CustomerEmail: 'andrew@gmail.com',
@@ -1436,7 +1437,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1009,
+    CustomerID: 1039,
     CustomerName: 'Christopher Jamil',
     CustomerEmail: 'jamil@gmail.com',
     ProjectName: 'MedicalPro WP Theme',
@@ -1449,8 +1450,7 @@ export const customersData = [
     Location: 'USA',
   },
   {
-    CustomerID: 1010,
-
+    CustomerID: 1040,
     CustomerName: 'Michael',
     CustomerEmail: 'michael@gmail.com',
     ProjectName: 'Weekly WP Theme',
