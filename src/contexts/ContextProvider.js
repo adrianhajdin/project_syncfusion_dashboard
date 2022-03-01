@@ -1,8 +1,13 @@
 import React, { createContext, useContext, useState } from 'react';
 
 const StateContext = createContext();
+
 const initialState = {
-  chat: false, search: false, cart: false, userProfile: false, notification: false,
+  chat: false,
+  search: false,
+  cart: false,
+  userProfile: false,
+  notification: false,
 };
 
 export const ContextProvider = ({ children }) => {

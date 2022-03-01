@@ -17,7 +17,6 @@ const Chat = () => {
             5 New
           </button>
         </div>
-
         <Button
           icon={<MdOutlineCancel />}
           color="rgb(153, 171, 180)"
@@ -40,7 +39,6 @@ const Chat = () => {
                 className="absolute inline-flex rounded-full h-2 w-2 right-0 -top-1"
               />
             </div>
-
             <div>
               <p className="font-semibold dark:text-gray-200 ">{item.message}</p>
               <p className="text-gray-500 dark:text-gray-400 text-sm">{item.desc}</p>
@@ -48,7 +46,6 @@ const Chat = () => {
             </div>
           </div>
         ))}
-
         <div className="mt-5">
           <Button
             color="white"

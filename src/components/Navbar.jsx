@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
-import { FiSearch, FiShoppingCart } from 'react-icons/fi';
+import { FiShoppingCart } from 'react-icons/fi';
 import { BsChatLeft } from 'react-icons/bs';
 import { RiNotification3Line } from 'react-icons/ri';
 import { MdKeyboardArrowDown } from 'react-icons/md';
@@ -10,7 +10,6 @@ import Cart from './Cart';
 import Chat from './Chat';
 import Notification from './Notification';
 import UserProfile from './UserProfile';
-import Searchbar from './Searchbar';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Navbar = () => {
@@ -37,7 +36,6 @@ const Navbar = () => {
   return (
     <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
       <div className="flex">
-
         <TooltipComponent content="Menu" position="BottomCenter">
           <button
             type="button"
@@ -47,17 +45,6 @@ const Navbar = () => {
           >
             <AiOutlineMenu />
           </button>
-        </TooltipComponent>
-        <TooltipComponent content="Search" position="BottomCenter">
-          <button
-            type="button"
-            onClick={() => handleClick('search')}
-            style={{ color: currentColor, borderRadius: '50%' }}
-            className="text-xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
-          >
-            <FiSearch />
-          </button>
-
         </TooltipComponent>
       </div>
       <div className="flex">
@@ -70,7 +57,6 @@ const Navbar = () => {
           >
             <FiShoppingCart />
           </button>
-
         </TooltipComponent>
         <TooltipComponent content="Chat" position="BottomCenter">
           <button
@@ -85,7 +71,6 @@ const Navbar = () => {
             />
             <BsChatLeft />
           </button>
-
         </TooltipComponent>
         <TooltipComponent content="Notification" position="BottomCenter">
           <button
@@ -100,7 +85,6 @@ const Navbar = () => {
             />
             <RiNotification3Line />
           </button>
-
         </TooltipComponent>
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
@@ -121,8 +105,6 @@ const Navbar = () => {
             <MdKeyboardArrowDown className="text-gray-400 text-14" />
           </div>
         </TooltipComponent>
-
-        {isClicked.search && <Searchbar />}
         {isClicked.cart && (<Cart currentColor={currentColor} />)}
         {isClicked.chat && (<Chat currentColor={currentColor} />)}
         {isClicked.notification && (<Notification currentColor={currentColor} />)}
