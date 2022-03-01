@@ -4,7 +4,7 @@ import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Leg
 import { stackedCustomSeries, stackedPrimaryXAxis, stackedPrimaryYAxis } from '../../data/dummy';
 import { useStateContext } from '../../contexts/ContextProvider';
 
-const Stacked = () => {
+const Stacked = ({ width, height }) => {
   const { currentMode } = useStateContext();
 
   return (
@@ -12,8 +12,8 @@ const Stacked = () => {
       id="charts"
       primaryXAxis={stackedPrimaryXAxis}
       primaryYAxis={stackedPrimaryYAxis}
-      width="320px"
-      height="360px"
+      width={width}
+      height={height}
       chartArea={{ border: { width: 0 } }}
       tooltip={{ enable: true }}
       background={currentMode === 'Dark' ? '#33373E' : '#fff'}
