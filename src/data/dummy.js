@@ -10,6 +10,18 @@ import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
 import { GiLouvrePyramid } from 'react-icons/gi';
 import { GrLocation } from 'react-icons/gr';
+import avatar from './avatar.jpg';
+import avatar2 from './avatar2.jpg';
+import avatar3 from './avatar3.png';
+import avatar4 from './avatar4.jpg';
+import product1 from './product1.jpg';
+import product2 from './product2.jpg';
+import product3 from './product3.jpg';
+import product4 from './product4.jpg';
+import product5 from './product5.jpg';
+import product6 from './product6.jpg';
+import product7 from './product7.jpg';
+import product8 from './product8.jpg';
 
 export const gridOrderImage = (props) => (
   <div>
@@ -549,21 +561,21 @@ export const links = [
 export const cartData = [
   {
     image:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s1.69341801.jpg',
+      product5,
     name: 'butterscotch ice-cream',
     category: 'Milk product',
     price: '$250',
   },
   {
     image:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s2.3260a3b5.jpg',
+      product6,
     name: 'Supreme fresh tomato',
     category: 'Vegetable Item',
     price: '$450',
   },
   {
     image:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s3.323ebcbe.jpg',
+      product7,
     name: 'Red color candy',
     category: 'Food Item',
     price: '$190',
@@ -573,28 +585,28 @@ export const cartData = [
 export const chatData = [
   {
     image:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-carson_darrin.png',
+      avatar2,
     message: 'Roman Joined the Team!',
     desc: 'Congratulate him',
     time: '9:08 AM',
   },
   {
     image:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-nasimiyu_danai.png',
+      avatar3,
     message: 'New message received',
     desc: 'Salma sent you new message',
     time: '11:56 AM',
   },
   {
     image:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-iulia_albu.png',
+      avatar4,
     message: 'New Payment received',
     desc: 'Check your earnings',
     time: '4:39 AM',
   },
   {
     image:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-omar_darboe.png',
+      avatar,
     message: 'Jolly completed tasks',
     desc: 'Assign her new tasks',
     time: '1:12 AM',
@@ -722,7 +734,7 @@ export const weeklyStats = [
 export const productsPerformance = [
   {
     image:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s1.69341801.jpg',
+      product5,
     title: 'Is it good butterscotch ice-cream?',
     desc: 'Ice-Cream, Milk, Powder',
     rating: 'Good',
@@ -731,7 +743,7 @@ export const productsPerformance = [
   },
   {
     image:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s2.3260a3b5.jpg',
+      product6,
     title: 'Supreme fresh tomato available',
     desc: 'Market, Mall',
     rating: 'Excellent',
@@ -740,7 +752,7 @@ export const productsPerformance = [
   },
   {
     image:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s3.323ebcbe.jpg',
+      product7,
     title: 'Red color candy from Gucci',
     desc: 'Chocolate, Yummy',
     rating: 'Average',
@@ -749,7 +761,7 @@ export const productsPerformance = [
   },
   {
     image:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s4.f4c5d8f9.jpg',
+      product4,
     title: 'Stylish night lamp for night',
     desc: 'Electric, Wire, Current',
     rating: 'Poor',
@@ -786,23 +798,23 @@ export const medicalproBranding = {
   leaders: [
     {
       image:
-        'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+        avatar2,
     },
     {
       image:
-        'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-fran_perez.png',
+        avatar3,
     },
     {
       image:
-        'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-carson_darrin.png',
+        avatar2,
     },
     {
       image:
-        'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-jie_yan_song.png',
+        avatar4,
     },
     {
       image:
-        'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-omar_darboe.png',
+        avatar,
     },
   ],
 };
@@ -913,7 +925,7 @@ export const customersData = [
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-carson_darrin.png',
+      avatar2,
     ProjectName: 'Hosting Press HTML',
     Status: 'Active',
     StatusBg: '#8BE78B',
@@ -929,7 +941,7 @@ export const customersData = [
     ProjectName: 'Elite Admin',
     Status: 'Active',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-fran_perez.png',
+      avatar3,
 
     StatusBg: '#8BE78B',
     Weeks: '11',
@@ -944,7 +956,7 @@ export const customersData = [
     ProjectName: 'Real Homes WP Theme',
     Status: 'Pending',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-jie_yan_song.png',
+      avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
@@ -958,7 +970,7 @@ export const customersData = [
     ProjectName: 'MedicalPro WP Theme',
     Status: 'Completed',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-anika_visser.png',
+      avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
@@ -972,7 +984,7 @@ export const customersData = [
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
@@ -983,7 +995,7 @@ export const customersData = [
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-carson_darrin.png',
+      avatar2,
     ProjectName: 'Hosting Press HTML',
     Status: 'Active',
     StatusBg: '#8BE78B',
@@ -999,7 +1011,7 @@ export const customersData = [
     ProjectName: 'Elite Admin',
     Status: 'Active',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-fran_perez.png',
+      avatar3,
 
     StatusBg: '#8BE78B',
     Weeks: '11',
@@ -1014,7 +1026,7 @@ export const customersData = [
     ProjectName: 'Real Homes WP Theme',
     Status: 'Pending',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-jie_yan_song.png',
+      avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
@@ -1028,7 +1040,7 @@ export const customersData = [
     ProjectName: 'MedicalPro WP Theme',
     Status: 'Completed',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-anika_visser.png',
+      avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1042,7 +1054,7 @@ export const customersData = [
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1053,7 +1065,7 @@ export const customersData = [
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-carson_darrin.png',
+      avatar2,
     ProjectName: 'Hosting Press HTML',
     Status: 'Active',
     StatusBg: '#8BE78B',
@@ -1069,7 +1081,7 @@ export const customersData = [
     ProjectName: 'Elite Admin',
     Status: 'Active',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-fran_perez.png',
+      avatar3,
 
     StatusBg: '#8BE78B',
     Weeks: '11',
@@ -1084,7 +1096,7 @@ export const customersData = [
     ProjectName: 'Real Homes WP Theme',
     Status: 'Pending',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-jie_yan_song.png',
+      avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
@@ -1098,7 +1110,7 @@ export const customersData = [
     ProjectName: 'MedicalPro WP Theme',
     Status: 'Completed',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-anika_visser.png',
+      avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1112,7 +1124,7 @@ export const customersData = [
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1123,7 +1135,7 @@ export const customersData = [
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-carson_darrin.png',
+      avatar2,
     ProjectName: 'Hosting Press HTML',
     Status: 'Active',
     StatusBg: '#8BE78B',
@@ -1139,7 +1151,7 @@ export const customersData = [
     ProjectName: 'Elite Admin',
     Status: 'Active',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-fran_perez.png',
+      avatar3,
 
     StatusBg: '#8BE78B',
     Weeks: '11',
@@ -1154,7 +1166,7 @@ export const customersData = [
     ProjectName: 'Real Homes WP Theme',
     Status: 'Pending',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-jie_yan_song.png',
+      avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
@@ -1168,7 +1180,7 @@ export const customersData = [
     ProjectName: 'MedicalPro WP Theme',
     Status: 'Completed',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-anika_visser.png',
+      avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1182,7 +1194,7 @@ export const customersData = [
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1193,7 +1205,7 @@ export const customersData = [
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-carson_darrin.png',
+      avatar2,
     ProjectName: 'Hosting Press HTML',
     Status: 'Active',
     StatusBg: '#8BE78B',
@@ -1209,7 +1221,7 @@ export const customersData = [
     ProjectName: 'Elite Admin',
     Status: 'Active',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-fran_perez.png',
+      avatar3,
 
     StatusBg: '#8BE78B',
     Weeks: '11',
@@ -1224,7 +1236,7 @@ export const customersData = [
     ProjectName: 'Real Homes WP Theme',
     Status: 'Pending',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-jie_yan_song.png',
+      avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
@@ -1238,7 +1250,7 @@ export const customersData = [
     ProjectName: 'MedicalPro WP Theme',
     Status: 'Completed',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-anika_visser.png',
+      avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1252,7 +1264,7 @@ export const customersData = [
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1263,7 +1275,7 @@ export const customersData = [
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-carson_darrin.png',
+      avatar2,
     ProjectName: 'Hosting Press HTML',
     Status: 'Active',
     StatusBg: '#8BE78B',
@@ -1279,7 +1291,7 @@ export const customersData = [
     ProjectName: 'Elite Admin',
     Status: 'Active',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-fran_perez.png',
+      avatar3,
 
     StatusBg: '#8BE78B',
     Weeks: '11',
@@ -1294,7 +1306,7 @@ export const customersData = [
     ProjectName: 'Real Homes WP Theme',
     Status: 'Pending',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-jie_yan_song.png',
+      avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
@@ -1308,7 +1320,7 @@ export const customersData = [
     ProjectName: 'MedicalPro WP Theme',
     Status: 'Completed',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-anika_visser.png',
+      avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1322,7 +1334,7 @@ export const customersData = [
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1333,7 +1345,7 @@ export const customersData = [
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-carson_darrin.png',
+      avatar2,
     ProjectName: 'Hosting Press HTML',
     Status: 'Active',
     StatusBg: '#8BE78B',
@@ -1349,7 +1361,7 @@ export const customersData = [
     ProjectName: 'Elite Admin',
     Status: 'Active',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-fran_perez.png',
+      avatar3,
 
     StatusBg: '#8BE78B',
     Weeks: '11',
@@ -1364,7 +1376,7 @@ export const customersData = [
     ProjectName: 'Real Homes WP Theme',
     Status: 'Pending',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-jie_yan_song.png',
+      avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
@@ -1378,7 +1390,7 @@ export const customersData = [
     ProjectName: 'MedicalPro WP Theme',
     Status: 'Completed',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-anika_visser.png',
+      avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1392,7 +1404,7 @@ export const customersData = [
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1403,7 +1415,7 @@ export const customersData = [
     CustomerName: 'Nirav Joshi',
     CustomerEmail: 'nirav@gmail.com',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-carson_darrin.png',
+      avatar2,
     ProjectName: 'Hosting Press HTML',
     Status: 'Active',
     StatusBg: '#8BE78B',
@@ -1419,7 +1431,7 @@ export const customersData = [
     ProjectName: 'Elite Admin',
     Status: 'Active',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-fran_perez.png',
+      avatar3,
 
     StatusBg: '#8BE78B',
     Weeks: '11',
@@ -1434,7 +1446,7 @@ export const customersData = [
     ProjectName: 'Real Homes WP Theme',
     Status: 'Pending',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-jie_yan_song.png',
+      avatar4,
     StatusBg: '#FEC90F',
     Weeks: '19',
     Budget: '$24.5k',
@@ -1447,7 +1459,7 @@ export const customersData = [
     ProjectName: 'MedicalPro WP Theme',
     Status: 'Completed',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-anika_visser.png',
+      avatar,
     StatusBg: '#8BE78B',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1460,7 +1472,7 @@ export const customersData = [
     ProjectName: 'Weekly WP Theme',
     Status: 'Cancel',
     CustomerImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
     StatusBg: 'red',
     Weeks: '34',
     Budget: '$16.5k',
@@ -1478,7 +1490,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-nasimiyu_danai.png',
+    avatar3,
   },
   {
     EmployeeID: 2,
@@ -1488,7 +1500,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-nasimiyu_danai.png',
+      avatar3,
   },
   {
     EmployeeID: 3,
@@ -1498,7 +1510,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-iulia_albu.png',
+      avatar4,
   },
   {
     EmployeeID: 4,
@@ -1508,7 +1520,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-siegbert_gottfried.png',
+      avatar2,
   },
   {
     EmployeeID: 5,
@@ -1518,7 +1530,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 4,
@@ -1528,7 +1540,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 5,
@@ -1538,7 +1550,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
   },
   {
     EmployeeID: 1,
@@ -1548,7 +1560,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+    avatar2,
 
   },
   {
@@ -1559,7 +1571,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-nasimiyu_danai.png',
+      avatar3,
   },
   {
     EmployeeID: 3,
@@ -1569,7 +1581,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-iulia_albu.png',
+      avatar4,
   },
   {
     EmployeeID: 4,
@@ -1579,7 +1591,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-siegbert_gottfried.png',
+      avatar2,
   },
   {
     EmployeeID: 5,
@@ -1589,7 +1601,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 4,
@@ -1599,7 +1611,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 5,
@@ -1609,7 +1621,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
   },
   {
     EmployeeID: 1,
@@ -1619,7 +1631,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+    avatar,
   },
   {
     EmployeeID: 2,
@@ -1629,7 +1641,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-nasimiyu_danai.png',
+      avatar3,
   },
   {
     EmployeeID: 3,
@@ -1639,7 +1651,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-iulia_albu.png',
+      avatar4,
   },
   {
     EmployeeID: 4,
@@ -1649,7 +1661,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-siegbert_gottfried.png',
+      avatar2,
   },
   {
     EmployeeID: 5,
@@ -1659,7 +1671,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 4,
@@ -1669,7 +1681,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 5,
@@ -1679,7 +1691,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
   },
   {
     EmployeeID: 1,
@@ -1689,7 +1701,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+    avatar2,
 
   },
   {
@@ -1700,7 +1712,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-nasimiyu_danai.png',
+      avatar3,
   },
   {
     EmployeeID: 3,
@@ -1710,7 +1722,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-iulia_albu.png',
+      avatar4,
   },
   {
     EmployeeID: 4,
@@ -1720,7 +1732,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-siegbert_gottfried.png',
+      avatar2,
   },
   {
     EmployeeID: 5,
@@ -1730,7 +1742,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 4,
@@ -1740,7 +1752,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 5,
@@ -1750,7 +1762,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
   },
   {
     EmployeeID: 1,
@@ -1760,7 +1772,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+    avatar2,
 
   },
   {
@@ -1771,7 +1783,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-nasimiyu_danai.png',
+      avatar3,
   },
   {
     EmployeeID: 3,
@@ -1781,7 +1793,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-iulia_albu.png',
+      avatar4,
   },
   {
     EmployeeID: 4,
@@ -1791,7 +1803,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-siegbert_gottfried.png',
+      avatar2,
   },
   {
     EmployeeID: 5,
@@ -1801,7 +1813,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 4,
@@ -1811,7 +1823,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 5,
@@ -1821,7 +1833,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
   },
   {
     EmployeeID: 1,
@@ -1831,7 +1843,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+    avatar2,
 
   },
   {
@@ -1842,7 +1854,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-nasimiyu_danai.png',
+      avatar3,
   },
   {
     EmployeeID: 3,
@@ -1852,7 +1864,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-iulia_albu.png',
+      avatar4,
   },
   {
     EmployeeID: 4,
@@ -1862,7 +1874,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-siegbert_gottfried.png',
+      avatar2,
   },
   {
     EmployeeID: 5,
@@ -1872,7 +1884,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 4,
@@ -1882,7 +1894,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 5,
@@ -1892,7 +1904,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
   },
   {
     EmployeeID: 1,
@@ -1902,7 +1914,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+    avatar2,
 
   },
   {
@@ -1913,7 +1925,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-nasimiyu_danai.png',
+      avatar3,
   },
   {
     EmployeeID: 3,
@@ -1923,7 +1935,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-iulia_albu.png',
+      avatar4,
   },
   {
     EmployeeID: 4,
@@ -1933,7 +1945,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-siegbert_gottfried.png',
+      avatar2,
   },
   {
     EmployeeID: 5,
@@ -1943,7 +1955,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 4,
@@ -1953,7 +1965,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 5,
@@ -1963,7 +1975,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
   },
   {
     EmployeeID: 1,
@@ -1973,7 +1985,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+    avatar2,
 
   },
   {
@@ -1984,7 +1996,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-nasimiyu_danai.png',
+      avatar3,
   },
   {
     EmployeeID: 3,
@@ -1994,7 +2006,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-iulia_albu.png',
+      avatar4,
   },
   {
     EmployeeID: 4,
@@ -2004,7 +2016,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-siegbert_gottfried.png',
+      avatar2,
   },
   {
     EmployeeID: 5,
@@ -2014,7 +2026,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 4,
@@ -2024,7 +2036,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 5,
@@ -2034,7 +2046,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
   },
   {
     EmployeeID: 1,
@@ -2044,7 +2056,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+    avatar2,
 
   },
   {
@@ -2055,7 +2067,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-nasimiyu_danai.png',
+      avatar3,
   },
   {
     EmployeeID: 3,
@@ -2065,7 +2077,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-iulia_albu.png',
+      avatar4,
   },
   {
     EmployeeID: 4,
@@ -2075,7 +2087,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-siegbert_gottfried.png',
+      avatar2,
   },
   {
     EmployeeID: 5,
@@ -2085,7 +2097,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 4,
@@ -2095,7 +2107,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-penjani_inyene.png',
+      avatar,
   },
   {
     EmployeeID: 5,
@@ -2105,7 +2117,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/avatars/avatar-miron_vitold.png',
+      avatar2,
   },
 ];
 
@@ -2120,7 +2132,7 @@ export const ordersData = [
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s2.3260a3b5.jpg',
+      product6,
   },
   {
     OrderID: 345653,
@@ -2131,7 +2143,7 @@ export const ordersData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s1.69341801.jpg',
+      product5,
   },
   {
     OrderID: 390457,
@@ -2142,7 +2154,7 @@ export const ordersData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s3.323ebcbe.jpg',
+      product7,
   },
   {
     OrderID: 893486,
@@ -2153,7 +2165,7 @@ export const ordersData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s4.f4c5d8f9.jpg',
+      product4,
   },
   {
     OrderID: 748975,
@@ -2164,7 +2176,7 @@ export const ordersData = [
     Status: 'rejected',
     StatusBg: 'red',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_1.png',
+    product1,
   },
   {
     OrderID: 94757,
@@ -2175,7 +2187,7 @@ export const ordersData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_2.png',
+      product2,
   },
   {
     OrderID: 944895,
@@ -2186,7 +2198,7 @@ export const ordersData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_5.png',
+      product3,
   },
   {
     OrderID: 845954,
@@ -2197,7 +2209,7 @@ export const ordersData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s4.f4c5d8f9.jpg',
+      product4,
   },
   {
     OrderID: 845954,
@@ -2264,7 +2276,7 @@ export const ordersData = [
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s2.3260a3b5.jpg',
+      product6,
   },
   {
     OrderID: 345653,
@@ -2275,7 +2287,7 @@ export const ordersData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s1.69341801.jpg',
+      product5,
   },
   {
     OrderID: 390457,
@@ -2286,7 +2298,7 @@ export const ordersData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s3.323ebcbe.jpg',
+      product7,
   },
   {
     OrderID: 893486,
@@ -2297,7 +2309,7 @@ export const ordersData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s4.f4c5d8f9.jpg',
+      product4,
   },
   {
     OrderID: 748975,
@@ -2308,7 +2320,7 @@ export const ordersData = [
     Status: 'rejected',
     StatusBg: 'red',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_1.png',
+      product1,
   },
   {
     OrderID: 94757,
@@ -2319,7 +2331,7 @@ export const ordersData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_2.png',
+      product2,
   },
   {
     OrderID: 944895,
@@ -2330,7 +2342,7 @@ export const ordersData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_5.png',
+      product3,
   },
   {
     OrderID: 845954,
@@ -2341,7 +2353,7 @@ export const ordersData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s4.f4c5d8f9.jpg',
+      product4,
   },
   {
     OrderID: 845954,
@@ -2408,7 +2420,7 @@ export const ordersData = [
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s2.3260a3b5.jpg',
+      product6,
   },
   {
     OrderID: 345653,
@@ -2419,7 +2431,7 @@ export const ordersData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s1.69341801.jpg',
+      product5,
   },
   {
     OrderID: 390457,
@@ -2430,7 +2442,7 @@ export const ordersData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s3.323ebcbe.jpg',
+      product7,
   },
   {
     OrderID: 893486,
@@ -2441,7 +2453,7 @@ export const ordersData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s4.f4c5d8f9.jpg',
+      product4,
   },
   {
     OrderID: 748975,
@@ -2452,7 +2464,7 @@ export const ordersData = [
     Status: 'rejected',
     StatusBg: 'red',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_1.png',
+      product1,
   },
   {
     OrderID: 94757,
@@ -2463,7 +2475,7 @@ export const ordersData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_2.png',
+      product2,
   },
   {
     OrderID: 944895,
@@ -2474,7 +2486,7 @@ export const ordersData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_5.png',
+      product3,
   },
   {
     OrderID: 845954,
@@ -2485,7 +2497,7 @@ export const ordersData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s4.f4c5d8f9.jpg',
+      product4,
   },
   {
     OrderID: 845954,
@@ -2552,7 +2564,7 @@ export const ordersData = [
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s2.3260a3b5.jpg',
+      product6,
   },
   {
     OrderID: 345653,
@@ -2563,7 +2575,7 @@ export const ordersData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s1.69341801.jpg',
+      product5,
   },
   {
     OrderID: 390457,
@@ -2574,7 +2586,7 @@ export const ordersData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s3.323ebcbe.jpg',
+      product7,
   },
   {
     OrderID: 893486,
@@ -2585,7 +2597,7 @@ export const ordersData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s4.f4c5d8f9.jpg',
+      product4,
   },
   {
     OrderID: 748975,
@@ -2596,7 +2608,7 @@ export const ordersData = [
     Status: 'rejected',
     StatusBg: 'red',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_1.png',
+      product1,
   },
   {
     OrderID: 94757,
@@ -2607,7 +2619,7 @@ export const ordersData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_2.png',
+      product2,
   },
   {
     OrderID: 944895,
@@ -2618,7 +2630,7 @@ export const ordersData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_5.png',
+      product3,
   },
   {
     OrderID: 845954,
@@ -2629,7 +2641,7 @@ export const ordersData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s4.f4c5d8f9.jpg',
+      product4,
   },
   {
     OrderID: 845954,
@@ -2696,7 +2708,7 @@ export const ordersData = [
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s2.3260a3b5.jpg',
+      product6,
   },
   {
     OrderID: 345653,
@@ -2707,7 +2719,7 @@ export const ordersData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s1.69341801.jpg',
+      product5,
   },
   {
     OrderID: 390457,
@@ -2718,7 +2730,7 @@ export const ordersData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s3.323ebcbe.jpg',
+      product7,
   },
   {
     OrderID: 893486,
@@ -2729,7 +2741,7 @@ export const ordersData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s4.f4c5d8f9.jpg',
+      product4,
   },
   {
     OrderID: 748975,
@@ -2740,7 +2752,7 @@ export const ordersData = [
     Status: 'rejected',
     StatusBg: 'red',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_1.png',
+      product1,
   },
   {
     OrderID: 94757,
@@ -2751,7 +2763,7 @@ export const ordersData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_2.png',
+      product2,
   },
   {
     OrderID: 944895,
@@ -2762,7 +2774,7 @@ export const ordersData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     ProductImage:
-      'https://material-kit-pro-react.devias.io/static/mock-images/products/product_5.png',
+      product3,
   },
   {
     OrderID: 845954,
@@ -2773,7 +2785,7 @@ export const ordersData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     ProductImage:
-      'https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/s4.f4c5d8f9.jpg',
+      product4,
   },
   {
     OrderID: 845954,
