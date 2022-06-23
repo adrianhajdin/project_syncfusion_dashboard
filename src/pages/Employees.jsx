@@ -1,5 +1,5 @@
 import React from 'react';
-import { GridComponent, Inject, ColumnsDirective, ColumnDirective, Search, Page } from '@syncfusion/ej2-react-grids';
+import { GridComponent, Inject, ColumnsDirective, ColumnDirective, Search, Page, Toolbar } from '@syncfusion/ej2-react-grids';
 
 import { employeesData, employeesGrid } from '../data/dummy';
 import { Header } from '../components';
@@ -25,7 +25,7 @@ const Employees = () => {
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
           {employeesGrid.map((item, index) => <ColumnDirective key={index} {...item} />)}
         </ColumnsDirective>
-        <Inject services={[Search, Page]} />
+        <Inject services={[Search, Page, Toolbar]} />
 
       </GridComponent>
     </div>
