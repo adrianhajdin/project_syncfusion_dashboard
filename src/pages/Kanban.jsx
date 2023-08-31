@@ -20,7 +20,7 @@ const Kanban = () => {
       {/* Card content */}
       <div className="flex flex-1 items-center ml-2">
         {/* Card content */}
-        <div className="flex-1 h-full">
+        <div className="flex-1 h-full flex flex-col justify-between space-y-4">
           {/* Card top */}
           <div className="flex justify-between items-center">
             <h1 className="text-m font-semibold">{cardData.Title}</h1>
@@ -31,7 +31,7 @@ const Kanban = () => {
           <div>{cardData.Summary}</div>
 
           {/* Card bottom */}
-          <div className="flex gap-4">
+          <div className="flex gap-2">
             {medicalproBranding.teams.map((item) => (
               <p
                 key={item.name}
