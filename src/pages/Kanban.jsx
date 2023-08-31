@@ -1,6 +1,6 @@
 import React from 'react';
 import { KanbanComponent, ColumnsDirective, ColumnDirective } from '@syncfusion/ej2-react-kanban';
-import { kanbanData, kanbanGrid } from '../data/dummy';
+import { kanbanData, kanbanGrid, medicalproBranding } from '../data/dummy';
 import { Header, Button } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
 
@@ -14,31 +14,57 @@ const Kanban = () => {
   };
 
   const cardTemplate = (cardData) => (
-    <div className="flex justify-between items-center m-2 p-1 max-w-10">
-      <div>
-        <h1 className="text-m font-semibold">{cardData.Title}</h1>
-        <div>{cardData.Summary}</div>
-      </div>
-      <div className="mt-3 flex flex-col items-end space-y-1">
-        <div className="mb-2 p-0">
-          <Button
-            color="white"
-            bgColor={currentColor}
-            text="Flow"
-            borderRadius="10px"
-            onClick={() => handleButtonClick(cardData)}
-            height={10}
-          />
+    <div className="flex justify-between h-40">
+      {/* Status bar */}
+      <div className="w-3 h-full" style={{ backgroundColor: 'green' }} />
+      {/* Card content */}
+      <div className="flex flex-1 items-center ml-2">
+        {/* Card content */}
+        <div className="flex-1 h-full">
+          {/* Card top */}
+          <div className="flex justify-between items-center">
+            <h1 className="text-m font-semibold">{cardData.Title}</h1>
+            <p>{cardData.Date}</p>
+          </div>
+
+          {/* Card middle */}
+          <div>{cardData.Summary}</div>
+
+          {/* Card bottom */}
+          <div className="flex gap-4">
+            {medicalproBranding.teams.map((item) => (
+              <p
+                key={item.name}
+                style={{ background: item.color }}
+                className="cursor-pointer hover:drop-shadow-xl text-white py-0.5 px-3 rounded-lg text-xs"
+              >
+                {item.name}
+              </p>
+            ))}
+          </div>
         </div>
-        <div>
-          <Button
-            color="white"
-            bgColor={currentColor}
-            text="View"
-            borderRadius="10px"
-            onClick={() => handleButtonClick(cardData)}
-            height={10}
-          />
+        {/* Buttons */}
+        <div className="mt-3 flex flex-col items-end space-y-1 ">
+          <div className="mb-2 p-0">
+            <Button
+              color="white"
+              bgColor={currentColor}
+              text="Flow"
+              borderRadius="10px"
+              onClick={() => handleButtonClick(cardData)}
+              height={10}
+            />
+          </div>
+          <div>
+            <Button
+              color="white"
+              bgColor={currentColor}
+              text="View"
+              borderRadius="10px"
+              onClick={() => handleButtonClick(cardData)}
+              height={10}
+            />
+          </div>
         </div>
       </div>
     </div>

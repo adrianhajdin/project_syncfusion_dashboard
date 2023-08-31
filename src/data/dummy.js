@@ -763,11 +763,11 @@ export const medicalproBranding = {
   ],
   teams: [
     {
-      name: 'Bootstrap',
+      name: 'tag 1: test',
       color: 'orange',
     },
     {
-      name: 'Angular',
+      name: 'tag 2: wow!',
       color: '#FB9678',
     },
   ],
@@ -3210,6 +3210,7 @@ export const kanbanData = [
     RankId: 1,
     Color: '#02897B',
     ClassName: 'e-story, e-low, e-nancy-davloio',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 2',
@@ -3224,6 +3225,7 @@ export const kanbanData = [
     RankId: 1,
     Color: '#673AB8',
     ClassName: 'e-improvement, e-normal, e-andrew-fuller',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 3',
@@ -3238,6 +3240,7 @@ export const kanbanData = [
     RankId: 2,
     Color: '#1F88E5',
     ClassName: 'e-others, e-critical, e-janet-leverling',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 4',
@@ -3252,6 +3255,7 @@ export const kanbanData = [
     RankId: 2,
     Color: '#E64A19',
     ClassName: 'e-bug, e-release, e-janet-leverling',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 5',
@@ -3266,6 +3270,7 @@ export const kanbanData = [
     RankId: 1,
     Color: '#E64A19',
     ClassName: 'e-bug, e-low, e-steven-walker',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 6',
@@ -3280,6 +3285,7 @@ export const kanbanData = [
     RankId: 1,
     Color: '#673AB8',
     ClassName: 'e-improvement, e-low, e-robert-king',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 7',
@@ -3294,6 +3300,7 @@ export const kanbanData = [
     RankId: 2,
     Color: '#E64A19',
     ClassName: 'e-bug, e-release, e-nancy-davloio',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 8',
@@ -3308,6 +3315,7 @@ export const kanbanData = [
     RankId: 3,
     Color: '#02897B',
     ClassName: 'e-story, e-low, e-margaret-hamilt',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 9',
@@ -3322,6 +3330,7 @@ export const kanbanData = [
     RankId: 1,
     Color: '#02897B',
     ClassName: 'e-story, e-high, e-steven-walker',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 10',
@@ -3336,6 +3345,7 @@ export const kanbanData = [
     RankId: 4,
     Color: '#02897B',
     ClassName: 'e-story, e-high, e-margaret-hamilt',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 11',
@@ -3350,6 +3360,7 @@ export const kanbanData = [
     RankId: 4,
     Color: '#E64A19',
     ClassName: 'e-bug, e-critical, e-janet-leverling',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 12',
@@ -3364,6 +3375,7 @@ export const kanbanData = [
     RankId: 4,
     Color: '#02897B',
     ClassName: 'e-story, e-normal, e-janet-leverling',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 13',
@@ -3378,6 +3390,7 @@ export const kanbanData = [
     RankId: 4,
     Color: '#02897B',
     ClassName: 'e-story, e-release, e-andrew-fuller',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 14',
@@ -3392,6 +3405,7 @@ export const kanbanData = [
     RankId: 1,
     Color: '#02897B',
     ClassName: 'e-story, e-low, e-margaret-hamilt',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 15',
@@ -3406,6 +3420,7 @@ export const kanbanData = [
     RankId: 5,
     Color: '#02897B',
     ClassName: 'e-story, e-high, e-margaret-hamilt',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 16',
@@ -3420,6 +3435,7 @@ export const kanbanData = [
     RankId: 6,
     Color: '#1F88E5',
     ClassName: 'e-others, e-release, e-steven-walker',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 17',
@@ -3434,6 +3450,7 @@ export const kanbanData = [
     RankId: 7,
     Color: '#02897B',
     ClassName: 'e-story, e-release, e-janet-leverling',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 18',
@@ -3448,6 +3465,7 @@ export const kanbanData = [
     RankId: 1,
     Color: '#02897B',
     ClassName: 'e-story, e-critical, e-nancy-davloio',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 19',
@@ -3462,6 +3480,7 @@ export const kanbanData = [
     RankId: 5,
     Color: '#02897B',
     ClassName: 'e-story, e-normal, e-nancy-davloio',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 20',
@@ -3476,6 +3495,7 @@ export const kanbanData = [
     RankId: 5,
     Color: '#673AB8',
     ClassName: 'e-improvement, e-low, e-andrew-fuller',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 21',
@@ -3490,6 +3510,7 @@ export const kanbanData = [
     RankId: 5,
     Color: '#e91e64',
     ClassName: 'e-epic, e-high, e-nancy-davloio',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 22',
@@ -3504,6 +3525,7 @@ export const kanbanData = [
     RankId: 6,
     Color: '#1F88E5',
     ClassName: 'e-others, e-high, e-steven-walker',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 23',
@@ -3518,6 +3540,7 @@ export const kanbanData = [
     RankId: 6,
     Color: '#E64A19',
     ClassName: 'e-bug, e-low, e-janet-leverling',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 24',
@@ -3532,6 +3555,7 @@ export const kanbanData = [
     RankId: 1,
     Color: '#E64A19',
     ClassName: 'e-bug, e-critical, e-steven-walker',
+    Date: '2021-01-01T00:00:00.000Z',
   },
   {
     Id: 'Task 25',
@@ -3546,6 +3570,7 @@ export const kanbanData = [
     RankId: 2,
     Color: '#E64A19',
     ClassName: 'e-bug, e-release, e-nancy-davloio',
+    Date: '2021-01-01T00:00:00.000Z',
   },
 ];
 
