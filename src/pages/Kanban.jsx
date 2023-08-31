@@ -3,7 +3,6 @@ import { KanbanComponent, ColumnsDirective, ColumnDirective } from '@syncfusion/
 import { kanbanData, kanbanGrid } from '../data/dummy';
 import { Header, Button } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
-import { adjustColorBrightness } from '../services/ColorManipulatorService';
 
 const Kanban = () => {
   const { currentColor } = useStateContext();
@@ -14,12 +13,10 @@ const Kanban = () => {
     // You can add your custom logic here
   };
 
-  const darkerColor = adjustColorBrightness(currentColor, -20);
-  // Define a template for the Kanban card content
   const cardTemplate = (cardData) => (
-    <div className="flex justify-between items-center m-2 rounded-2xl md:w-400 p-4" style={{ backgroundColor: darkerColor }}>
+    <div className="flex justify-between items-center m-2 p-1 max-w-10">
       <div>
-        <h1>{cardData.Title}</h1>
+        <h1 className="text-m font-semibold">{cardData.Title}</h1>
         <div>{cardData.Summary}</div>
       </div>
       <div className="mt-3 flex flex-col items-end space-y-1">
@@ -48,13 +45,13 @@ const Kanban = () => {
   );
 
   return (
-    <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
+    <div className="m-2 mt-24 p-2 bg-white rounded-3xl">
       <Header category="App" title="Kanban" />
       <KanbanComponent
         id="kanban"
         keyField="Status"
         dataSource={kanbanData}
-        cardSettings={{ template: cardTemplate }}
+        cardSettings={{ template: cardTemplate, contentField: 'Summary', headerField: 'Id' }}
       >
         <ColumnsDirective>
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
