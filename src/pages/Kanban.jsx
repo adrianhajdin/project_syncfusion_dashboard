@@ -36,7 +36,7 @@ const Kanban = () => {
               <p
                 key={item.name}
                 style={{ background: item.color }}
-                className="cursor-pointer hover:drop-shadow-xl text-white py-0.5 px-3 rounded-lg text-xs"
+                className="cursor-pointer hover:drop-shadow-xl text-white py-0.5 px-3 rounded-lg text-xs mb-3"
               >
                 {item.name}
               </p>
