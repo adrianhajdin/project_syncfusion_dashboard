@@ -24,6 +24,16 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "@syncfusion/ej2-base": "22.2.10",
+    "@syncfusion/ej2-navigations": "22.2.11",
+    "@syncfusion/ej2-react-base": "22.2.5",
+    "@syncfusion/ej2-react-navigations": "22.2.11",
+    "@syncfusion/ej2-lists": "22.2.11",
+    "@syncfusion/ej2-documenteditor": "22.2.11",
+    "@syncfusion/ej2-buttons": "22.2.9",
+    "@syncfusion/ej2-splitbuttons": "22.2.8",
+    "@syncfusion/ej2-pivotview": "22.2.11",
+    "@syncfusion/ej2-schedule": "22.2.11"
   }
 }
