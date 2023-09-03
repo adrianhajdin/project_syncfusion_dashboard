@@ -91,7 +91,6 @@ const SidebarWithMenu = () => {
 
     return (
         <div id="menu-wrapper" className="control-section">
-		<div className="t">q</div>
             <div id="sidebarmenu">
                 {/* header-section  declaration */}
                 <div>

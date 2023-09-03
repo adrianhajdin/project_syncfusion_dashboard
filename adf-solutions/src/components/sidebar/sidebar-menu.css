@@ -1,9 +1,4 @@
 /* Specifies the sample level styles for the sidebar*/
-
-.t{
-	background-color: orange;
-}
-
 #menu-wrapper .icon-menu {
     font-size: 24px;
 }
@@ -363,4 +358,9 @@
 .material .e-folder-name,
 .material-dark .e-folder-name {
     margin-top: 1px;
+}
+
+#menuSidebar{
+	overflow-y: hidden; /* Hide vertical scrollbar */
+	overflow-x: hidden; /* Hide horizontal scrollbar */
 }
