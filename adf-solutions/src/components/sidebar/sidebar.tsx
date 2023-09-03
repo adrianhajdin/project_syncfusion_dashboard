@@ -9,11 +9,10 @@ import {
 import { TextBoxComponent } from "@syncfusion/ej2-react-inputs";
 import "./sidebar.css";
 type SidebarProps = {
-	onClick: (componentName : string) => void;
-	selectedComponent: any;
+  onClick: (componentName: string) => void;
 };
 
-const Sidebar = ({ onClick, selectedComponent }: SidebarProps) => {
+const Sidebar = ({ onClick }: SidebarProps) => {
   const sidebarobj = useRef<SidebarComponent>(null);
   const data: { [key: string]: unknown }[] = [
     {
@@ -154,14 +153,14 @@ const Sidebar = ({ onClick, selectedComponent }: SidebarProps) => {
     // Logic to determine which component to display based on nodeId
     switch (nodeId!.nodeData.id) {
       case "01":
-		onClick("kanban")
+        onClick("kanban");
         break;
       case "02":
         // setSelectedComponent("deployment");
         break;
       // Add more cases for other nodes...
       default:
-        // setSelectedComponent("default");
+      // setSelectedComponent("default");
     }
   };
 
@@ -171,19 +170,8 @@ const Sidebar = ({ onClick, selectedComponent }: SidebarProps) => {
       id="responsive-wrapper"
     >
       <div id="reswrapper">
-        {/* header-section  declaration */}
-        <div>
-          <ToolbarComponent id="resToolbar" clicked={toolbarCliked.bind(this)}>
-            <ItemsDirective>
-              <ItemDirective
-                prefixIcon="e-tbar-menu-icon tb-icons"
-                tooltipText="Menu"
-              ></ItemDirective>
-              <ItemDirective template={folderEle}></ItemDirective>
-            </ItemsDirective>
-          </ToolbarComponent>
-        </div>
-        {/* end of header-section */}
+		{/* toggle the sidebar */}
+		<button onClick={toolbarCliked.bind(this)}>Toggle Sidebar</button>	
         <SidebarComponent
           id="sideTree"
           className="sidebar-treeview"
@@ -213,7 +201,6 @@ const Sidebar = ({ onClick, selectedComponent }: SidebarProps) => {
           </div>
         </SidebarComponent>
         {/* end of sidebar element */}
-        
       </div>
     </div>
   );

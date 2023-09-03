@@ -329,7 +329,6 @@
 }
 
 .full-screen-wrapper {
-	position: fixed; /* Fixed positioning */
 	top: 0;
 	right: 0;
 	bottom: 0;

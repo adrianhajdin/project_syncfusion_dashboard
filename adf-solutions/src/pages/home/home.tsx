@@ -13,10 +13,7 @@ function Home() {
   return (
     <>
       <Sidebar onClick={handleState} selectedComponent={selectedComponent}/>
-      <div className="content">
-        {selectedComponent === "kanban" && <Kanban />} {/* Render the selected component */}
-        {/* Add more conditions for other components... */}
-      </div>
+        {selectedComponent === "kanban" && <Kanban />} 
     </>
   );
 }
