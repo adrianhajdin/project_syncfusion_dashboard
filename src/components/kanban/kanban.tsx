@@ -1,4 +1,5 @@
 import { extend, addClass } from '@syncfusion/ej2-base';
+import { DataManager } from '@syncfusion/ej2-data'
 import { KanbanComponent, ColumnsDirective, ColumnDirective, DialogFieldsModel, CardRenderedEventArgs } from "@syncfusion/ej2-react-kanban";
 import * as dataSource from './datasource.json';
 import './kanban.css';
@@ -8,7 +9,7 @@ import './kanban.css';
  */
 
 function Kanban (this: unknown) {
-    const data: Object = extend([], (dataSource as { [key: string]: Object }).cardData, undefined, true) as Object;
+    const data: Record<string, any>[] | DataManager | undefined = extend([], (dataSource as { [key: string]: Object }).cardData, true) as Record<string, any>[] | DataManager | undefined ;
     const fields: DialogFieldsModel[] = [
         { text: 'ID', key: 'Title', type: 'TextBox' },
         { key: 'Status', type: 'DropDown' },
