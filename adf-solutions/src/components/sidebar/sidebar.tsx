@@ -8,9 +8,12 @@ import {
 } from "@syncfusion/ej2-react-navigations";
 import { TextBoxComponent } from "@syncfusion/ej2-react-inputs";
 import "./sidebar.css";
-import Kanban from "../kanban/kanban";
-const Sidebar = () => {
-  const [selectedComponent, setSelectedComponent] = useState("kanban");
+type SidebarProps = {
+	onClick: (componentName : string) => void;
+	selectedComponent: any;
+};
+
+const Sidebar = ({ onClick, selectedComponent }: SidebarProps) => {
   const sidebarobj = useRef<SidebarComponent>(null);
   const data: { [key: string]: unknown }[] = [
     {
@@ -149,17 +152,16 @@ const Sidebar = () => {
   // Inside your Sidebar component
   const handleNodeClick = (nodeId: unknown) => {
     // Logic to determine which component to display based on nodeId
-	console.log(nodeId.nodeData.id);
-    switch (nodeId.nodeData.id) {
+    switch (nodeId!.nodeData.id) {
       case "01":
-        setSelectedComponent("kanban");
+		onClick("kanban")
         break;
       case "02":
-        setSelectedComponent("deployment");
+        // setSelectedComponent("deployment");
         break;
       // Add more cases for other nodes...
       default:
-        setSelectedComponent("default");
+        // setSelectedComponent("default");
     }
   };
 
@@ -211,13 +213,7 @@ const Sidebar = () => {
           </div>
         </SidebarComponent>
         {/* end of sidebar element */}
-        {/* .main-sidebar-content declaration */}
-        <div className="main-sidebar-content" id="main-text">
-          <div className="sidebar-content">
-            {selectedComponent === "kanban" && <Kanban />}
-            {/* Add more conditions for other components... */}
-          </div>
-        </div>
+        
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import './kanban.css';
  * Kanban Overview sample
  */
 
-function Kanban (this: any) {
+function Kanban (this: unknown) {
     const data: Object = extend([], (dataSource as { [key: string]: Object }).cardData, undefined, true) as Object;
     const fields: DialogFieldsModel[] = [
         { text: 'ID', key: 'Title', type: 'TextBox' },
