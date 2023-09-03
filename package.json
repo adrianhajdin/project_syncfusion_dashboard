@@ -15,7 +15,8 @@
     "@syncfusion/ej2-react-inputs": "^22.2.9",
     "@syncfusion/ej2-react-kanban": "^22.2.9",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "reactflow": "^11.8.3"
   },
   "devDependencies": {
     "@syncfusion/ej2-base": "^22.2.10",

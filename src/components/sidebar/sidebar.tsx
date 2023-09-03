@@ -3,6 +3,7 @@ import { SidebarComponent } from "@syncfusion/ej2-react-navigations";
 import { TreeViewComponent } from "@syncfusion/ej2-react-navigations";
 import { TextBoxComponent } from "@syncfusion/ej2-react-inputs";
 import "./sidebar.css";
+import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
 
 type SidebarProps = {
   onClick: (componentName: string) => void;
@@ -157,7 +158,7 @@ const Sidebar = ({ onClick, onToolbarPosChanged }: SidebarProps) => {
         onClick("kanban");
         break;
       case "02":
-        // setSelectedComponent("deployment");
+        onClick("flow");
         break;
       // Add more cases for other nodes...
       default:
@@ -172,7 +173,15 @@ const Sidebar = ({ onClick, onToolbarPosChanged }: SidebarProps) => {
     >
       <div id="reswrapper">
         {/* toggle the sidebar */}
-        <button onClick={toolbarCliked.bind(this)}>Toggle Sidebar</button>
+        <div>
+          <ButtonComponent
+            onClick={toolbarCliked.bind(this)}
+            className="toggle-sidebar-button"
+            cssClass="e-flat e-primary"
+          >
+            Toggle Sidebar
+          </ButtonComponent>
+        </div>
         <SidebarComponent
           id="sideTree"
           className="sidebar-treeview"

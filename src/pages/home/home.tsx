@@ -2,6 +2,7 @@ import { useState } from "react";
 import Sidebar from "../../components/sidebar/sidebar";
 import "./home.css";
 import Kanban from "../../components/kanban/kanban";
+import Flow from "../../components/flow/flow";
 
 function Home() {
   const [selectedComponent, setSelectedComponent] = useState("default"); // Initialize with the default component
@@ -22,6 +23,7 @@ function Home() {
     <div className={`home-wrapper ${isSidebarOpen ? 'shifted-content' : 'reset-content'}`}>
       <Sidebar onClick={changeComponent} onToolbarPosChanged={handleSideBarPosition}/>
       {selectedComponent === "kanban" && <Kanban />}
+      {selectedComponent === "flow" && <Flow />}
     </div>
   );
 }
