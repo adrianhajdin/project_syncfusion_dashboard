@@ -1,0 +1,12 @@
+/* Add a CSS class for shifting content when the sidebar is open */
+.shifted-content {
+	margin-left: 290px; /* Adjust this value to match your sidebar width */
+	transition: margin-left 0.3s; /* Add a transition for smooth animation */
+  }
+  
+  /* Add a CSS class to reset the margin when the sidebar is closed */
+  .reset-content {
+	margin-left: 0;
+	transition: margin-left 0.3s;
+  }
+  
