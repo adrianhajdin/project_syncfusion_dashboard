@@ -1,18 +1,14 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { SidebarComponent } from "@syncfusion/ej2-react-navigations";
-import {
-  TreeViewComponent,
-  ToolbarComponent,
-  ItemsDirective,
-  ItemDirective,
-} from "@syncfusion/ej2-react-navigations";
+import { TreeViewComponent} from "@syncfusion/ej2-react-navigations";
 import { TextBoxComponent } from "@syncfusion/ej2-react-inputs";
 import "./sidebar.css";
 type SidebarProps = {
   onClick: (componentName: string) => void;
+  onToolbarPosChanged: (componentName: boolean | undefined) => void;
 };
 
-const Sidebar = ({ onClick }: SidebarProps) => {
+const Sidebar = ({ onClick, onToolbarPosChanged }: SidebarProps) => {
   const sidebarobj = useRef<SidebarComponent>(null);
   const data: { [key: string]: unknown }[] = [
     {
@@ -141,11 +137,9 @@ const Sidebar = ({ onClick }: SidebarProps) => {
     child: "nodeChild",
     iconCss: "iconCss",
   };
-  const folderEle: string =
-    '<div class= "e-folder"><div class= "e-folder-name">Navigation Pane</div></div>';
-  //toggle the sidebar
   const toolbarCliked = (): void => {
     sidebarobj.current!.toggle();
+    onToolbarPosChanged(sidebarobj.current?.isOpen);
   };
 
   // Inside your Sidebar component
@@ -170,8 +164,8 @@ const Sidebar = ({ onClick }: SidebarProps) => {
       id="responsive-wrapper"
     >
       <div id="reswrapper">
-		{/* toggle the sidebar */}
-		<button onClick={toolbarCliked.bind(this)}>Toggle Sidebar</button>	
+        {/* toggle the sidebar */}
+        <button onClick={toolbarCliked.bind(this)}>Toggle Sidebar</button>
         <SidebarComponent
           id="sideTree"
           className="sidebar-treeview"
