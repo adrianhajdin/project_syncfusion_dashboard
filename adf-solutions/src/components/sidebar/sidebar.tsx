@@ -8,7 +8,7 @@ import {
 } from "@syncfusion/ej2-react-navigations";
 import { TextBoxComponent } from "@syncfusion/ej2-react-inputs";
 import "./sidebar.css";
-import KanbanComponent from "../kanban/kanban";
+import Kanban from "../kanban/kanban";
 const Sidebar = () => {
   const [selectedComponent, setSelectedComponent] = useState("kanban");
   const sidebarobj = useRef<SidebarComponent>(null);
@@ -214,7 +214,7 @@ const Sidebar = () => {
         {/* .main-sidebar-content declaration */}
         <div className="main-sidebar-content" id="main-text">
           <div className="sidebar-content">
-            {selectedComponent === "kanban" && <KanbanComponent />}
+            {selectedComponent === "kanban" && <Kanban />}
             {/* Add more conditions for other components... */}
           </div>
         </div>
