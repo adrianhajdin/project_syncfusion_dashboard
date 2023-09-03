@@ -66,11 +66,13 @@ function Kanban(this: unknown) {
         </div>
 
         <div className="buttons flex-1 m-1">
-          <div className="">
-            <ButtonComponent cssClass="e-primary">View</ButtonComponent>
-          </div>
           <div>
-            <ButtonComponent cssClass="e-outline">FlowS</ButtonComponent>
+            <div>
+              <ButtonComponent cssClass="e-primary">View</ButtonComponent>
+            </div>
+            <div>
+              <ButtonComponent cssClass="e-outline">Flow</ButtonComponent>
+            </div>
           </div>
         </div>
       </div>
