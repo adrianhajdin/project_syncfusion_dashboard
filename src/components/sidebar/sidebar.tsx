@@ -1,12 +1,19 @@
 import { useRef } from "react";
 import { SidebarComponent } from "@syncfusion/ej2-react-navigations";
-import { TreeViewComponent} from "@syncfusion/ej2-react-navigations";
+import { TreeViewComponent } from "@syncfusion/ej2-react-navigations";
 import { TextBoxComponent } from "@syncfusion/ej2-react-inputs";
 import "./sidebar.css";
+
 type SidebarProps = {
   onClick: (componentName: string) => void;
   onToolbarPosChanged: (componentName: boolean | undefined) => void;
 };
+
+interface NodeId {
+  nodeData: {
+    id: string;
+  };
+}
 
 const Sidebar = ({ onClick, onToolbarPosChanged }: SidebarProps) => {
   const sidebarobj = useRef<SidebarComponent>(null);
@@ -143,7 +150,7 @@ const Sidebar = ({ onClick, onToolbarPosChanged }: SidebarProps) => {
   };
 
   // Inside your Sidebar component
-  const handleNodeClick = (nodeId: unknown) => {
+  const handleNodeClick = (nodeId: NodeId) => {
     // Logic to determine which component to display based on nodeId
     switch (nodeId!.nodeData.id) {
       case "01":
