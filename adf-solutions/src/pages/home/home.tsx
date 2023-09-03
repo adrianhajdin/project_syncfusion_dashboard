@@ -1,13 +1,10 @@
-import SidebarWithMenu from '../../components/sidebar/sidebar-menu'
+import Sidebar from '../../components/sidebar/sidebar'
 import './home.css'
 
 function Home() {
   return (
     <>
-	<SidebarWithMenu></SidebarWithMenu>
-     <h1 className="text-2xl font-bold underline">
-		Hello worsdadswald!
-	</h1>
+	<Sidebar></Sidebar>
     </>
   )
 }
