@@ -15,68 +15,71 @@ import "./kanban.css";
  * Kanban Overview sample
  */
 
+const fields: DialogFieldsModel[] = [
+  { text: "ID", key: "Title", type: "TextBox" },
+  { key: "Status", type: "DropDown" },
+  { key: "Assignee", type: "DropDown" },
+  { key: "RankId", type: "TextBox" },
+  { key: "Summary", type: "TextArea" },
+];
+
+function columnTemplate(props: { [key: string]: string }): JSX.Element {
+  return (
+    <div className="header-template-wrap">
+      <div className={"header-icon e-icons " + props.keyField}></div>
+      <div className="header-text">{props.headerText}</div>
+    </div>
+  );
+}
+
+function cardTemplate(props: { [key: string]: string }): JSX.Element {
+  return (
+    <div className="card-template flex">
+      <div>
+        <div className="e-card-header flex-1">
+          <div className="e-card-header-caption">
+            <div className="e-card-header-title e-tooltip-text">
+              {props.Title}
+            </div>
+          </div>
+        </div>
+        <div className="e-card-content e-tooltip-text">
+          <div className="e-text">{props.Summary}</div>
+        </div>
+        <div className="e-card-custom-footer">
+          {props.Tags.split(",").map((tag: string) => (
+            <div key={tag} className="e-card-tag-field e-tooltip-text">
+              {tag}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="buttons flex-1 m-1">
+        <div>
+          <div>
+            <ButtonComponent cssClass="e-primary">View</ButtonComponent>
+          </div>
+          <div>
+            <ButtonComponent cssClass="e-outline">Flow</ButtonComponent>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Kanban(this: unknown) {
   const data: Record<string, any>[] | DataManager | undefined = extend(
     [],
-    (dataSource as { [key: string]: Object }).cardData,
+    (dataSource as { [key: string]: unknown }).cardData,
     true
   ) as Record<string, any>[] | DataManager | undefined;
-  const fields: DialogFieldsModel[] = [
-    { text: "ID", key: "Title", type: "TextBox" },
-    { key: "Status", type: "DropDown" },
-    { key: "Assignee", type: "DropDown" },
-    { key: "RankId", type: "TextBox" },
-    { key: "Summary", type: "TextArea" },
-  ];
 
   function cardRendered(args: CardRenderedEventArgs): void {
     const val: string = (args.data as { [key: string]: unknown })
       .Priority as string;
     addClass([args.element], val);
-  }
-
-  function columnTemplate(props: { [key: string]: string }): JSX.Element {
-    return (
-      <div className="header-template-wrap">
-        <div className={"header-icon e-icons " + props.keyField}></div>
-        <div className="header-text">{props.headerText}</div>
-      </div>
-    );
-  }
-
-  function cardTemplate(props: { [key: string]: string }): JSX.Element {
-    return (
-      <div className="card-template flex">
-        <div>
-          <div className="e-card-header flex-1">
-            <div className="e-card-header-caption">
-              <div className="e-card-header-title e-tooltip-text">
-                {props.Title}
-              </div>
-            </div>
-          </div>
-          <div className="e-card-content e-tooltip-text">
-            <div className="e-text">{props.Summary}</div>
-          </div>
-          <div className="e-card-custom-footer">
-            {props.Tags.split(",").map((tag: string) => (
-              <div className="e-card-tag-field e-tooltip-text">{tag}</div>
-            ))}
-          </div>
-        </div>
-
-        <div className="buttons flex-1 m-1">
-          <div>
-            <div>
-              <ButtonComponent cssClass="e-primary">View</ButtonComponent>
-            </div>
-            <div>
-              <ButtonComponent cssClass="e-outline">Flow</ButtonComponent>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
   }
 
   return (
