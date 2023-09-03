@@ -18,19 +18,14 @@
     margin-right: 15px;
 }
 
-.kanban-overview.e-kanban.e-rtl .e-card-avatar {
+.kanban-overview.e-kanban.e-rtl .buttons {
     left: 12px;
     right: auto;
 }
 
-.kanban-overview.e-kanban .e-card-avatar {
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    background-color: gainsboro;
-    color: #6b6b6b;
+.kanban-overview.e-kanban .buttons {
+    text-align: right;
     border-radius: 50%;
-    position: absolute;
     right: 12px;
     bottom: 10px;
     font-size: 12px;
@@ -134,3 +129,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
