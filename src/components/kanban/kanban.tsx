@@ -10,6 +10,7 @@ import {
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
 import * as dataSource from "./datasource.json";
 import "./kanban.css";
+import kanbanCard from "../../entities/kanbanCard";
 
 /**
  * Kanban Overview sample
@@ -70,11 +71,7 @@ function cardTemplate(props: { [key: string]: string }): JSX.Element {
 }
 
 function Kanban(this: unknown) {
-  const data: Record<string, any>[] | DataManager | undefined = extend(
-    [],
-    (dataSource as { [key: string]: unknown }).cardData,
-    true
-  ) as Record<string, any>[] | DataManager | undefined;
+	const data: kanbanCard[] = (dataSource as unknown as { [key: string]: kanbanCard[] }).cardData;
 
   function cardRendered(args: CardRenderedEventArgs): void {
     const val: string = (args.data as { [key: string]: unknown })
