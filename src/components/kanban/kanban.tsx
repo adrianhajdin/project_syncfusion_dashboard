@@ -1,5 +1,4 @@
-import { extend, addClass } from "@syncfusion/ej2-base";
-import { DataManager } from "@syncfusion/ej2-data";
+import { addClass } from "@syncfusion/ej2-base";
 import {
   KanbanComponent,
   ColumnsDirective,

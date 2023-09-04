@@ -1,4 +1,4 @@
-class kananbanCard {
+class kanbanCard {
     Id: string;
     Title: string;
     Status: string;
@@ -41,4 +41,4 @@ class kananbanCard {
     }
 }
 
-export default kananbanCard;
+export default kanbanCard;
