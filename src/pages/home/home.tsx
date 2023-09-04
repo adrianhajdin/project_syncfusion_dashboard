@@ -7,21 +7,29 @@ import Flow from "../../components/flow/flow";
 function Home() {
   const [selectedComponent, setSelectedComponent] = useState("default"); // Initialize with the default component
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Track the sidebar state
-
+  console.log({ isSidebarOpen });
   function changeComponent(componentName: string) {
     console.log(componentName);
     setSelectedComponent(componentName); // Change the selected component
   }
 
   // Toggle the sidebar state
-  function handleSideBarPosition(isOpen: boolean | undefined){
-	if(isOpen === undefined) return;
+  function handleSideBarPosition(isOpen: boolean | undefined) {
+    console.log("handleSideBarPosition");
+    if (isOpen === undefined) return;
     setIsSidebarOpen(isOpen);
   }
 
   return (
-    <div className={`home-wrapper ${isSidebarOpen ? 'shifted-content' : 'reset-content'}`}>
-      <Sidebar onClick={changeComponent} onToolbarPosChanged={handleSideBarPosition}/>
+    <div
+      className={`home-wrapper ${
+        isSidebarOpen ? "shifted-content" : "reset-content"
+      }`}
+    >
+      <Sidebar
+        onClick={changeComponent}
+        onToolbarPosChanged={handleSideBarPosition}
+      />
       {selectedComponent === "kanban" && <Kanban />}
       {selectedComponent === "flow" && <Flow />}
     </div>
