@@ -324,9 +324,7 @@
     border-right: 1px solid #eaeaea63;
 }
 
-#sideTree{
-	overflow: hidden;
-}
+
 
 .full-screen-wrapper {
 	top: 0;
@@ -335,4 +333,11 @@
 	left: 0;
 	z-index: 9999; /* Adjust the z-index as needed */
 	overflow: auto; /* Allow scrolling if content overflows */
+  }
+
+  .toggle-sidebar-button {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999; /* Make sure it's above other content */
   }

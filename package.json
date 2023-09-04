@@ -10,14 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@syncfusion/ej2-react-buttons": "^22.2.9",
     "@syncfusion/ej2-react-grids": "^22.2.11",
     "@syncfusion/ej2-react-inputs": "^22.2.9",
     "@syncfusion/ej2-react-kanban": "^22.2.9",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "reactflow": "^11.8.3"
   },
   "devDependencies": {
-    "@syncfusion/ej2-base": "22.2.10",
+    "@syncfusion/ej2-base": "^22.2.10",
     "@syncfusion/ej2-buttons": "22.2.9",
     "@syncfusion/ej2-documenteditor": "22.2.11",
     "@syncfusion/ej2-lists": "22.2.11",
