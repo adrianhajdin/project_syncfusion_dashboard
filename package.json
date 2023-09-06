@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "tw": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+	"db": "json-server --watch db.json --port 3001",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -15,6 +16,7 @@
     "@syncfusion/ej2-react-grids": "^22.2.11",
     "@syncfusion/ej2-react-inputs": "^22.2.9",
     "@syncfusion/ej2-react-kanban": "^22.2.9",
+    "json-server": "^0.17.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "reactflow": "^11.8.3"
