@@ -15,12 +15,20 @@ import ReactFlow, {
 import "reactflow/dist/style.css";
 import "./flow.css";
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
+import DefaultNode from "./card-types/default-node";
+import SpecialNode from "./card-types/special-node";
+
+const nodeTypes = {  specialNode: SpecialNode, defaultNode: DefaultNode };
 
 const initialNodes = [
-  { id: "1", position: { x: 0, y: 0 }, data: { label: "1" } },
-  { id: "2", position: { x: 0, y: 100 }, data: { label: "2" } },
+  { id: "1", position: { x: 100, y: 100 }, data: { label: "1" }, type:"defaultNode" },
+  { id: "2", position: { x: 100, y: 200 }, data: { label: "2" }, type:"defaultNode" },
+  { id: "3", position: { x: 100, y: 300 }, data: { label: "3" }, type:"specialNode"},
 ];
-const initialEdges = [{ id: "e1-2", source: "1", target: "2" }];
+const initialEdges = [
+	{ id: "e1-2", source: "1", target: "2" },
+	{ id: "e2-3", source: "2", target: "3" }
+];
 
 function Flow() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
@@ -48,6 +56,8 @@ function Flow() {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
+		nodeTypes={nodeTypes}
+		fitView
       >
         <Panel position="top-right">
           <div className="col-xs-12 col-sm-12 col-lg-6 col-md-6">
