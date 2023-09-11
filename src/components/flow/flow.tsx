@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import ReactFlow, {
   MiniMap,
   Controls,
@@ -17,6 +17,7 @@ import "./flow.css";
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
 import DefaultNode from "./card-types/default-node";
 import SpecialNode from "./card-types/special-node";
+import kanbanCard from "../../entities/kanbanCard";
 
 const nodeTypes = { specialNode: SpecialNode, defaultNode: DefaultNode };
 
@@ -52,6 +53,33 @@ const initialEdges = [
 function Flow() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
+  useEffect(() => {
+    // Fetch data from your JSON Server
+    fetch("http://localhost:3000/cards") 
+      .then((response) => response.json())
+      .then((data) => {
+        const nodeData = data.cards.map((card : kanbanCard) => ({
+          id: card.Id.toString(),
+          position: card.Position,
+          data: {
+            label: card.Data.Label,
+            title: card.title,
+            subject: card.subject,
+          },
+          type: card.type,
+        }));
+
+        // Set the fetched data as nodes
+        setNodes(nodeData);
+
+        // You can also set edges if needed
+        // const edgeData = ...
+        // setEdges(edgeData);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
 
   const onConnect = useCallback(
     (params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)),

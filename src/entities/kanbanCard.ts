@@ -11,6 +11,7 @@ class kanbanCard {
     RankId: number;
     Color: string;
     ClassName: string;
+	Position: Array<number> = [0, 0];
 
     constructor(
         Id: string,
