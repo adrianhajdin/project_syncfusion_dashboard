@@ -17,41 +17,17 @@ import "./flow.css";
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
 import DefaultNode from "./card-types/default-node";
 import SpecialNode from "./card-types/special-node";
-import kanbanCard from "../../entities/kanbanCard";
+import CardData from "../../entities/flowCard";
 
 const nodeTypes = { specialNode: SpecialNode, defaultNode: DefaultNode };
 
-const initialNodes = [
-  {
-    id: "1",
-    position: { x: 100, y: 100 },
-    data: { label: "1", title: "IPC Triggering", subject: "Code: COM_IPC_TRG" },
-    type: "defaultNode",
-  },
-  {
-    id: "2",
-    position: { x: 100, y: 200 },
-    data: { label: "2", title: "IPC Triggering", subject: "Code: COM_IPC_TRG" },
-    type: "defaultNode",
-  },
-  {
-    id: "3",
-    position: { x: 100, y: 300 },
-    data: {
-      label: "3",
-      title: "KV Trigger Update",
-      subject: "Chapter: COM_IPC_SPE",
-    },
-    type: "specialNode",
-  },
-];
 const initialEdges = [
   { id: "e1-2", source: "1", target: "2" },
   { id: "e2-3", source: "2", target: "3" },
 ];
 
 function Flow() {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   useEffect(() => {
@@ -59,17 +35,18 @@ function Flow() {
     fetch("http://localhost:3000/cards") 
       .then((response) => response.json())
       .then((data) => {
-        const nodeData = data.cards.map((card : kanbanCard) => ({
-          id: card.Id.toString(),
-          position: card.Position,
+		console.log('data', data);
+        const nodeData = data.map((card : CardData) => ({
+          id: card.id.toString(),
+          position: card.position,
           data: {
-            label: card.Data.Label,
-            title: card.title,
-            subject: card.subject,
+            title: card.data.title,
+            subject: card.data.subject,
           },
           type: card.type,
         }));
 
+		console.log('it is done', nodeData);
         // Set the fetched data as nodes
         setNodes(nodeData);
 

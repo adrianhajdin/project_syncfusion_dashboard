@@ -4,7 +4,7 @@
 			"id":1,
 			"position":{ "x":100, "y":100 },
 			"data":{
-				"label": "1", "title": "IPC Triggering", "subject": "Code: COM_IPC_TRG" 
+				"label": "1", "title": "IPC Triggering", "subject": "Code: COM_IPC_TRGqwe" 
 			},
 			"type": "defaultNode"
 		},
@@ -12,15 +12,15 @@
 			"id":2,
 			"position":{ "x":100, "y":200 },
 			"data":{
-				"label": "2", "title": "IPC Triggering", "subject": "Code: COM_IPC_TRG" 
+				"label": "2", "title": "IPC Trinwwwwg", "subject": "Code: COM_IPC_TRGww" 
 			},
 			"type": "defaultNode"
 		},
 		{
 			"id":3,
-			"position":{ "x":100, "y":300 },
+			"position":{ "x":150, "y":300 },
 			"data":{
-				"label": "3", "title": "IPC Triggering", "subject": "Code: COM_IPC_TRG" 
+				"label": "3", "title": "IPC Triggering", "subject": "Code: COM_IPC_TRGee" 
 			},
 			"type": "specialNode"
 		}

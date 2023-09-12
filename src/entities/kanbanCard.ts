@@ -12,6 +12,8 @@ class kanbanCard {
     Color: string;
     ClassName: string;
 	Position: Array<number> = [0, 0];
+	Label: string;
+	Subject: string;
 
     constructor(
         Id: string,
@@ -25,7 +27,10 @@ class kanbanCard {
         Assignee: string,
         RankId: number,
         Color: string,
-        ClassName: string
+        ClassName: string,
+		Position: Array<number> = [0, 0],
+		Label: string,
+		Subject: string
     ) {
         this.Id = Id;
         this.Title = Title;
@@ -39,6 +44,9 @@ class kanbanCard {
         this.RankId = RankId;
         this.Color = Color;
         this.ClassName = ClassName;
+		this.Position = Position;
+		this.Label = Label;
+		this.Subject = Subject;
     }
 }
 
