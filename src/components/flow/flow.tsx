@@ -18,6 +18,7 @@ import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
 import DefaultNode from "./card-types/default-node";
 import SpecialNode from "./card-types/special-node";
 import CardData from "../../entities/flowCard";
+import axios from "axios";
 
 const nodeTypes = { specialNode: SpecialNode, defaultNode: DefaultNode };
 
@@ -31,32 +32,21 @@ function Flow() {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   useEffect(() => {
-    // Fetch data from your JSON Server
-    fetch("http://localhost:3000/cards") 
-      .then((response) => response.json())
-      .then((data) => {
-		console.log('data', data);
-        const nodeData = data.map((card : CardData) => ({
+    axios
+      .get("http://localhost:3000/cards")
+      .then((response) => {
+        const cards = response.data as CardData[];
+        const cardsWithStringIds = cards.map((card) => ({
+          ...card,
           id: card.id.toString(),
-          position: card.position,
-          data: {
-            title: card.data.title,
-            subject: card.data.subject,
-          },
-          type: card.type,
         }));
-
-		console.log('it is done', nodeData);
-        // Set the fetched data as nodes
-        setNodes(nodeData);
-
-        // You can also set edges if needed
-        // const edgeData = ...
-        // setEdges(edgeData);
+        console.log("it is done", cards);
+        setNodes(cardsWithStringIds);
       })
-      .catch((error) => console.error("Error fetching data:", error));
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
-
 
   const onConnect = useCallback(
     (params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)),
