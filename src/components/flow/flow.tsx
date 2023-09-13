@@ -17,47 +17,32 @@ import "./flow.css";
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
 import DefaultNode from "./card-types/default-node";
 import SpecialNode from "./card-types/special-node";
-import CardData from "../../entities/flowCard";
 import axios from "axios";
-import { getCards } from "../../api/api";
+import { FlowService } from "../../services/flowService";
 
 const nodeTypes = { specialNode: SpecialNode, defaultNode: DefaultNode };
 
-const initialEdges = [
-  { id: "e1-2", source: "1", target: "2" },
-  { id: "e2-3", source: "2", target: "3" },
-];
-
 function Flow() {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
   useEffect(() => {
     async function fetchData() {
-      await setCards();
+		await FlowService.fetchAndSetCardsData(setNodes);
+		await FlowService.fetchAndSetEdgesData(setEdges);
     }
-    
     fetchData();
   }, []);
 
-  async function setCards() {
-    const cards : CardData[] = await getCards();
-    console.log("it is done", cards);
-    const cardsWithStringIds = cards.map((card) => ({
-      ...card,
-      id: card.id.toString(),
-    }));
 
-    setNodes(cardsWithStringIds);
-  }
   const onConnect = useCallback(
     (params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)),
     [setEdges]
   );
 
   const onAdd = () => {
-    const newNode: CardData = {
-      id: nodes.length + 1,
+    const newNode = {
+      id: (nodes.length + 1).toString(),
       position: { x: 0, y: 0 },
       data: {
         label: (nodes.length + 1).toString(),

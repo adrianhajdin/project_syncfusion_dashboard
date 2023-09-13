@@ -1,5 +1,5 @@
 class CardData {
-  id: number;
+  id: string;
   position: {
     x: number;
     y: number;
@@ -11,7 +11,7 @@ class CardData {
   };
   type: string;
   constructor(
-    id: number,
+    id: string,
     position: {
       x: number;
       y: number;
