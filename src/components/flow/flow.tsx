@@ -9,6 +9,7 @@ import ReactFlow, {
   Edge,
   BackgroundVariant,
   Panel,
+  Node,
 } from "reactflow";
 
 import "reactflow/dist/style.css";
@@ -34,9 +35,13 @@ function Flow() {
     fetchData();
   }, []); // Empty dependency array to run only on initial mount
 
+  async function onAdd() {
+    const cardDataArray = nodes.map((node) => mapNodeToCardData(node));
+    await FlowService.addCard(cardDataArray, setNodes);
+  }
+
   const handleConnect = useCallback(
     async (sourceNodeId: string, targetNodeId: string) => {
-      console.log("edgeDataArrayOLD", edges);
       const edgeDataArray = edges.map((edge) => mapEdgeToEdgeData(edge));
       await FlowService.addEdge(
         edgeDataArray,
@@ -60,11 +65,28 @@ function Flow() {
     [handleConnect]
   );
 
-  async function onAdd() {
-    console.log("nodes", nodes, "edges", edges);
-    const cardDataArray = nodes.map((node) => mapNodeToCardData(node));
-    await FlowService.addCard(cardDataArray, setNodes);
-  }
+  const handleNodeChange = useCallback(
+    async (node: Node) => {
+      const cardDataArray = nodes.map((node) => mapNodeToCardData(node));
+      await FlowService.updateCard(
+        cardDataArray,
+        node.id,
+        node.position,
+        setNodes
+      );
+    },
+    [nodes, setNodes]
+  );
+
+  // Use handleConnect in your onConnect callback
+  const onNodeChanged = useCallback(
+    async (params: React.MouseEvent, node: Node) => {
+      if (params) {
+        await handleNodeChange(node);
+      }
+    },
+    [handleNodeChange]
+  );
 
   return (
     <div style={{ width: "100%", height: "100vh" }}>
@@ -72,6 +94,7 @@ function Flow() {
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}
+        onNodeDragStop={onNodeChanged}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         nodeTypes={nodeTypes}

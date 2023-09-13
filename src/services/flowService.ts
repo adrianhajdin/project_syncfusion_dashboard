@@ -1,5 +1,5 @@
 // FlowService.ts
-import { addCard, addEdge, getCards, getEdges } from "../api/api";
+import Api from "../api/api";
 import CardData from "../entities/flowCard";
 import EdgeData from "../entities/flowEdge";
 
@@ -9,7 +9,7 @@ export type SetEdgesFunction = (edges: EdgeData[]) => void;
 export const FlowService = {
   async fetchAndSetCardsData(setNodes: SetNodesFunction) {
     try {
-      const cards: CardData[] = await getCards();
+      const cards: CardData[] = await Api.getCards();
       console.log("Cards data fetched", cards);
       const cardsWithStringIds = cards.map((card) => ({
         ...card,
@@ -33,16 +33,41 @@ export const FlowService = {
         },
         type: "defaultNode",
       };
-      await addCard(newNode);
+      await Api.addCard(newNode);
       setNodes([...nodes, newNode]);
     } catch (error) {
       console.error("Error adding card", error);
     }
   },
 
+  async updateCard(
+    nodes: CardData[],
+    nodeId: string,
+    position: { x: number; y: number },
+    setNodes: SetNodesFunction
+  ) {
+    try {
+      const nodeToUpdate = nodes.find((node) => node.id === nodeId);
+      if (!nodeToUpdate) {
+        throw new Error(`Node with id ${nodeId} not found`);
+      }
+      const updatedNode = {
+        ...nodeToUpdate,
+        position,
+      };
+      await Api.updateCard(updatedNode);
+      const updatedNodes = nodes.map((node) =>
+        node.id === nodeId ? updatedNode : node
+      );
+      setNodes(updatedNodes);
+    } catch (error) {
+      console.error("Error updating card", error);
+    }
+  },
+
   async fetchAndSetEdgesData(setEdges: SetEdgesFunction) {
     try {
-      const edges = await getEdges();
+      const edges = await Api.getEdges();
       const edgesWithStringIds = edges.map((edge) => ({
         ...edge,
         id: edge.id.toString(),
@@ -66,11 +91,8 @@ export const FlowService = {
         source: sourceNodeId,
         target: targetNodeId,
       };
-
-      console.log("New edge", newEdge);
-
       // Add the edge to the server (assuming you have an addEdge function in your API)
-      await addEdge(newEdge);
+      await Api.addEdge(newEdge);
 
       // Update the local edges state by concatenating the new edge to the existing edges
       setEdges([...edges, newEdge]);
