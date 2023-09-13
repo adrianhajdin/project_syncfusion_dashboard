@@ -16,6 +16,17 @@ export async function getCards() {
   }
 }
 
+export async function addCard(card: CardData) {
+  try {
+    const response = await axios.post("http://localhost:3000/cards", card);
+    const newCard = response.data as CardData;
+    return newCard;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
 export async function getEdges() {
   try {
     const response = await axios.get("http://localhost:3000/edges");

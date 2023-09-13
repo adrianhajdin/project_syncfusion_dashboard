@@ -17,8 +17,8 @@ import "./flow.css";
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
 import DefaultNode from "./card-types/default-node";
 import SpecialNode from "./card-types/special-node";
-import axios from "axios";
 import { FlowService } from "../../services/flowService";
+import mapNodeToCardData from "../../mappers/cardMapper";
 
 const nodeTypes = { specialNode: SpecialNode, defaultNode: DefaultNode };
 
@@ -28,32 +28,23 @@ function Flow() {
 
   useEffect(() => {
     async function fetchData() {
-		await FlowService.fetchAndSetCardsData(setNodes);
-		await FlowService.fetchAndSetEdgesData(setEdges);
+      await FlowService.fetchAndSetCardsData(setNodes);
+      await FlowService.fetchAndSetEdgesData(setEdges);
     }
     fetchData();
-  }, []);
-
+  }, []); // Empty dependency array to run only on initial mount
 
   const onConnect = useCallback(
     (params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)),
     [setEdges]
   );
 
-  const onAdd = () => {
-    const newNode = {
-      id: (nodes.length + 1).toString(),
-      position: { x: 0, y: 0 },
-      data: {
-        label: (nodes.length + 1).toString(),
-        title: "New Node",
-        subject: "New Subject",
-      },
-      type: "defaultNode",
-    };
-    setNodes((nodes) => nodes.concat(newNode));
-    axios.post("http://localhost:3000/cards", newNode);
-  };
+  async function onAdd(){
+
+	const cardDataArray = nodes.map((node) => mapNodeToCardData(node));
+	
+    await FlowService.AddCard(cardDataArray, setNodes);
+  }
 
   return (
     <div style={{ width: "100%", height: "100vh" }}>

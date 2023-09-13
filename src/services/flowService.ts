@@ -1,5 +1,5 @@
 // FlowService.ts
-import { getCards, getEdges } from "../api/api";
+import { addCard, getCards, getEdges } from "../api/api";
 import CardData from "../entities/flowCard";
 import EdgeData from "../entities/flowEdge";
 
@@ -18,6 +18,25 @@ export const FlowService = {
       setNodes(cardsWithStringIds);
     } catch (error) {
       console.error("Error fetching cards data", error);
+    }
+  },
+
+  async AddCard(nodes: CardData[], setNodes: SetNodesFunction) {
+    try {
+      const newNode = {
+        id: (nodes.length + 1).toString(),
+        position: { x: 0, y: 0 },
+        data: {
+          label: (nodes.length + 1).toString(),
+          title: "New Node",
+          subject: "New Subject",
+        },
+        type: "defaultNode",
+      };
+      await addCard(newNode);
+      setNodes([...nodes, newNode]);
+    } catch (error) {
+      console.error("Error adding card", error);
     }
   },
 
