@@ -1,5 +1,5 @@
 // FlowService.ts
-import { addCard, getCards, getEdges } from "../api/api";
+import { addCard, addEdge, getCards, getEdges } from "../api/api";
 import CardData from "../entities/flowCard";
 import EdgeData from "../entities/flowEdge";
 
@@ -21,7 +21,7 @@ export const FlowService = {
     }
   },
 
-  async AddCard(nodes: CardData[], setNodes: SetNodesFunction) {
+  async addCard(nodes: CardData[], setNodes: SetNodesFunction) {
     try {
       const newNode = {
         id: (nodes.length + 1).toString(),
@@ -50,6 +50,32 @@ export const FlowService = {
       setEdges(edgesWithStringIds);
     } catch (error) {
       console.error("Error fetching edges data", error);
+    }
+  },
+
+  async addEdge(
+    edges: EdgeData[],
+    sourceNodeId: string,
+    targetNodeId: string,
+    setEdges: SetEdgesFunction
+  ) {
+    try {
+      // Create a new edge object
+      const newEdge: EdgeData = {
+        id: `e${sourceNodeId}-${targetNodeId}`,
+        source: sourceNodeId,
+        target: targetNodeId,
+      };
+
+      console.log("New edge", newEdge);
+
+      // Add the edge to the server (assuming you have an addEdge function in your API)
+      await addEdge(newEdge);
+
+      // Update the local edges state by concatenating the new edge to the existing edges
+      setEdges([...edges, newEdge]);
+    } catch (error) {
+      console.error("Error adding edge", error);
     }
   },
 };

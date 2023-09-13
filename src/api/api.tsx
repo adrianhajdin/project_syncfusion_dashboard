@@ -39,4 +39,15 @@ export async function getEdges() {
   }
 }
 
+export async function addEdge(edge: EdgeData) {
+  try {
+    const response = await axios.post("http://localhost:3000/edges", edge);
+    const newEdge = response.data as EdgeData;
+    return newEdge;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
 export default Api;

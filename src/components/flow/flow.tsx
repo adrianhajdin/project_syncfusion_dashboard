@@ -5,7 +5,6 @@ import ReactFlow, {
   Background,
   useNodesState,
   useEdgesState,
-  addEdge,
   Connection,
   Edge,
   BackgroundVariant,
@@ -19,6 +18,7 @@ import DefaultNode from "./card-types/default-node";
 import SpecialNode from "./card-types/special-node";
 import { FlowService } from "../../services/flowService";
 import mapNodeToCardData from "../../mappers/cardMapper";
+import mapEdgeToEdgeData from "../../mappers/edgeMapper";
 
 const nodeTypes = { specialNode: SpecialNode, defaultNode: DefaultNode };
 
@@ -34,16 +34,36 @@ function Flow() {
     fetchData();
   }, []); // Empty dependency array to run only on initial mount
 
-  const onConnect = useCallback(
-    (params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)),
-    [setEdges]
+  const handleConnect = useCallback(
+    async (sourceNodeId: string, targetNodeId: string) => {
+      console.log("edgeDataArrayOLD", edges);
+      const edgeDataArray = edges.map((edge) => mapEdgeToEdgeData(edge));
+      await FlowService.addEdge(
+        edgeDataArray,
+        sourceNodeId,
+        targetNodeId,
+        setEdges
+      );
+    },
+    [edges, setEdges]
   );
 
-  async function onAdd(){
+  // Use handleConnect in your onConnect callback
+  const onConnect = useCallback(
+    async (params: Edge | Connection) => {
+      if (params.source && params.target) {
+        const sourceNodeId = params.source;
+        const targetNodeId = params.target;
+        await handleConnect(sourceNodeId, targetNodeId);
+      }
+    },
+    [handleConnect]
+  );
 
-	const cardDataArray = nodes.map((node) => mapNodeToCardData(node));
-	
-    await FlowService.AddCard(cardDataArray, setNodes);
+  async function onAdd() {
+    console.log("nodes", nodes, "edges", edges);
+    const cardDataArray = nodes.map((node) => mapNodeToCardData(node));
+    await FlowService.addCard(cardDataArray, setNodes);
   }
 
   return (
