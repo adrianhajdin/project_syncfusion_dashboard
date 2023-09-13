@@ -1,44 +1,92 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import ReactFlow, {
   MiniMap,
   Controls,
   Background,
   useNodesState,
   useEdgesState,
-  addEdge,
   Connection,
   Edge,
   BackgroundVariant,
   Panel,
+  Node,
 } from "reactflow";
 
 import "reactflow/dist/style.css";
 import "./flow.css";
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
+import DefaultNode from "./card-types/default-node";
+import SpecialNode from "./card-types/special-node";
+import { FlowService } from "../../services/flowService";
+import mapNodeToCardData from "../../mappers/cardMapper";
+import mapEdgeToEdgeData from "../../mappers/edgeMapper";
 
-const initialNodes = [
-  { id: "1", position: { x: 0, y: 0 }, data: { label: "1" } },
-  { id: "2", position: { x: 0, y: 100 }, data: { label: "2" } },
-];
-const initialEdges = [{ id: "e1-2", source: "1", target: "2" }];
+const nodeTypes = { specialNode: SpecialNode, defaultNode: DefaultNode };
 
 function Flow() {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
-  const onConnect = useCallback(
-    (params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)),
-    [setEdges]
+  useEffect(() => {
+    async function fetchData() {
+      await FlowService.fetchAndSetCardsData(setNodes);
+      await FlowService.fetchAndSetEdgesData(setEdges);
+    }
+    fetchData();
+  }, []); // Empty dependency array to run only on initial mount
+
+  async function onAdd() {
+    const cardDataArray = nodes.map((node) => mapNodeToCardData(node));
+    await FlowService.addCard(cardDataArray, setNodes);
+  }
+
+  const handleConnect = useCallback(
+    async (sourceNodeId: string, targetNodeId: string) => {
+      const edgeDataArray = edges.map((edge) => mapEdgeToEdgeData(edge));
+      await FlowService.addEdge(
+        edgeDataArray,
+        sourceNodeId,
+        targetNodeId,
+        setEdges
+      );
+    },
+    [edges, setEdges]
   );
 
-  const onAdd = () => {
-    const newNode = {
-      id: (nodes.length + 1).toString(),
-      position: { x: 0, y: 0 },
-      data: { label: (nodes.length + 1).toString() },
-    };
-    setNodes((nodes) => nodes.concat(newNode));
-  };
+  // Use handleConnect in your onConnect callback
+  const onConnect = useCallback(
+    async (params: Edge | Connection) => {
+      if (params.source && params.target) {
+        const sourceNodeId = params.source;
+        const targetNodeId = params.target;
+        await handleConnect(sourceNodeId, targetNodeId);
+      }
+    },
+    [handleConnect]
+  );
+
+  const handleNodeChange = useCallback(
+    async (node: Node) => {
+      const cardDataArray = nodes.map((node) => mapNodeToCardData(node));
+      await FlowService.updateCard(
+        cardDataArray,
+        node.id,
+        node.position,
+        setNodes
+      );
+    },
+    [nodes, setNodes]
+  );
+
+  // Use handleConnect in your onConnect callback
+  const onNodeChanged = useCallback(
+    async (params: React.MouseEvent, node: Node) => {
+      if (params) {
+        await handleNodeChange(node);
+      }
+    },
+    [handleNodeChange]
+  );
 
   return (
     <div style={{ width: "100%", height: "100vh" }}>
@@ -46,8 +94,11 @@ function Flow() {
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}
+        onNodeDragStop={onNodeChanged}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
+        nodeTypes={nodeTypes}
+        fitView
       >
         <Panel position="top-right">
           <div className="col-xs-12 col-sm-12 col-lg-6 col-md-6">

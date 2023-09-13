@@ -192,8 +192,7 @@ const Sidebar = ({ onClick, onToolbarPosChanged }: SidebarProps) => {
           mediaQuery={mediaQuery}
           isOpen={true}
           closeOnDocumentClick={false}
-          close={() => false}
-		//   todo: fix swipe left
+          close={toolbarClicked.bind(this)}
         >
           <div className="res-main-menu">
             <div className="table-content">

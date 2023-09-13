@@ -5,7 +5,7 @@ import './index.css'
 import { registerLicense } from '@syncfusion/ej2-base';
 
 // Registering Syncfusion license key
-registerLicense('Ngo9BigBOggjHTQxAR8/V1NGaF1cWGhAYVppR2NbfE5xfldGalxXVBYiSV9jS31Tf0VhWHxccHRTQmNbUQ==');
+registerLicense('ORg4AjUWIQA/Gnt2V1hhQlJAfV5AQmBIYVp/TGpJfl96cVxMZVVBJAtUQF1hSn5ad0djWH9Zc31UT2Na');
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
