@@ -33,16 +33,23 @@ function Flow() {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   useEffect(() => {
-    const cards = getCards();
+    async function fetchData() {
+      await setCards();
+    }
+    
+    fetchData();
+  }, []);
+
+  async function setCards() {
+    const cards : CardData[] = await getCards();
     console.log("it is done", cards);
-	const cardsWithStringIds = cards.map((card) => ({
-		...card,
-		id: card.id.toString(),
-	}));
+    const cardsWithStringIds = cards.map((card) => ({
+      ...card,
+      id: card.id.toString(),
+    }));
 
     setNodes(cardsWithStringIds);
-  }, [setNodes]);
-
+  }
   const onConnect = useCallback(
     (params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)),
     [setEdges]

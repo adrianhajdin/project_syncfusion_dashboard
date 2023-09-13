@@ -3,7 +3,7 @@ import CardData from "../entities/flowCard";
 
 function Api() {}
 
-export async function getCards(): Promise<CardData[]> {
+export async function getCards() {
   try {
     const response = await axios.get("http://localhost:3000/cards");
     const cards = response.data as CardData[];
