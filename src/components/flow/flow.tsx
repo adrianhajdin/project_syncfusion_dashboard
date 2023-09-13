@@ -19,6 +19,7 @@ import DefaultNode from "./card-types/default-node";
 import SpecialNode from "./card-types/special-node";
 import CardData from "../../entities/flowCard";
 import axios from "axios";
+import { getCards } from "../../api/api";
 
 const nodeTypes = { specialNode: SpecialNode, defaultNode: DefaultNode };
 
@@ -32,21 +33,15 @@ function Flow() {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/cards")
-      .then((response) => {
-        const cards = response.data as CardData[];
-        const cardsWithStringIds = cards.map((card) => ({
-          ...card,
-          id: card.id.toString(),
-        }));
-        console.log("it is done", cards);
-        setNodes(cardsWithStringIds);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+    const cards = getCards();
+    console.log("it is done", cards);
+	const cardsWithStringIds = cards.map((card) => ({
+		...card,
+		id: card.id.toString(),
+	}));
+
+    setNodes(cardsWithStringIds);
+  }, [setNodes]);
 
   const onConnect = useCallback(
     (params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)),
@@ -54,8 +49,8 @@ function Flow() {
   );
 
   const onAdd = () => {
-    const newNode = {
-      id: (nodes.length + 1).toString(),
+    const newNode: CardData = {
+      id: nodes.length + 1,
       position: { x: 0, y: 0 },
       data: {
         label: (nodes.length + 1).toString(),
@@ -65,6 +60,7 @@ function Flow() {
       type: "defaultNode",
     };
     setNodes((nodes) => nodes.concat(newNode));
+    axios.post("http://localhost:3000/cards", newNode);
   };
 
   return (
