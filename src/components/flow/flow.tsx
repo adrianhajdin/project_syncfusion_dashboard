@@ -20,12 +20,27 @@ import SpecialNode from "./card-types/special-node";
 import { FlowService } from "../../services/flowService";
 import mapNodeToCardData from "../../mappers/cardMapper";
 import mapEdgeToEdgeData from "../../mappers/edgeMapper";
+import {
+  ContextMenuComponent,
+  MenuItemModel,
+} from "@syncfusion/ej2-react-navigations";
 
 const nodeTypes = { specialNode: SpecialNode, defaultNode: DefaultNode };
 
 function Flow() {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const menuItems: MenuItemModel[] = [
+    {
+      text: "Cut",
+    },
+    {
+      text: "Copy",
+    },
+    {
+      text: "Paste",
+    },
+  ];
 
   useEffect(() => {
     async function fetchData() {
@@ -89,33 +104,36 @@ function Flow() {
   );
 
   return (
-    <div style={{ width: "100%", height: "100vh" }}>
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        onNodesChange={onNodesChange}
-        onNodeDragStop={onNodeChanged}
-        onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
-        nodeTypes={nodeTypes}
-        fitView
-      >
-        <Panel position="top-right">
-          <div className="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+    <div>
+      <div style={{ width: "100%", height: "100vh" }} id="target">
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
+          onNodesChange={onNodesChange}
+          onNodeDragStop={onNodeChanged}
+          onEdgesChange={onEdgesChange}
+          onConnect={onConnect}
+          nodeTypes={nodeTypes}
+          fitView
+        >
+          <Panel position="top-right">
             <div className="col-xs-12 col-sm-12 col-lg-6 col-md-6">
-              <ButtonComponent
-                cssClass="e-small e-round"
-                iconCss="e-btn-sb-icons e-add-icon"
-                isPrimary
-                onClick={onAdd}
-              ></ButtonComponent>
+              <div className="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+                <ButtonComponent
+                  cssClass="e-small e-round"
+                  iconCss="e-btn-sb-icons e-add-icon"
+                  isPrimary
+                  onClick={onAdd}
+                ></ButtonComponent>
+              </div>
             </div>
-          </div>
-        </Panel>
-        <Controls />
-        <MiniMap />
-        <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
-      </ReactFlow>
+          </Panel>
+          <Controls />
+          <MiniMap />
+          <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
+        </ReactFlow>
+      </div>
+      <ContextMenuComponent target="#target" items={menuItems} />
     </div>
   );
 }

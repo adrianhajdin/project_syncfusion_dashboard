@@ -30,7 +30,7 @@
     "@syncfusion/ej2-navigations": "22.2.11",
     "@syncfusion/ej2-pivotview": "22.2.11",
     "@syncfusion/ej2-react-base": "22.2.5",
-    "@syncfusion/ej2-react-navigations": "22.2.11",
+    "@syncfusion/ej2-react-navigations": "^22.2.11",
     "@syncfusion/ej2-schedule": "22.2.11",
     "@syncfusion/ej2-splitbuttons": "22.2.8",
     "@types/json-server": "^0.14.4",
