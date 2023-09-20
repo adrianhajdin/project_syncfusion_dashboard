@@ -114,6 +114,7 @@ function Flow() {
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
           nodeTypes={nodeTypes}
+		  onDoubleClick={(event) => console.log(event)}
           fitView
         >
           <Panel position="top-right">
