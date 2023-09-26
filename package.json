@@ -16,6 +16,7 @@
     "@syncfusion/ej2-react-grids": "^22.2.11",
     "@syncfusion/ej2-react-inputs": "^22.2.9",
     "@syncfusion/ej2-react-kanban": "^22.2.9",
+    "@syncfusion/ej2-react-popups": "^23.1.36",
     "axios": "^1.5.0",
     "json-server": "^0.17.3",
     "react": "^18.2.0",

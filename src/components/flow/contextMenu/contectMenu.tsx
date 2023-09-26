@@ -1,5 +1,4 @@
 import { ContextMenuComponent, MenuItemModel } from '@syncfusion/ej2-react-navigations';
-import * as React from 'react';
 import './App.css';
 
 function ContextMenu() {

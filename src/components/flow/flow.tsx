@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ReactFlow, {
   MiniMap,
   Controls,
@@ -24,12 +24,19 @@ import {
   ContextMenuComponent,
   MenuItemModel,
 } from "@syncfusion/ej2-react-navigations";
+import Modal from "./Modal/modal-dialog";
+import CardData from "../../entities/flowCard";
 
 const nodeTypes = { specialNode: SpecialNode, defaultNode: DefaultNode };
 
 function Flow() {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [selectedNodeData, setSelectedNodeData] = useState<CardData | null>(
+    null
+  );
+
   const menuItems: MenuItemModel[] = [
     {
       text: "Cut",
@@ -80,13 +87,20 @@ function Flow() {
     [handleConnect]
   );
 
-  function onDoubleClick() {
-    return async (event: React.MouseEvent, node: Node) => {
-		if (node) {
-			//open modal
+  const onNodeDoubleClick = useCallback(
+    (event: React.MouseEvent, node: Node) => {
+      if (node) {
+        // Store the data of the selected node
+		const selectedCard : CardData = mapNodeToCardData(node);
+		if(selectedCard){
+			setSelectedNodeData(selectedCard);
 		}
-    };
-  }
+        // Open the modal
+        setIsModalOpen(true);
+      }
+    },
+    []
+  );
 
   const handleNodeChange = useCallback(
     async (node: Node) => {
@@ -122,7 +136,7 @@ function Flow() {
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
           nodeTypes={nodeTypes}
-          onNodeDoubleClick={onDoubleClick()}
+          onNodeDoubleClick={onNodeDoubleClick}
           fitView
         >
           <Panel position="top-right">
@@ -143,6 +157,10 @@ function Flow() {
         </ReactFlow>
       </div>
       <ContextMenuComponent target="#target" items={menuItems} />
+      {/* Render the Modal component */}
+      {isModalOpen && (
+        <Modal data={selectedNodeData} onClose={() => setIsModalOpen(false)} />
+      )}
     </div>
   );
 }
