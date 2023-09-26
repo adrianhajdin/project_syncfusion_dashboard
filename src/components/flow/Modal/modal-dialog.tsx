@@ -8,7 +8,7 @@ import "./modal-dialog.css";
 import CardData from "../../../entities/flowCard";
 
 interface ModalProps {
-  data: CardData; // Replace 'any' with the actual type of your data
+  data: CardData | null; // Replace 'any' with the actual type of your data
   onClose: () => void;
 }
 
