@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import {
   DialogComponent,
-  ButtonPropsModel,
   AnimationSettingsModel,
 } from "@syncfusion/ej2-react-popups";
 import "./modal-dialog.css";
@@ -15,18 +14,44 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
   const dialogInstance = useRef<DialogComponent>(null);
   const animationSettings: AnimationSettingsModel = { effect: "Zoom" };
-  const [display, setDisplay] = useState<string>("none");
   const [status, setStatus] = useState<boolean>(true);
+  const header = () => {
+    return (
+      <div>
+        <span className="e-avatar template-image e-avatar-xsmall e-avatar-circle"></span>
+        <div id="dlg-template" title="Nancy" className="e-icon-settings">
+          Nancy
+        </div>
+      </div>
+    );
+  };
+  const footerTemplate = () => {
+    return (
+      <div>
+        <input
+          id="inVal"
+          className="e-input"
+          type="text"
+          placeholder="Enter your message here!"
+        />
+        <button
+          id="sendButton"
+          className="e-control e-btn e-primary"
+          data-ripple="true"
+        >
+          Send
+        </button>
+      </div>
+    );
+  };
 
   const dialogClose = (): void => {
     setStatus(false);
-    setDisplay("inline-block");
     onClose(); // Call the onClose function when the dialog is closed
   };
 
   const dialogOpen = (): void => {
     setStatus(true);
-    setDisplay("none");
   };
 
   useEffect(() => {
@@ -42,7 +67,7 @@ const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
             id="modalDialog"
             isModal={true}
             // buttons={buttons}
-            header="Software Update"
+            header={header}
             width="335px"
             content="Your current software version is up to date."
             ref={dialogInstance}
@@ -50,7 +75,11 @@ const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
             visible={status}
             open={dialogOpen}
             close={dialogClose}
+			showCloseIcon={true}
+			closeOnEscape={true}
+			allowDragging={true}
             animationSettings={animationSettings}
+			footerTemplate={footerTemplate}
           ></DialogComponent>
         </div>
       </div>
