@@ -88,7 +88,7 @@ function Flow() {
   );
 
   const onNodeDoubleClick = useCallback(
-    (event: React.MouseEvent, node: Node) => {
+    (_event: React.MouseEvent, node: Node) => {
       if (node) {
         // Store the data of the selected node
 		const selectedCard : CardData = mapNodeToCardData(node);

@@ -16,18 +16,19 @@ const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
   const animationSettings: AnimationSettingsModel = { effect: "Zoom" };
   const [status, setStatus] = useState<boolean>(true);
 
-  const floatFocus = (args: any): void => {
-    args.target.parentElement.classList.add("e-input-focus");
+  const floatFocus = (args: { target: HTMLInputElement }): void => {
+    args.target.parentElement?.classList.add("e-input-focus");
   };
-  const floatBlur = (args: any): void => {
-    args.target.parentElement.classList.remove("e-input-focus");
+  const floatBlur = (args: { target: HTMLInputElement }): void => {
+    console.log(typeof args);
+    args.target.parentElement?.classList.remove("e-input-focus");
   };
 
   const header = () => {
     return (
       <div>
         <div id="dlg-template" title="Nancy" className="e-icon-settings">
-          {data?.data.title}
+          {data?.id}: {data?.data.title}
         </div>
       </div>
     );
@@ -55,12 +56,11 @@ const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
             <div className="e-input-group">
               <input
                 className="e-input"
+                type="text"
                 onFocus={floatFocus}
                 onBlur={floatBlur}
-                type="text"
-                placeholder="Enter Name"
-                value="Name"
-                readOnly
+                placeholder={data?.data.title}
+				onChange={updateCardTitle}
               />
             </div>
             <div className="e-input-group">
@@ -69,15 +69,19 @@ const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
                 onFocus={floatFocus}
                 onBlur={floatBlur}
                 type="text"
-                placeholder="Enter Name"
-                value="Subject"
-                readOnly
+                placeholder={data?.data.subject}
               />
             </div>
           </div>
         </span>
       </div>
     );
+  };
+
+  const updateCardTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (data) {
+      data.data.title = event.target.value;
+    }
   };
 
   const dialogClose = (): void => {
