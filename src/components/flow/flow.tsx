@@ -80,6 +80,14 @@ function Flow() {
     [handleConnect]
   );
 
+  function onDoubleClick() {
+    return async (event: React.MouseEvent, node: Node) => {
+		if (node) {
+			//open modal
+		}
+    };
+  }
+
   const handleNodeChange = useCallback(
     async (node: Node) => {
       const cardDataArray = nodes.map((node) => mapNodeToCardData(node));
@@ -114,7 +122,7 @@ function Flow() {
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
           nodeTypes={nodeTypes}
-		  onDoubleClick={(event) => console.log(event)}
+          onNodeDoubleClick={onDoubleClick()}
           fitView
         >
           <Panel position="top-right">
