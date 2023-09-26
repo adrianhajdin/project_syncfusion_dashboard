@@ -15,32 +15,67 @@ const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
   const dialogInstance = useRef<DialogComponent>(null);
   const animationSettings: AnimationSettingsModel = { effect: "Zoom" };
   const [status, setStatus] = useState<boolean>(true);
+
+  const floatFocus = (args: any): void => {
+    args.target.parentElement.classList.add("e-input-focus");
+  };
+  const floatBlur = (args: any): void => {
+    args.target.parentElement.classList.remove("e-input-focus");
+  };
+
   const header = () => {
     return (
       <div>
-        <span className="e-avatar template-image e-avatar-xsmall e-avatar-circle"></span>
         <div id="dlg-template" title="Nancy" className="e-icon-settings">
-          Nancy
+          {data?.data.title}
         </div>
       </div>
     );
   };
+
   const footerTemplate = () => {
     return (
       <div>
-        <input
-          id="inVal"
-          className="e-input"
-          type="text"
-          placeholder="Enter your message here!"
-        />
         <button
           id="sendButton"
           className="e-control e-btn e-primary"
           data-ripple="true"
         >
-          Send
+          Save
         </button>
+      </div>
+    );
+  };
+
+  const content = () => {
+    return (
+      <div className="dialogContent">
+        <span className="dialogText">
+          <div className="row custom-margin custom-padding-5 material">
+            <div className="e-input-group">
+              <input
+                className="e-input"
+                onFocus={floatFocus}
+                onBlur={floatBlur}
+                type="text"
+                placeholder="Enter Name"
+                value="Name"
+                readOnly
+              />
+            </div>
+            <div className="e-input-group">
+              <input
+                className="e-input"
+                onFocus={floatFocus}
+                onBlur={floatBlur}
+                type="text"
+                placeholder="Enter Name"
+                value="Subject"
+                readOnly
+              />
+            </div>
+          </div>
+        </span>
       </div>
     );
   };
@@ -69,17 +104,17 @@ const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
             // buttons={buttons}
             header={header}
             width="335px"
-            content="Your current software version is up to date."
+            content={content}
             ref={dialogInstance}
             target="#target"
             visible={status}
             open={dialogOpen}
             close={dialogClose}
-			showCloseIcon={true}
-			closeOnEscape={true}
-			allowDragging={true}
+            showCloseIcon={true}
+            closeOnEscape={true}
+            allowDragging={true}
             animationSettings={animationSettings}
-			footerTemplate={footerTemplate}
+            footerTemplate={footerTemplate}
           ></DialogComponent>
         </div>
       </div>
