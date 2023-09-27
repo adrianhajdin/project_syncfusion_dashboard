@@ -32,7 +32,7 @@ const nodeTypes = { specialNode: SpecialNode, defaultNode: DefaultNode };
 function Flow() {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedNodeData, setSelectedNodeData] = useState<CardData | null>(
     null
   );
@@ -55,7 +55,7 @@ function Flow() {
       await FlowService.fetchAndSetEdgesData(setEdges);
     }
     fetchData();
-  }, []); // Empty dependency array to run only on initial mount
+  }, []);
 
   async function onAdd() {
     const cardDataArray = nodes.map((node) => mapNodeToCardData(node));
@@ -75,7 +75,6 @@ function Flow() {
     [edges, setEdges]
   );
 
-  // Use handleConnect in your onConnect callback
   const onConnect = useCallback(
     async (params: Edge | Connection) => {
       if (params.source && params.target) {
@@ -91,12 +90,12 @@ function Flow() {
     (_event: React.MouseEvent, node: Node) => {
       if (node) {
         // Store the data of the selected node
-		const selectedCard : CardData = mapNodeToCardData(node);
-		if(selectedCard){
-			setSelectedNodeData(selectedCard);
-		}
+        const selectedCard: CardData = mapNodeToCardData(node);
+        if (selectedCard) {
+          setSelectedNodeData(selectedCard);
+        }
         // Open the modal
-        setIsModalOpen(true);
+        openModal(selectedCard);
       }
     },
     []
@@ -115,7 +114,6 @@ function Flow() {
     [nodes, setNodes]
   );
 
-  // Use handleConnect in your onConnect callback
   const onNodeChanged = useCallback(
     async (params: React.MouseEvent, node: Node) => {
       if (params) {
@@ -124,6 +122,15 @@ function Flow() {
     },
     [handleNodeChange]
   );
+
+  const openModal = (nodeData: CardData) => {
+    setSelectedNodeData(nodeData);
+    setIsModalOpen(true);
+  };
+
+  const onModalClose = () => {
+    onNodeChanged;
+  };
 
   return (
     <div>
@@ -159,7 +166,14 @@ function Flow() {
       <ContextMenuComponent target="#target" items={menuItems} />
       {/* Render the Modal component */}
       {isModalOpen && (
-        <Modal data={selectedNodeData} onClose={() => setIsModalOpen(false)} />
+        <Modal
+          data={selectedNodeData}
+          onClose={() => {
+            setIsModalOpen(false);
+            console.log("modal closed");
+            onModalClose();
+          }}
+        />
       )}
     </div>
   );

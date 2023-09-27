@@ -60,6 +60,7 @@ export const FlowService = {
         node.id === nodeId ? updatedNode : node
       );
       setNodes(updatedNodes);
+      console.log("Updated nodes", updatedNodes);
     } catch (error) {
       console.error("Error updating card", error);
     }

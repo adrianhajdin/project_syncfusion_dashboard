@@ -6,8 +6,10 @@ import {
 import "./modal-dialog.css";
 import CardData from "../../../entities/flowCard";
 
+export type SetNodesFunction = (nodes: CardData[]) => void;
+
 interface ModalProps {
-  data: CardData | null; // Replace 'any' with the actual type of your data
+  data: CardData | null;
   onClose: () => void;
 }
 
@@ -15,10 +17,12 @@ const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
   const dialogInstance = useRef<DialogComponent>(null);
   const animationSettings: AnimationSettingsModel = { effect: "Zoom" };
   const [status, setStatus] = useState<boolean>(true);
+  const cardToSave: CardData | null = data;
 
   const floatFocus = (args: { target: HTMLInputElement }): void => {
     args.target.parentElement?.classList.add("e-input-focus");
   };
+
   const floatBlur = (args: { target: HTMLInputElement }): void => {
     console.log(typeof args);
     args.target.parentElement?.classList.remove("e-input-focus");
@@ -41,6 +45,7 @@ const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
           id="sendButton"
           className="e-control e-btn e-primary"
           data-ripple="true"
+          onClick={saveCard}
         >
           Save
         </button>
@@ -60,7 +65,7 @@ const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
                 onFocus={floatFocus}
                 onBlur={floatBlur}
                 placeholder={data?.data.title}
-				onChange={updateCardTitle}
+                onChange={updateCardTitle}
               />
             </div>
             <div className="e-input-group">
@@ -70,6 +75,7 @@ const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
                 onBlur={floatBlur}
                 type="text"
                 placeholder={data?.data.subject}
+                onChange={updateCardSubject}
               />
             </div>
           </div>
@@ -78,9 +84,33 @@ const Modal: React.FC<ModalProps> = ({ data, onClose }) => {
     );
   };
 
+  const saveCard = () => {
+    if (!cardToSave) {
+      alert("cardToSave is null");
+    }
+	// Api.updateCard(cardToSave!);
+	data = cardToSave;
+    onClose();
+    console.log("saveCard", cardToSave);
+  };
+
   const updateCardTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (data) {
-      data.data.title = event.target.value;
+      if (!cardToSave) {
+        console.log("cardToSave is null");
+      }
+      cardToSave!.data.title = event.target.value;
+      console.log(cardToSave);
+    }
+  };
+  
+  const updateCardSubject = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (data) {
+      if (!cardToSave) {
+        console.log("cardToSave is null");
+      }
+      cardToSave!.data.subject = event.target.value;
+      console.log(cardToSave);
     }
   };
 
