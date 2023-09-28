@@ -40,6 +40,19 @@ class Api {
     }
   }
 
+  static async deleteCard(cardId: string) {
+    try {
+      const response = await axios.delete(
+        `http://localhost:3000/cards/${cardId}`
+      );
+      const deletedCard = response.data as CardData;
+      return deletedCard;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
+
   static async getEdges() {
     try {
       const response = await axios.get("http://localhost:3000/edges");
@@ -57,6 +70,18 @@ class Api {
       const response = await axios.post("http://localhost:3000/edges", edge);
       const newEdge = response.data as EdgeData;
       return newEdge;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
+  static async deleteEdges(edges: EdgeData[]) {
+    try {
+      for (const edge of edges) {
+        await axios.delete(`http://localhost:3000/edges/${edge.id}`);
+      }
+      const deletedEdge = edges;
+      return deletedEdge;
     } catch (error) {
       console.error(error);
       return null;
