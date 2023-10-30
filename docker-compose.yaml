@@ -1,6 +1,7 @@
 services:
   app:
+    build: .
     container_name: syncfusion-dashboard
-    image: syncfusion-dashboard
+    image: ayushbehl31/syncfusion-dashboard
     ports: 
       - 8082:3000
