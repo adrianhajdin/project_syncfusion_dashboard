@@ -1,49 +1,49 @@
 {
   "cards": [
     {
-      "id": 1,
+      "id": "1",
       "position": {
-        "x": -2446.5466738197424,
-        "y": 69.14356223175966
+        "x": -457.2347839018754,
+        "y": -128.7947326413506
       },
       "data": {
         "label": "1",
-        "title": "IPC Triggering",
-        "subject": "Code: COM_IPC_TRGqwe"
+        "title": "www",
+        "subject": "ewqew"
       },
       "type": "defaultNode"
     },
     {
-      "id": 2,
+      "id": "2",
       "position": {
-        "x": -2427.2140086692416,
-        "y": 291.19467654038266
+        "x": -400.0306301155469,
+        "y": 97.27048538003265
       },
       "data": {
         "label": "2",
-        "title": "IPC Tring",
-        "subject": "Code: COM_IPC_TRGww"
+        "title": "New Node",
+        "subject": "New Subject"
       },
       "type": "defaultNode"
     },
     {
-      "id": 3,
+      "id": "3",
       "position": {
-        "x": -2492,
-        "y": 500
+        "x": -147.85309015526394,
+        "y": -123.59659332280339
       },
       "data": {
         "label": "3",
-        "title": "IPC Triggering",
-        "subject": "Code: COM_IPC_TRGee"
+        "title": "New Node",
+        "subject": "New Subject"
       },
-      "type": "specialNode"
+      "type": "defaultNode"
     },
     {
       "id": "4",
       "position": {
-        "x": -2655.648457949044,
-        "y": -148.40506103774655
+        "x": -114.16388304026121,
+        "y": -14.865088937534018
       },
       "data": {
         "label": "4",
@@ -55,8 +55,8 @@
     {
       "id": "5",
       "position": {
-        "x": -2773.3414508946184,
-        "y": 74.51409819729349
+        "x": -157.18140077004233,
+        "y": 106.4425883474519
       },
       "data": {
         "label": "5",
@@ -68,29 +68,19 @@
   ],
   "edges": [
     {
-      "id": "e4-1",
-      "source": "4",
-      "target": "1"
-    },
-    {
-      "id": "e5-2",
-      "source": "5",
+      "id": "e1-2",
+      "source": "1",
       "target": "2"
     },
     {
-      "id": "e4-2",
+      "id": "e3-4",
+      "source": "3",
+      "target": "4"
+    },
+    {
+      "id": "e4-5",
       "source": "4",
-      "target": "2"
-    },
-    {
-      "id": "e5-3",
-      "source": "5",
-      "target": "3"
-    },
-    {
-      "id": "e2-3",
-      "source": "2",
-      "target": "3"
+      "target": "5"
     }
   ]
 }

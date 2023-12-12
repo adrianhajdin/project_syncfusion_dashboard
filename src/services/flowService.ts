@@ -60,8 +60,38 @@ export const FlowService = {
         node.id === nodeId ? updatedNode : node
       );
       setNodes(updatedNodes);
+      console.log("Updated nodes", updatedNodes);
     } catch (error) {
       console.error("Error updating card", error);
+    }
+  },
+
+  async deleteCard(
+    nodes: CardData[],
+    edges: EdgeData[],
+    nodeId: string,
+    setNodes: SetNodesFunction,
+    setEdges: SetEdgesFunction
+  ) {
+    try {
+      // Delete the node from the server (assuming you have a deleteCard function in your API)
+      await Api.deleteCard(nodeId);
+
+      //delete all edges connected to the node
+      const connectedEdges = edges.filter(
+        (edge) => edge.source === nodeId || edge.target === nodeId
+      );
+
+      await Api.deleteEdges(connectedEdges);
+
+      // Update the local nodes state by filtering out the node to be deleted
+      const updatedNodes = nodes.filter((node) => node.id !== nodeId);
+      setNodes(updatedNodes);
+
+      // Update the local edges state by filtering out the edges connected to the node to be deleted
+      setEdges(connectedEdges);
+    } catch (error) {
+      console.error("Error deleting card", error);
     }
   },
 
