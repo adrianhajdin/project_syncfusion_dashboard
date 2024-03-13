@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: syncfusion-dash
+  labels:
+    app: syncfusion-dash
+    env: test
+
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 3000
+      targetPort: 80
+      protocol: TCP
+  
+  selector:
+    app: syncfusion-dash
+    env: test
+    

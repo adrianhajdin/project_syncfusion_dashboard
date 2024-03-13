@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: syncfusion-dash
+  labels:
+    app: syncfusion-dash
+    env: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: syncfusion-dash
+      env: test
+    
+  template:
+    metadata:
+      name: syncfusion-dash
+      labels:
+        app: syncfusion-dash
+        env: test
+    
+    spec:
+      containers:
+        - name: test-syncfusion-dashboard
+          image: ayushbehl31/sync-dash-react:latest
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "2Gi"
+              cpu: "1000m"
+
+            limits:
+              memory: "4Gi"
+              cpu: "1500m"    

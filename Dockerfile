@@ -1,8 +1,7 @@
-FROM node:17-alpine AS builder
-
-WORKDIR /app
-COPY ./package.json .
-COPY . .
+FROM node:18-alpine
+WORKDIR /usr/src/app
+COPY . ./
+COPY package.json ./
 RUN npm install --legacy-peer-deps
-# RUN npm run build
-CMD npm start
+CMD ["npm", "start"]
+
