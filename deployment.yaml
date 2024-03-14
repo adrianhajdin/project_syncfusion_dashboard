@@ -21,16 +21,15 @@ spec:
     
     spec:
       containers:
-        - name: test-syncfusion-dashboard
-          image: ayushbehl31/sync-dash-react:latest
-          imagePullPolicy: "Always"
-          ports:
-            - containerPort: 80
-          resources:
-            requests:
-              memory: "2Gi"
-              cpu: "1000m"
+      - name: test-syncfusion-dashboard
+        image: ayushbehl31/sync-dash-react:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1000m"
 
-            limits:
-              memory: "4Gi"
-              cpu: "1500m"    
+          limits:
+            memory: "4Gi"
+            cpu: "1500m"
