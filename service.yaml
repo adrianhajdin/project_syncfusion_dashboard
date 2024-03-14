@@ -7,13 +7,12 @@ metadata:
     env: test
 
 spec:
-  type: LoadBalancer
-  ports:
-    - port: 3000
-      targetPort: 80
-      protocol: TCP
-  
+  type: NodePort
   selector:
     app: syncfusion-dash
     env: test
-    
+  ports:
+    - port: 3050
+      targetPort: 3000
+      protocol: TCP
+      nodePort: 31000
