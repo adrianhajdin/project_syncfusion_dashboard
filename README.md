@@ -1,3 +1,9 @@
+# How to run this repository:-
+Step 1:- Clone this repository through "$git clone" command.
+Step 2:- After cloning this repository open code in vs code & then open vs code terminal then run the first command as "yarn i" to install all dependencies
+Step 3:- after the "Yarn i" command run the second command "yarn start" to start the development server. 
+Done.
+
 # Build and Deploy a React Admin Dashboard App With Theming, Tables, Charts, Calendar, Kanban and More
 ![Shoppy](https://i.ibb.co/W6g39w3/image.png)
 
