@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: syncfusion-dash-backend-service
+  labels:
+    app: syncfusion-dash-backend
+spec:
+  selector:
+    app: syncfusion-dash-backend
+    env: test
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: NodePort

@@ -1,30 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: syncfusion-dash-frontend
+  name: syncfusion-dash-backend
   labels:
-    app: syncfusion-dash-frontend
+    app: syncfusion-dash-backend
     env: test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: syncfusion-dash-frontend
+      app: syncfusion-dash-backend
       env: test
     
   template:
     metadata:
-      name: syncfusion-dash-frontend
+      name: syncfusion-dash-backend
       labels:
-        app: syncfusion-dash-frontend
+        app: syncfusion-dash-backend
         env: test
     
     spec:
       containers:
-      - name: test-syncfusion-dashboard
-        image: ayushbehl31/sync-dash:latest
+      - name: scalable-syncfusion-dashboard
+        image: ayushbehl31/scalable_backend_img:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 5000
         resources:
           requests:
             memory: "2Gi"

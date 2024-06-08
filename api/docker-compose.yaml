@@ -1,0 +1,7 @@
+version: '3'
+services:
+  scalable_backend:
+    image: scalable_backend_img
+    ports:
+      - "8000:5000"
+    restart: unless-stopped
